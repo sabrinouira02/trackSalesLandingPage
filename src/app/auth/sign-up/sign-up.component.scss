@@ -12,3 +12,13 @@ button.btn.btn-primary.btn-block.mb-4 {
 button.btn.btn-primary.btn-block.mb-4:hover {
     background-color: #b0964e;
 }
+
+@media (max-width: 450px) {
+    .sign-up-img {
+        display: none;
+    }
+
+    .login-logo {
+        margin: -22% 0 10% -8%;
+    }
+}

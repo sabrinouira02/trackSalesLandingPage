@@ -14,6 +14,18 @@
     .h-custom {
         height: 100%;
     }
+
+    .login-img {
+        display: none;
+    }
+
+    .login-logo {
+        margin: 10%;
+    }
+
+    .pt-1 {
+        padding-bottom: 3.25rem !important;
+    }
 }
 
 button.btn.btn-primary.btn-lg {
@@ -28,4 +40,8 @@ button.btn.btn-primary.btn-lg:hover {
 .link-danger {
     color: #eecc6f !important;
     text-decoration-color: #eecc6f !important;
+}
+
+img.login-logo {
+    margin: -10% 0px 5% 0;
 }
