@@ -9,35 +9,36 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div [class.collapse]="navbarCollapsed" class="navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
                     <a class="nav-link" routerLink="/" routerLinkActive="active"
                         [ngClass]="{'custom-active-class': isActive('/')}">
                         Home
                         <span class="underline"></span>
                     </a>
                 </li>
-                <li>
+                <li class="nav-item">
                     <a class="nav-link" routerLink="/pricing" routerLinkActive="active"
                         [ngClass]="{'custom-active-class': isActive('/pricing')}">
                         Pricing
                         <span class="underline"></span>
                     </a>
                 </li>
-                <li>
+                <li class="nav-item">
                     <a class="nav-link" routerLink="/about-us" routerLinkActive="active"
                         [ngClass]="{'custom-active-class': isActive('/about-us')}">
                         About us
                         <span class="underline"></span>
                     </a>
                 </li>
-                <li>
-                    <a class="nav-link" routerLink="/auth/sign-in">Log In</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://app.tracksales.io/#/sign-in">Log In</a>
                 </li>
                 <li class="nav-item signup">
-                    <a class="nav-link" routerLink="/auth/sign-up">Sign Up</a>
+                    <a class="nav-link" href="https://app.tracksales.io/#/sign-up">Sign Up</a>
                 </li>
             </ul>
+
         </div>
     </div>
 </nav>
