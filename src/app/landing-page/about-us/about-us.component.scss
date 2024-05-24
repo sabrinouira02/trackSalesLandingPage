@@ -1,74 +1,87 @@
+.main_container {
+  //   padding: 10% 10% 5% 10%;
+  font-size: 20px;
+  background-color: #f8f9fa;
+}
+
+p,
+button,
+li,
+span,
+a {
+  font-family: monospace;
+}
+
 .container-x-small {
-    max-width: 48rem;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
 }
 
 .vertical-div.align-center {
-    align-items: center;
-    padding-top: 10%;
+  align-items: center;
+  padding-top: 10%;
 }
 
 .vertical-div {
-    flex-direction: column;
-    display: flex;
-    position: relative;
+  flex-direction: column;
+  display: flex;
+  position: relative;
 }
 
 h1 {
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: 56px;
-    font-weight: 700;
-    line-height: 1.2;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .margin-top-16px {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .text-center {
-    text-align: center;
+  text-align: center;
 }
 
 .steps-button {
-    background-image: linear-gradient(to right, #eaeaea, rgba(234, 234, 234, 0));
-    border-radius: 0.25rem;
-    padding: 1px;
-    transition: box-shadow .3s;
+  background-image: linear-gradient(to right, #eaeaea, rgba(234, 234, 234, 0));
+  border-radius: 0.25rem;
+  padding: 1px;
+  transition: box-shadow 0.3s;
 }
 
 .w-inline-block {
-    max-width: 100%;
-    display: inline-block;
+  max-width: 100%;
+  display: inline-block;
 }
 
 a {
-    color: var(--white);
-    text-decoration: none;
+  color: var(--white);
+  text-decoration: none;
 }
 
 .steps-button-wrapper {
-    grid-column-gap: 0.3125rem;
-    color: #fff;
-    background-color: #444a5c;
-    border-radius: 0.25rem;
-    justify-content: center;
-    align-items: center;
-    padding: 0.5rem 0.625rem;
-    font-size: .9375rem;
-    font-weight: 500;
-    transition: background-color .2s;
-    display: flex;
+  grid-column-gap: 0.3125rem;
+  color: #fff;
+  background-color: #444a5c;
+  border-radius: 0.25rem;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 0.625rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  transition: background-color 0.2s;
+  display: flex;
 }
 
 h3 {
-    margin-top: 15%;
-    margin-bottom: 0;
-    font-size: 40px;
-    font-weight: 700;
-    line-height: 1.2;
+  margin-top: 15%;
+  margin-bottom: 0;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
 }
