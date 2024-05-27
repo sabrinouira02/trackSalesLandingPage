@@ -8,7 +8,10 @@ import { PricingComponent } from './pricing/pricing.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
-
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { HttpClient } from '@angular/common/http';
+import { HttpLoaderFactory } from '../app.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     LandingPageComponent,
@@ -16,11 +19,19 @@ import { HeaderComponent } from './header/header.component';
     PricingComponent,
     AboutUsComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
   imports: [
     CommonModule,
     LandingPageRoutingModule,
-  ]
+    NgbModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+    }),
+  ],
 })
-export class LandingPageModule { }
+export class LandingPageModule {}

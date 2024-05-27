@@ -19,7 +19,7 @@ a {
 }
 
 .main_container {
-  padding: 10% 10% 5% 10%;
+  padding: 6% 10% 5% 10%;
   font-size: 20px;
   background-color: #f8f9fa;
 }
@@ -32,6 +32,25 @@ a {
 .wpb_wrapper2 {
   margin-right: 2%;
   width: 76%;
+  padding-top: 4%;
+}
+
+.cursor {
+  display: inline-block;
+  width: 1px;
+  background-color: black; /* ou la couleur de votre choix */
+  margin-left: 2px; /* ajustez selon vos besoins */
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  from,
+  to {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 .vc_btn3 {
@@ -45,7 +64,7 @@ a {
   color: white;
 
   &:hover {
-    background: #775802;
+    background: #ae954e;
   }
 }
 
@@ -186,10 +205,10 @@ iframe {
 
 .meta-title {
   text-align: center;
-  margin-top: 10%;
+  margin-top: 6%;
   margin-bottom: 30px;
   color: #929eaa;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -276,7 +295,7 @@ ul.checklist li img {
 
 .allarounddata-widget span {
   text-align: center;
-  font-size: 12px;
+  font-size: 16px;
   line-height: 16px;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -368,7 +387,7 @@ ul.wpb_thumbnails-fluid > li {
   background: #eecc6f;
 
   &:hover {
-    background: #775802;
+    background: #ae954e;
   }
 }
 
@@ -450,7 +469,7 @@ div.vc_btn3-container.btn a {
 .meta-title h5,
 .meta-title h6 {
   color: #929eaa;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -679,4 +698,72 @@ a {
 
 .steps-button-wrapper:hover {
   background-color: #5c5c5c;
+}
+
+// .clients {
+//   background-color: white;
+// }
+
+.clients .image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.clients .image-container:before,
+.clients .image-container:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), #f8f9fa);
+}
+
+.clients .image-container:before {
+  left: 0;
+  transform: scaleX(-1);
+  z-index: 9;
+}
+
+.clients .image-container:after {
+  right: 0;
+  transform: scaleX(1);
+  z-index: 9;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.image-list {
+  display: inline-block;
+  animation: slide 20s linear infinite;
+}
+
+.image-container img {
+  width: 150px;
+  height: auto;
+  margin-right: 100px;
+  filter: grayscale(100);
+  transition: all 0.4s ease-in-out;
+  display: inline-block;
+  padding: 15px 0;
+}
+
+.image-container img:hover {
+  filter: none;
+  transform: scale(1.1);
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }

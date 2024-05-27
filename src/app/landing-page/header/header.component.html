@@ -1,7 +1,12 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<div class="top-bar d-flex justify-content-center align-items-center p-2">
+    <h6 class="top-bar-title">{{ 'top_bar.title' | translate }}</h6>
+    <button class="btn btn-primary">{{ 'top_bar.button' | translate }}</button>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light" [ngClass]="{'app-header-scrolled': scrolled}">
     <div class="container-fluid">
         <a routerLink="" class="navbar-brand">
-            <img src="assets/images/logos/4.png" alt="logo" width="150">
+            <img src="assets/images/logos/4.png" alt="logo" width="180">
         </a>
         <button (click)="toggleNavbarCollapsing()" class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -13,29 +18,57 @@
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/" routerLinkActive="active"
                         [ngClass]="{'custom-active-class': isActive('/')}">
-                        Home
+                        {{ 'nav.home' | translate }}
                         <span class="underline"></span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/pricing" routerLinkActive="active"
                         [ngClass]="{'custom-active-class': isActive('/pricing')}">
-                        Pricing
+                        {{ 'nav.pricing' | translate }}
                         <span class="underline"></span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/about-us" routerLinkActive="active"
                         [ngClass]="{'custom-active-class': isActive('/about-us')}">
-                        About us
+                        {{ 'nav.about_us' | translate }}
                         <span class="underline"></span>
                     </a>
                 </li>
+
                 <li class="nav-item">
-                    <a class="nav-link" href="https://app.tracksales.io/sign-in">Log In</a>
+                    <div ngbDropdown class="d-inline-block">
+                        <a class="nav-link" id="dropdownBasic1" ngbDropdownToggle>
+                            {{ 'nav.langue' | translate }}
+                        </a>
+                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="dropdown-menu-end">
+                            <a (click)="switchLanguage('en')" ngbDropdownItem class="d-flex align-items-center">
+                                <span>{{ 'nav.english' | translate }}</span>
+                                <img src="assets/images/Flag_of_the_United_Kingdom.png" width="30px" alt="English Flag"
+                                    class="ms-auto">
+                            </a>
+                            <a (click)="switchLanguage('fr')" ngbDropdownItem class="d-flex align-items-center">
+                                <span>{{ 'nav.french' | translate }}</span>
+                                <img src="assets/images/Flag_of_France.png" width="30px" alt="French Flag"
+                                    class="ms-auto">
+                            </a>
+                            <a (click)="switchLanguage('de')" ngbDropdownItem class="d-flex align-items-center">
+                                <span>{{ 'nav.deutch' | translate }}</span>
+                                <img src="assets/images/Allemand-flag.png" width="30px" alt="Deutch Flag"
+                                    class="ms-auto">
+                            </a>
+                        </div>
+                    </div>
+
+
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="https://app.tracksales.io/sign-in">{{ 'nav.sign_in' | translate }}</a>
                 </li>
                 <li class="nav-item signup">
-                    <a class="nav-link" href="https://app.tracksales.io/sign-up">Sign Up</a>
+                    <a class="nav-link" href="https://app.tracksales.io/sign-up">{{ 'nav.sign_up' | translate }}</a>
                 </li>
             </ul>
 

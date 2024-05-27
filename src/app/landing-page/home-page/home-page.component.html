@@ -1,39 +1,45 @@
 <div class="main_container">
     <div class="vc_row">
         <div class="wpb_wrapper2">
-            <h1 [@fadeAndScale]="animationState">Never Miss Another Conversion</h1>
-            <p class="wpb_text_column" [@fadeInOut]="animationState">Ensure that 100% of your conversions are tracked
-                and
-                delivered to your marketing channels like Facebook, TikTok, Google Ads, GA4, and 40+ other channels with
-                Track Sales server-side tracking. Plus boost Klaviyo flow performance by 2-3x with Session Enrichment.
+            <h1>
+                <span>{{ title }}</span><span class="cursor">|</span>
+            </h1>
+
+            <p class="wpb_text_column">{{ 'wpb_wrapper2_description' | translate }}
             </p>
-            <button class="vc_btn3" onclick="window.location.href='https://app.tracksales.io/sign-up'">Sign up for Track
-                Sales</button>
-            <p class="wpb_text_column">Plans from $0 a month + 15-day free trials on all plans
+            <button data-aos="fade-left" class="vc_btn3"
+                onclick="window.location.href='https://app.tracksales.io/sign-up'">{{
+                'wpb_wrapper2_sign_up' | translate }}</button>
+            <p class="wpb_text_column">{{ 'wpb_wrapper2_free_plans' | translate }}
             </p>
         </div>
-        <div [@fadeAndScale]="animationState" id="lottie-container"></div>
+        <div data-aos="zoom-in" data-aos-anchor="#example-anchor" id="lottie-container"></div>
     </div>
 
     <div class="page-padding">
         <div class="container-large">
             <div class="vertical-div align-center">
-                <div class="meta-title">Let’s do this!</div>
-                <h4 class="meta-sub-title">How can I start?</h4>
+                <div class="meta-title" data-aos="zoom-out" data-aos-offset="500" data-aos-duration="2400">{{
+                    'meta-title1' | translate }}</div>
+                <h4 class="meta-sub-title" data-aos="zoom-out" data-aos-offset="500" data-aos-duration="2400">{{
+                    'meta-sub-title1' | translate }}</h4>
                 <div class="steps-wrapper">
-                    <div id="w-node-ac551f8e-6b9e-9a23-6302-012f036c2cef-f310d9e4" class="steps-block">
+                    <div id="w-node-ac551f8e-6b9e-9a23-6302-012f036c2cef-f310d9e4" class="steps-block"
+                        data-aos="fade-up" data-aos-offset="500" data-aos-duration="2400">
                         <div class="steps-number">
                             <div>1</div>
                         </div>
                         <div class="steps-text">
-                            <div class="text-l text-bold">Make an account</div>
-                            <p class="text-s opacity-0-8">Create an account within 10 seconds. No unnecessary personal
+                            <div class="text-l text-bold" data-aos="fade-left">Make an account</div>
+                            <p class="text-s opacity-0-8" data-aos="fade-left">Create an account within 10 seconds. No
+                                unnecessary personal
                                 information or payment details required.</p><a data-name="How To Start Register Button"
                                 routerLink="/auth/sign-up" class="steps-button w-inline-block">
                                 <div class="steps-button-wrapper">
-                                    <div class="button-text">Create your free account</div>
-                                    <div class="button-icon w-embed"><svg class="button-icon" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <div class="button-text" data-aos="fade-left">Create your free account</div>
+                                    <div class="button-icon w-embed" data-aos="fade-left"><svg class="button-icon"
+                                            width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2400/svg">
                                             <path d="M17 12L7 12M17 12L13 16M17 12L13 8" stroke="#FFFFFF"
                                                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                                             </path>
@@ -42,7 +48,8 @@
                             </a>
                         </div>
                     </div>
-                    <div id="w-node-ac551f8e-6b9e-9a23-6302-012f036c2cfc-f310d9e4" class="steps-block">
+                    <div id="w-node-ac551f8e-6b9e-9a23-6302-012f036c2cfc-f310d9e4" class="steps-block"
+                        data-aos="fade-down" data-aos-offset="500" data-aos-duration="2400">
                         <div class="steps-number">
                             <div>2</div>
                         </div>
@@ -54,7 +61,8 @@
                                 begins immediately.</p>
                         </div>
                     </div>
-                    <div id="w-node-ac551f8e-6b9e-9a23-6302-012f036c2d05-f310d9e4" class="steps-block">
+                    <div id="w-node-ac551f8e-6b9e-9a23-6302-012f036c2d05-f310d9e4" class="steps-block"
+                        data-aos="fade-up" data-aos-offset="500" data-aos-duration="2400">
                         <div class="steps-number">
                             <div>3</div>
                         </div>
@@ -71,32 +79,17 @@
     </div>
 
     <div class="vc_column-inner">
-        <h5 class="meta-title">TRUSTED BY OVER 6,500 D2C LEADERS</h5>
-        <h2 class="meta-sub-title">Marketers, analysts, and Shopify brand owners use Track Sales for accurate conversion
-            tracking
-        </h2>
+        <h3 class="meta-title" data-aos="zoom-out" data-aos-offset="700" data-aos-duration="2400">{{ 'meta-title2' |
+            translate }}</h3>
+        <h2 class="meta-sub-title" data-aos="zoom-out" data-aos-offset="700" data-aos-duration="2400">{{
+            'meta-sub-title2' | translate }}</h2>
     </div>
 
-    <div class="wpb_wrapper">
-        <div class="wpb_raw_code wpb_content_element wpb_raw_html">
-            <div class="wpb_wrapper">
-                <div id="client_logos_1">
-
-                    <img width="" height="" src="assets/images/logos/Elevar-customer_vuori_160x54-logo.png"
-                        class="vc_single_image-img attachment-full" alt="vuori-logo" loading="lazy">
-                    <img width="" height="" src="assets/images/logos/Elevar-customer_rothys_160x54-logo.png"
-                        class="vc_single_image-img attachment-full" alt="rothys-logo" loading="lazy">
-                    <img width="" height="" src="assets/images/logos/Elevar-customer_vessi_160x54-logo.png"
-                        class="vc_single_image-img attachment-full" alt="vessi-logo" loading="lazy">
-                    <img width="" height="" src="assets/images/logos/Elevar-customer_thrive-causemetics_160x54-logo.png"
-                        class="vc_single_image-img attachment-full" alt="thrive-logo" loading="lazy">
-                    <img width="" height="" src="assets/images/logos/Elevar-customer_snow_160x54-logo.png"
-                        class="vc_single_image-img attachment-full" alt="snow-logo" loading="lazy">
-                    <img width="" height="" src="assets/images/logos/Elevar-customer_skims_160x54-logo.png"
-                        class="vc_single_image-img attachment-full" alt="skims-logo" loading="lazy">
-                    <img width="" height="" src="assets/images/logos/Elevar-customer_cuts_160x54-logo.png"
-                        class="vc_single_image-img attachment-full" alt="cuts-logo" loading="lazy">
-                </div>
+    <div id="clients" class="clients section-bg">
+        <div class="image-container" style="padding: 0 200px 0 200px;">
+            <div class="image-list">
+                <img *ngFor="let slide of images" [src]="slide.src" [alt]="slide.alt">
+                <img *ngFor="let slide of images" [src]="slide.src" [alt]="slide.alt">
             </div>
         </div>
     </div>
@@ -104,7 +97,7 @@
     <div id="client_needs_container" data-vc-full-width="true" data-vc-full-width-init="true">
         <div class="relative wpb_column vc_column_container vc_col-sm-4">
             <div class="vc_column-inner ">
-                <div class="wpb_wrapper">
+                <div class="wpb_wrapper" data-aos="zoom-out" data-aos-offset="700" data-aos-duration="2400">
                     <h2 style="text-align: left" class="vc_custom_heading">If any of this sounds familiar, you need
                         Track Sales</h2>
                 </div>
@@ -150,21 +143,27 @@
     </div>
 
     <div class="allarounddata-widget">
-        <div class="container"><span>All Around Data</span>
-            <h2>3 Types of Data Collected</h2>
-            <p class="subheading">Track Sales's job is to collect the maximum amount of attributable data to send to
+        <div class="container" data-aos="zoom-out" data-aos-offset="700" data-aos-duration="2400"><span
+                class="meta-title">{{ 'meta-title3' | translate }}</span>
+            <h2 class="meta-sub-title" data-aos="zoom-out" data-aos-offset="700" data-aos-duration="2400">{{
+                'meta-sub-title3' | translate }}</h2>
+            <p class="subheading" data-aos="zoom-out" data-aos-offset="700" data-aos-duration="2400">Track Sales's job
+                is to collect the maximum amount of attributable data to send to
                 each of
                 your marketing destinations.</p>
             <div class="allarounddata__rows">
                 <div class="allarounddata_row_1 allarounddata__row" tabindex="-1" role="option"
-                    aria-describedby="slick-slide10"><img src="assets/images/Product-Data.png" alt="">
-                    <div class="allarounddata__column">
-                        <h3>Product &amp; Order Data</h3>
+                    aria-describedby="slick-slide10"><img data-aos="fade-right" data-aos-offset="700"
+                        data-aos-duration="2400" src="assets/images/Product-Data.png" alt="">
+                    <div class="allarounddata__column" data-aos="fade-left" data-aos-offset="700"
+                        data-aos-duration="2400">
+                        <h3>Product &amp; Order Data
+                        </h3>
                         <p>This is the data you'd expect to see in each of your tags that appears in pixel helpers --
                             product sku, price, brand, revenue, transaction IDs, etc.</p>
                         <a href="#" tabindex="0" class="svg-link">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
+                                xmlns="http://www.w3.org/2400/svg">
                                 <path
                                     d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
                                     stroke="#5F5CE7" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -178,14 +177,16 @@
                     </div>
                 </div>
                 <div class="allarounddata_row_2 allarounddata__row" tabindex="-1" role="option"
-                    aria-describedby="slick-slide11"><img src="assets/images/Customer-Data.png" alt="">
-                    <div class="allarounddata__column">
+                    aria-describedby="slick-slide11"><img data-aos="fade-left" data-aos-offset="700"
+                        data-aos-duration="2400" src="assets/images/Customer-Data.png" alt="">
+                    <div class="allarounddata__column" data-aos="fade-right" data-aos-offset="700"
+                        data-aos-duration="2400">
                         <h3>Customer Data</h3>
                         <p>This is data such as email, user identifier, customer id, phone, addresses, etc. This data
                             collection can be integrated with consent providers like OneTrust.</p>
                         <a href="#" tabindex="0" class="svg-link">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
+                                xmlns="http://www.w3.org/2400/svg">
                                 <path
                                     d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
                                     stroke="#5F5CE7" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -198,15 +199,17 @@
                     </div>
                 </div>
                 <div class="allarounddata_row_3 allarounddata__row" tabindex="-1" role="option"
-                    aria-describedby="slick-slide12"><img src="assets/images/Attribution-Data.png" alt="">
-                    <div class="allarounddata__column">
+                    aria-describedby="slick-slide12"><img src="assets/images/Attribution-Data.png" alt=""
+                        data-aos="fade-right" data-aos-offset="700" data-aos-duration="2400">
+                    <div class="allarounddata__column" data-aos="fade-left" data-aos-offset="700"
+                        data-aos-duration="2400">
                         <h3>Attribution Data</h3>
                         <p>The most critical data for your marketing channels to attribute clicks to conversions. This
                             data includes click IDs, cookie values, UTM parameters, and other data related to session
                             stitching.</p>
                         <a href="#" tabindex="0" class="svg-link">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
+                                xmlns="http://www.w3.org/2400/svg">
                                 <path
                                     d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
                                     stroke="#5F5CE7" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -266,7 +269,7 @@
             <div class="vc_column-inner vc_custom_1619540288743">
                 <div class="wpb_text_column wpb_content_element  meta-title">
                     <div class="wpb_wrapper">
-                        <h5 style="text-align: center;">Built for Shopify</h5>
+                        <h5 style="text-align: center;">{{ 'meta-title4' | translate }}</h5>
 
                     </div>
                 </div>
@@ -292,10 +295,10 @@
         class="vc_row wpb_row vc_row-fluid section full-width-checklist vc_custom_1619808691479">
         <div
             class="wpb_column vc_column_container vc_col-sm-10 vc_col-lg-offset-3 vc_col-lg-6 vc_col-md-offset-2 vc_col-md-8 vc_col-sm-offset-1">
-            <div class="vc_column-inner vc_custom_1500890239705">
+            <div class="vc_column-inner vc_custom_1700890239705">
                 <div class="wpb_text_column wpb_content_element  meta-title">
                     <div class="wpb_wrapper">
-                        <h5 style="text-align: center;">One Central System</h5>
+                        <h5 style="text-align: center;">{{ 'meta-title5' | translate }}</h5>
 
                     </div>
                 </div>
