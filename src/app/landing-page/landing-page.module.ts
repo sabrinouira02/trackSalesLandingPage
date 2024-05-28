@@ -12,6 +12,8 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpLoaderFactory } from '../app.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { PrivacyComponent } from './privacy/privacy.component';
+import { TermsComponent } from './terms/terms.component';
 @NgModule({
   declarations: [
     LandingPageComponent,
@@ -20,6 +22,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AboutUsComponent,
     FooterComponent,
     HeaderComponent,
+    PrivacyComponent,
+    TermsComponent,
   ],
   imports: [
     CommonModule,

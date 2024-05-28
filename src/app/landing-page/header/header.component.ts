@@ -30,4 +30,8 @@ export class HeaderComponent {
   toggleNavbarCollapsing() {
     this.navbarCollapsed = !this.navbarCollapsed;
   }
+
+  navigateToExternalLink(): void {
+    window.open('https://pxmr7cwajh0.typeform.com/to/MNUlpNse', '_blank'); // Remplacez par l'URL de votre choix
+  }
 }

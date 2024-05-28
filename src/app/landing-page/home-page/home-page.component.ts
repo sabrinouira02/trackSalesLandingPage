@@ -1,5 +1,11 @@
 import { Location } from '@angular/common';
-import { Component, AfterViewInit, Renderer2 } from '@angular/core';
+import {
+  Component,
+  AfterViewInit,
+  Renderer2,
+  ViewChild,
+  ElementRef,
+} from '@angular/core';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 import { LottieService } from 'src/app/services/lottie.service';
@@ -14,6 +20,16 @@ export class HomePageComponent implements AfterViewInit {
   langChangeSubscription!: Subscription;
   currentInterval: any; // Pour stocker l'intervalle en cours
   currentTimeout: any; // Pour stocker le timeout en cours
+  @ViewChild('conversionAccuracyElement')
+  conversionAccuracyElement!: ElementRef;
+  @ViewChild('moneyBackDaysElement') moneyBackDaysElement!: ElementRef;
+
+  conversionAccuracy: number = 0;
+  moneyBackDays: number = 0;
+  targetConversionAccuracy: number = 99;
+  targetMoneyBackDays: number = 30;
+  duration: number = 3000; // durée de l'incrémentation en millisecondes
+  observer!: IntersectionObserver;
 
   images = [
     {
@@ -69,6 +85,10 @@ export class HomePageComponent implements AfterViewInit {
   ngAfterViewInit() {
     AOS.init({
       duration: 1200, // durée de l'animation en ms
+      disable: function () {
+        var maxWidth = 768;
+        return window.innerWidth < maxWidth;
+      },
     });
     // Specify the container ID, animation path, and autoplay delay
     this.animationStateService.loadAnimation(
@@ -82,6 +102,7 @@ export class HomePageComponent implements AfterViewInit {
         this.setTitle();
       }
     );
+    this.setupObserver();
   }
 
   ngOnDestroy() {
@@ -123,5 +144,71 @@ export class HomePageComponent implements AfterViewInit {
       clearTimeout(this.currentTimeout);
       this.currentTimeout = null;
     }
+  }
+
+  setupObserver(): void {
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1,
+    };
+
+    this.observer = new IntersectionObserver(
+      this.handleIntersect.bind(this),
+      options
+    );
+
+    if (this.conversionAccuracyElement) {
+      this.observer.observe(this.conversionAccuracyElement.nativeElement);
+      console.log('Observing conversionAccuracyElement');
+    }
+    if (this.moneyBackDaysElement) {
+      this.observer.observe(this.moneyBackDaysElement.nativeElement);
+      console.log('Observing moneyBackDaysElement');
+    }
+  }
+
+  handleIntersect(
+    entries: IntersectionObserverEntry[],
+    observer: IntersectionObserver
+  ): void {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        console.log('Element is intersecting:', entry.target);
+        if (
+          entry.target === this.conversionAccuracyElement.nativeElement &&
+          this.conversionAccuracy === 0
+        ) {
+          console.log('Starting counter for conversionAccuracy');
+          this.incrementCounter(
+            'conversionAccuracy',
+            this.targetConversionAccuracy
+          );
+        } else if (
+          entry.target === this.moneyBackDaysElement.nativeElement &&
+          this.moneyBackDays === 0
+        ) {
+          console.log('Starting counter for moneyBackDays');
+          this.incrementCounter('moneyBackDays', this.targetMoneyBackDays);
+        }
+      }
+    });
+  }
+
+  incrementCounter(
+    property: 'conversionAccuracy' | 'moneyBackDays',
+    target: number
+  ): void {
+    const stepTime = Math.abs(Math.floor(this.duration / target));
+    let currentValue = 0;
+    const increment = target > 0 ? 1 : -1;
+
+    const timer = setInterval(() => {
+      currentValue += increment;
+      (this as any)[property] = currentValue; // Utilisation de "as any" pour contourner le problème de typage
+      if (currentValue === target) {
+        clearInterval(timer);
+      }
+    }, stepTime);
   }
 }
