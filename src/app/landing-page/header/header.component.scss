@@ -2,6 +2,11 @@
   background-color: #eecc6f;
 }
 
+img.T_logo.d-none.d-sm-block {
+  margin-top: -84px;
+  margin-bottom: 16px;
+}
+
 i.fab {
   color: #000;
   font-size: 20px;
@@ -98,6 +103,10 @@ ul {
 }
 
 @media (min-width: 992px) {
+  .container-fluid {
+    padding: 10px 0px;
+  }
+
   ul {
     li {
       padding: 0;

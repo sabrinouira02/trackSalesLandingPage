@@ -1,6 +1,15 @@
 <div class="top-bar d-flex justify-content-between align-items-center p-2">
     <div class="d-flex align-items-center mx-auto">
-        <h6 class="top-bar-title mr-3">{{ 'top_bar.title' | translate }}</h6>
+        <!-- Titre pour la version desktop -->
+        <h6 class="top-bar-title mr-3 d-none d-sm-block">
+            {{ 'top_bar.title' | translate }}
+        </h6>
+
+        <!-- Titre pour la version mobile -->
+        <h6 class="top-bar-title mr-3 d-block d-sm-none">
+            {{ 'top_bar.mobile_title' | translate }}
+        </h6>
+
         <button class="btn btn-primary" (click)="navigateToExternalLink()">{{ 'top_bar.button' | translate }}</button>
     </div>
 
@@ -20,7 +29,13 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light" [ngClass]="{'app-header-scrolled': scrolled}">
     <div class="container-fluid">
         <a routerLink="" class="navbar-brand">
-            <img src="assets/images/logos/4.png" alt="logo" width="180">
+            <!-- Image pour la version desktop -->
+            <img src="assets/images/logos/T_logo.png" alt="logo" width="150" class="T_logo d-none d-sm-block">
+            <img src="assets/images/logos/TrackSales_logo.png" alt="logo" width="150"
+                class="TrackSales_logo d-none d-sm-block">
+            <!-- Image pour la version mobile -->
+            <img src="assets/images/logos/4.png" alt="logo" width="180" class="d-block d-sm-none">
+
         </a>
         <button (click)="toggleNavbarCollapsing()" class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"

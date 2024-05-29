@@ -18,16 +18,21 @@ a {
   font-family: monospace;
 }
 
-.main_container {
+.padding {
   padding: 4% 10% 5% 10%;
+}
+
+.main_container {
+  // padding: 4% 10% 5% 10%;
   font-size: 20px;
   background-color: #f8f9fa;
 }
 
-// .wpb_wrapper {
-//     margin-right: 2%;
-//     margin-left: 10%;
-// }
+.page-padding {
+  padding: 4% 10% 5% 10%;
+  background-color: #eeeeee;
+  box-shadow: 3.31228px 3.31228px 33.1228px rgb(33 43 54 / 10%);
+}
 
 .cursor {
   display: inline-block;
@@ -85,16 +90,18 @@ h1 {
   }
 
   #client_needs_container {
-    background-image: linear-gradient(-16deg, #f7f8fb 45%, #fafbfc 44%);
+    // background-image: linear-gradient(-16deg, #f7f8fb 45%, #fafbfc 44%);
+    background-image: linear-gradient(-21deg, #eeeeee 45%, #fafbfc 46%);
     align-items: center;
-    padding-top: 80px !important;
-    padding-bottom: 80px !important;
-    margin-bottom: 70px;
+    box-shadow: 0 4px 10px rgba(33 43 54 / 10%);
+    // padding-top: 80px !important;
+    // padding-bottom: 80px !important;
+    // margin-bottom: 70px;
   }
 
   ul.checklist {
     background: #ffffff;
-    box-shadow: 3.31228px 3.31228px 33.1228px rgb(33 43 54 / 10%);
+    box-shadow: 3.31228px 3.31228px 33.1228px rgba(197, 197, 197, 0.1);
     border-radius: 6.62456px;
     list-style-type: none;
     padding: 32px 24px;
@@ -217,8 +224,9 @@ h1 {
     box-shadow: 3.31228px 3.31228px 33.1228px rgba(33, 43, 54, 0.1);
     border-radius: 6.62456px;
     list-style-type: none;
-    padding: 32px 8px;
-    width: 98%;
+    padding: 32px 30px;
+    margin-left: 40px;
+    width: 80%;
   }
 
   .allarounddata__row {
@@ -341,6 +349,7 @@ ul.checklist li img {
 
   #client_needs_container {
     display: flex;
+    padding: 4% 10% 5% 10%;
   }
 
   .vc_column_container > .vc_column-inner {
@@ -639,6 +648,8 @@ ul.wpb_thumbnails-fluid > li {
 //Ready to Get Started?
 .vc_custom_1621249512603 {
   background-color: #f4f6f8 !important;
+  margin: 0 40px;
+  border-radius: 20px;
 }
 
 .section--get-started {
@@ -829,4 +840,15 @@ a {
   100% {
     transform: translateX(-50%);
   }
+}
+
+///
+///
+#info {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.lil-gui .gui-stats {
+  line-height: var(--widget-height);
+  padding: var(--padding);
 }

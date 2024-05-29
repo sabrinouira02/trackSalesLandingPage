@@ -1,7 +1,11 @@
 .main_container {
   //   padding: 10% 10% 5% 10%;
   font-size: 20px;
-  background-color: #f8f9fa;
+  background-color: #f8f9fa !important;
+}
+
+.\.main_container {
+  background-color: #f8f9fa !important;
 }
 
 p,
@@ -12,21 +16,9 @@ a {
   font-family: monospace;
 }
 
-.section-pricing-3 {
-  background: url(../../../assets/images/abstract-luxury-clear-yellow-wall-well-use-as-backdrop-background-layout_1258-266.jpg)
-    no-repeat;
-  background-position: bottom center;
-  background-size: cover;
-  padding-bottom: 240px;
-}
-
-.section-pricing {
-  margin-bottom: 72px;
-}
-
 @media (min-width: 768px) {
-  .section-pricing-3 {
-    padding-top: 118px !important;
+  .pad1 {
+    padding: 0rem 4rem;
   }
 
   .vc_col-sm-4 {
@@ -35,6 +27,23 @@ a {
 
   .vc_col-sm-12 {
     width: 100%;
+  }
+
+  .first-pricing-section {
+    padding: 6rem 20rem 4rem 20rem;
+  }
+
+  .pricing-title {
+    text-align: center;
+    font-size: 50px;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    padding: 4rem 0;
   }
 
   .pricing-wrapper {
@@ -66,24 +75,6 @@ a {
   }
 }
 
-.section-pricing-3 h2 {
-  color: #fafafa !important;
-  line-height: 54px;
-}
-
-// .wpb_button,
-// .wpb_content_element,
-// ul.wpb_thumbnails-fluid > li {
-//   margin-bottom: 35px;
-// }
-
-.section-pricing-3 p {
-  color: #efefff !important;
-  font-size: 18px !important;
-  line-height: 28px !important;
-  margin-top: 20px;
-}
-
 //////////////////////////
 ///
 
@@ -106,10 +97,23 @@ a {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .section-tab-3 .vc_column_container {
     padding-left: 15px;
     padding-right: 15px;
+  }
+
+  .first-pricing-section {
+    padding: 4rem 2rem 2rem 2rem;
+  }
+
+  .pricing-title {
+    text-align: center;
+    font-size: 34px;
+  }
+
+  .pad1 {
+    padding: 0rem 2rem;
   }
 
   .vc_custom_heading {
@@ -120,6 +124,11 @@ a {
     height: 400px;
     background: #fff;
     padding: 35px 42px 35px 40px;
+  }
+
+  .block {
+    height: 340px !important;
+    margin-bottom: 21px !important;
   }
 }
 
@@ -346,4 +355,136 @@ a {
 
 .section h2.vc_custom_heading {
   margin: 7rem 0 4rem 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.columns {
+  float: left;
+  width: 33.3%;
+  padding: 8px;
+}
+
+.price {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #eee;
+  margin: 0;
+  padding: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.price .header {
+  background-color: #111;
+  color: white;
+  font-size: 25px;
+}
+
+.price li {
+  border-bottom: 1px solid #eee;
+  padding: 20px;
+  text-align: center;
+}
+
+.price .grey {
+  background-color: #eee;
+  font-size: 20px;
+}
+
+.button {
+  background-color: #eecc6f;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 600px) {
+  .columns {
+    width: 100%;
+  }
+}
+
+.block {
+  flex: 0 0 48%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s;
+  height: 300px; /* Vous pouvez ajuster cette hauteur selon vos besoins */
+}
+
+.block:hover {
+  transform: scale(1.05);
+}
+
+.price:hover {
+  box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.image {
+  max-width: 50px;
+  height: auto;
+}
+
+.title {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.description {
+  font-size: 1em;
+  margin: 10px 0;
+  color: #666;
+  flex-grow: 1;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.price {
+  font-size: 1.2em;
+  color: #333;
+  margin: 0;
+}
+
+.price2 {
+  font-size: 1.2em;
+  color: #333;
+  margin: 0;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.button:hover {
+  background-color: #2b2b2b;
 }

@@ -14,6 +14,7 @@ import { HttpLoaderFactory } from '../app.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { TermsComponent } from './terms/terms.component';
+import { ThreeComponent } from './three/three.component';
 @NgModule({
   declarations: [
     LandingPageComponent,
@@ -24,6 +25,7 @@ import { TermsComponent } from './terms/terms.component';
     HeaderComponent,
     PrivacyComponent,
     TermsComponent,
+    ThreeComponent,
   ],
   imports: [
     CommonModule,

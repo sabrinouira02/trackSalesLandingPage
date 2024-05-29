@@ -160,11 +160,9 @@ export class HomePageComponent implements AfterViewInit {
 
     if (this.conversionAccuracyElement) {
       this.observer.observe(this.conversionAccuracyElement.nativeElement);
-      console.log('Observing conversionAccuracyElement');
     }
     if (this.moneyBackDaysElement) {
       this.observer.observe(this.moneyBackDaysElement.nativeElement);
-      console.log('Observing moneyBackDaysElement');
     }
   }
 
@@ -174,12 +172,10 @@ export class HomePageComponent implements AfterViewInit {
   ): void {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        console.log('Element is intersecting:', entry.target);
         if (
           entry.target === this.conversionAccuracyElement.nativeElement &&
           this.conversionAccuracy === 0
         ) {
-          console.log('Starting counter for conversionAccuracy');
           this.incrementCounter(
             'conversionAccuracy',
             this.targetConversionAccuracy
@@ -188,7 +184,6 @@ export class HomePageComponent implements AfterViewInit {
           entry.target === this.moneyBackDaysElement.nativeElement &&
           this.moneyBackDays === 0
         ) {
-          console.log('Starting counter for moneyBackDays');
           this.incrementCounter('moneyBackDays', this.targetMoneyBackDays);
         }
       }

@@ -60,12 +60,12 @@
   }
 }
 
-.container {
-  margin-right: 10%;
-  margin-left: 10%;
-  //   padding-left: 15px;
-  //   padding-right: 15px;
-}
+// .container {
+//   margin-right: 10%;
+//   margin-left: 10%;
+//   //   padding-left: 15px;
+//   //   padding-right: 15px;
+// }
 
 .img-responsive {
   display: block;
@@ -180,6 +180,10 @@ ul {
   li#menu-item-4887 {
     margin-left: 40px;
   }
+
+  .bottom-footer p {
+    font-size: 16px;
+  }
 }
 
 i.fab {
@@ -195,6 +199,7 @@ i.fab {
 a.contact {
   color: #000;
   margin-left: 8px;
+  font-size: 16px;
 }
 
 .social-icons a {
