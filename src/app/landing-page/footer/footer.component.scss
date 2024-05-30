@@ -9,6 +9,9 @@
   // .container {
   //     width: 1170px;
   // }
+  .menu {
+    padding-left: 100px;
+  }
 
   .col-lg-3 {
     width: 25%;
@@ -32,9 +35,9 @@
     width: 29.66667%;
   }
 
-  .container {
-    margin-bottom: -4rem;
-  }
+  // .container {
+  //   margin-bottom: -4rem;
+  // }
 }
 
 @media (min-width: 768px) {
@@ -125,6 +128,7 @@ a {
 
 .clearBoth {
   clear: both;
+  border-top: 1px solid #fff;
 }
 
 .copyright p {

@@ -1,6 +1,7 @@
 {
   "top_bar": {
     "title": "Vous souhaitez découvrir la manière innovante de suivre vos performances ?",
+    "mobile_title": "Réserver une place",
     "button": "Réserver une démo"
   },
   "nav": {
@@ -13,6 +14,11 @@
     "about_us": "À propos",
     "sign_in": "Se connecter",
     "sign_up": "S'inscrire"
+  },
+  "footer": {
+    "text_sous_logo": "TrackSales est un outil qui simplifie et automatise le processus de collecte de données et de suivi côté serveur spécifiquement pour les marques directes aux consommateurs (D2C) utilisant Shopify.",
+    "menu": "Menu",
+    "contact": "Contact"
   },
   "wpb_wrapper2_title": "Assurez-vous de ne jamais rater une opportunité de conversion",
   "wpb_wrapper2_description": "Assurez un suivi et une livraison à 100% de vos conversions vers des canaux marketing comme Facebook, TikTok, Google Ads, GA4 et plus de 40 autres plateformes avec le suivi côté serveur de Track Sales.",
@@ -33,5 +39,57 @@
   "start_etape_2_description": "Connectez facilement et rapidement vos boutiques. Le suivi de vos nouvelles données commence immédiatement.",
   "start_etape_3_description": "C'est maintenant que le vrai plaisir commence. Commencez à prendre des décisions éclairées basées sur des données précises, sans effort, sans avoir besoin d'une équipe dédiée au big data.",
   "create_account": "Créez votre compte gratuit",
-  "sounds_familiar_title": "Si cela vous semble familier, vous avez besoin de Track Sales"
+  "sounds_familiar_title": "Si cela vous semble familier, vous avez besoin de Track Sales",
+  "data_collected_description": "La principale responsabilité de Track Sales est de collecter autant de données pertinentes que possible, qui peuvent ensuite être transmises à diverses destinations marketing.",
+  "type1_title": "Données de produit et de commande",
+  "type1_title_description": "Ce sont les données que vous vous attendez à voir dans chacun de vos tags apparaissant dans les assistants de pixel -- SKU du produit, prix, marque, revenus, ID de transaction, etc.",
+  "type2_title": "Données client",
+  "type2_title_description": "Ce sont des données telles que l'email, l'identifiant utilisateur, l'ID client, le téléphone, les adresses, etc. Cette collecte de données peut être intégrée avec des fournisseurs de consentement comme OneTrust.",
+  "type3_title": "Données d'attribution",
+  "type3_title_description": "Les données les plus cruciales pour vos canaux marketing pour attribuer les clics aux conversions. Ces données incluent les ID de clic, les valeurs de cookie, les paramètres UTM et d'autres données liées à la session.",
+  "watch": "Regarder comment cela fonctionne",
+  "integartions_title": "Faites plus avec plus de 50 intégrations avec Track Sales",
+  "integartions_description": "Avec une surveillance des événements en temps réel et des intégrations avec Facebook Conversion API, Google Ads, GA4, TikTok et plus de 40 autres canaux de marketing numérique",
+  "explore_integration": "Explorer les intégrations",
+  "power_pixel_title": "Optimisez vos pixels et analyses avec des ensembles de données complets",
+  "power_pixel_description": "Déployez instantanément une couche de données Google Tag Manager, un suivi côté serveur, un enrichissement de session et une surveillance des performances en temps réel pour que vos plateformes marketing soient toujours pleinement optimisées.",
+  "power_pixel_button": "Voir les cas d'utilisation",
+  "central_system_title": "Track Sales offre une solution rationalisée pour gérer la complexité croissante du suivi et de l'identification des utilisateurs, en consolidant tout dans une seule plateforme.",
+  "central_system_description": "Votre équipe marketing gagne en assurance et observe des améliorations dans les résultats de leurs campagnes. En conséquence, vous obtenez de la tranquillité, des performances supérieures et une augmentation des revenus.",
+  "view_pricing_button": "Voir les prix et plans",
+  "watch_or_book_button": "Regarder ou réserver une démo",
+  "conversion_accuracy": "Précision des conversions",
+  "money_back": "Garantie de remboursement",
+  "conversion_accuracy_desc": "Track Sales gère entièrement le suivi côté serveur et nous garantissons que 99% de vos données d'achat seront livrées avec succès à toutes vos destinations marketing côté serveur.",
+  "money_back_desc": "Notre garantie de remboursement de 30 jours, sans poser de questions, est disponible sur tous les plans. Nous nous investissons dans votre succès.",
+  "ready_to_get_started": "Prêt à commencer?",
+  "get_started": "Commencer",
+  "ready_to_get_started_desc": "Essayez gratuitement pendant 15 jours pour commencer à augmenter les performances grâce à un meilleur suivi",
+  "view_plans": "Voir les plans",
+  "pricing": {
+    "title": "Forfaits et Tarifs",
+    "description": "Booster vos campagnes publicitaires avec nos techniques révolutionnaires d'enrichissement de données, garantissant le suivi de 100% de vos conversions et leur livraison à vos canaux marketing, ce qui entraîne une augmentation moyenne de 20,7% de votre ROAS ! Commencez facilement avec une configuration simple en 2 minutes - seulement 10 clics pour démarrer - et suivez vos premiers 50k de revenus gratuitement.",
+    "buttons_get_started": "Commencer",
+    "columns_header1": "Essentiel",
+    "columns_header2": "Pro",
+    "columns_header3": "Premium",
+    "year": "an",
+    "data_layer": "Couche de Données",
+    "server_Side_tracking": "Suivi Côté Serveur",
+    "tracking_guarantee": "Garantie de Suivi",
+    "orders_month": "Commandes/mois",
+    "add_Ons_available": "Extensions Disponibles",
+    "block1_header": "Installation Expert",
+    "block2_header": "Optimisation GA4",
+    "block3_header": "Suivi et Support Continus des Balises",
+    "block4_header": "Plans Multi-Boutiques",
+    "block1_desc": "Achetez notre extension de mise en service unique et nos analystes migreront/mettent à jour le suivi sur tous vos canaux marketing.",
+    "block2_desc": "Alors que Universal Analytics approche de la fin de sa vie, GA4 continue d'évoluer et de changer radicalement. Laissez nos analystes s'assurer que votre configuration GA4 suit les dernières bonnes pratiques et transfère toutes les configurations importantes de votre propriété Universal Analytics à votre propriété GA4.",
+    "block3_desc": "Laissez les analystes experts d'Elevar gérer tous vos besoins en balisage, suivi et suivi côté serveur de manière continue pour vous. Nous proposons un plan 'Lite' et un plan 'Service Complet'.",
+    "block4_desc": "Vous utilisez plusieurs boutiques pour une expansion internationale ? Nous pouvons aider ! Elevar regroupera toutes vos boutiques dans un seul plan. Choisissez simplement un moment pour parler avec nous ici.",
+    "and_up": "et plus",
+    "starts_at": "Commence à",
+    "sign_up_to_access": "Inscrivez-vous pour accéder",
+    "schedule_call": "Planifier un Appel"
+  }
 }

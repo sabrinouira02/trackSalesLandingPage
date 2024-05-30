@@ -9,12 +9,29 @@ img.T_logo.d-none.d-sm-block {
 
 i.fab {
   color: #000;
-  font-size: 20px;
+  font-size: 24px;
   margin-left: 20px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+i.fab:hover {
+  transform: scale(1.4);
 }
 
 .social-icons {
   padding-right: 30px;
+}
+
+.custom-dropdown-menu {
+  width: auto;
+}
+
+@media (max-width: 768px) {
+  .custom-dropdown-menu {
+    width: 88vw; /* La largeur sera égale à 100% de la vue d'écran */
+    left: 0 !important; /* Assurez-vous que le menu commence à gauche */
+    right: 0 !important; /* Assurez-vous que le menu s'étend à droite */
+  }
 }
 
 .app-header-scrolled {

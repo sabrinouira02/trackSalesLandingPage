@@ -1,219 +1,201 @@
 <div class=".main_container">
     <div class="first-pricing-section">
-        <h2 class="pricing-title">Plans and Pricing</h2>
-        <p style="text-align:center">Supercharge your ad campaigns with our groundbreaking data enrichment techniques,
-            ensuring 100% of your conversions are tracked and delivered to your marketing channels, resulting in an
-            average
-            20,7% increase of your ROAS! Get started effortlessly with a simple 2-minute setup — just 10 clicks to
-            launch —
-            and track your first 50k in revenue for free.</p>
+        <h2 class="pricing-title">{{ 'pricing.title' | translate }}</h2>
+        <p style="text-align:center">{{ 'pricing.description' | translate }}</p>
     </div>
 
-    <div class="pad1">
+    <div class="container">
+        <div class="box">
+            <span></span>
+            <div class="content">
+                <h2>{{ 'pricing.columns_header1' | translate }}</h2>
+                <h5>$ 9.99 / {{ 'pricing.year' | translate }}</h5>
+                <p>{{ 'pricing.data_layer' | translate }}</p><br>
+                <p>{{ 'pricing.server_Side_tracking' | translate }}</p><br>
+                <p>{{ 'pricing.tracking_guarantee' | translate }}</p><br>
+                <p>1,000 {{ 'pricing.orders_month' | translate }}</p><br>
+
+                <a href="#">{{ 'get_started' | translate }}</a>
+            </div>
+        </div>
+        <div class="box">
+            <span></span>
+            <div class="content">
+                <h2>{{ 'pricing.columns_header2' | translate }}</h2>
+                <h5>$ 9.99 / {{ 'pricing.year' | translate }}</h5>
+                <p>{{ 'pricing.data_layer' | translate }}</p><br>
+                <p>{{ 'pricing.server_Side_tracking' | translate }}</p><br>
+                <p>{{ 'pricing.tracking_guarantee' | translate }}</p><br>
+                <p>10,000 {{ 'pricing.orders_month' | translate }}</p><br>
+
+                <a href="#">{{ 'get_started' | translate }}</a>
+            </div>
+        </div>
+        <div class="box">
+            <span></span>
+            <div class="content">
+                <h2>{{ 'pricing.columns_header3' | translate }}</h2>
+                <h5>$ 9.99 / {{ 'pricing.year' | translate }}</h5>
+                <p>{{ 'pricing.data_layer' | translate }}</p><br>
+                <p>{{ 'pricing.server_Side_tracking' | translate }}</p><br>
+                <p>{{ 'pricing.tracking_guarantee' | translate }}</p><br>
+                <p>50,000 {{ 'pricing.orders_month' | translate }}</p><br>
+
+                <a href="#">{{ 'get_started' | translate }}</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <div class="pad1">
         <div class="columns">
             <ul class="price">
-                <li class="header">Essentials</li>
-                <li class="grey">$ 9.99 / year</li>
-                <li>Data Layer</li>
-                <li>Server-Side Tracking</li>
-                <li>Tracking Guarantee</li>
-                <li>1,000 Orders/month</li>
-                <li class="grey"><a href="#" class="button">Sign Up</a></li>
+                <li class="header">{{ 'pricing.columns_header1' | translate }}</li>
+                <li class="grey">$ 9.99 / {{ 'pricing.year' | translate }}</li>
+                <li>{{ 'pricing.data_layer' | translate }}</li>
+                <li>{{ 'pricing.server_Side_tracking' | translate }}</li>
+                <li>{{ 'pricing.tracking_guarantee' | translate }}</li>
+                <li>1,000 {{ 'pricing.orders_month' | translate }}</li>
+                <li class="grey"><a href="#" class="button">{{ 'get_started' | translate }}</a></li>
             </ul>
         </div>
 
         <div class="columns">
             <ul class="price">
-                <li class="header" style="background-color:#eecc6f">Pro</li>
-                <li class="grey">$ 24.99 / year</li>
-                <li>Data Layer</li>
-                <li>Server-Side Tracking</li>
-                <li>Tracking Guarantee</li>
-                <li>10,000 Orders/month</li>
-                <li class="grey"><a href="#" class="button">Sign Up</a></li>
+                <li class="header" style="background-color:#eecc6f">{{ 'pricing.columns_header2' | translate }}</li>
+                <li class="grey">$ 24.99 / {{ 'pricing.year' | translate }}</li>
+                <li>{{ 'pricing.data_layer' | translate }}</li>
+                <li>{{ 'pricing.server_Side_tracking' | translate }}</li>
+                <li>{{ 'pricing.tracking_guarantee' | translate }}</li>
+                <li>10,000 {{ 'pricing.orders_month' | translate }}</li>
+                <li class="grey"><a href="#" class="button">{{ 'get_started' | translate }}</a></li>
             </ul>
         </div>
 
         <div class="columns">
             <ul class="price">
-                <li class="header">Premium</li>
-                <li class="grey">$ 49.99 / year</li>
-                <li>Data Layere</li>
-                <li>Server-Side Tracking</li>
-                <li>Tracking Guarantee</li>
-                <li>50,000 Orders/month</li>
-                <li class="grey"><a href="#" class="button">Sign Up</a></li>
+                <li class="header">{{ 'pricing.columns_header3' | translate }}</li>
+                <li class="grey">$ 49.99 / {{ 'pricing.year' | translate }}</li>
+                <li>{{ 'pricing.data_layer' | translate }}</li>
+                <li>{{ 'pricing.server_Side_tracking' | translate }}</li>
+                <li>{{ 'pricing.tracking_guarantee' | translate }}</li>
+                <li>50,000 {{ 'pricing.orders_month' | translate }}</li>
+                <li class="grey"><a href="#" class="button">{{ 'get_started' | translate }}</a></li>
             </ul>
         </div>
 
+    </div> -->
+
+    <!-- <div class="container" style="text-align: center;">
+        <h2 style="font-size: 38px;line-height: 48px;text-align: center; padding: 0 4rem;">{{
+            'pricing.add_Ons_available' | translate }}</h2>
     </div>
 
-
-    <div class="container" style="text-align: center;">
-        <h2 style="font-size: 38px;line-height: 48px;text-align: center; padding: 0 4rem;">Add-Ons Available</h2>
-    </div>
     <div class="container">
         <div class="block">
             <div class="header">
                 <img src="assets/images/shoppin_icon.png" alt="Image 1" class="image">
-                <h2 class="title">Expert Installation</h2>
+                <h2 class="title">{{ 'pricing.block1_header' | translate }}</h2>
             </div>
-            <p class="description">Purchase our one-time onboarding add-on and our analysts will migrate/update
-                tracking
-                across all of your marketing channels.</p>
+            <p class="description">{{ 'pricing.block1_desc' | translate }}</p>
             <div class="footer">
-                <p class="price2">$1000 <small> and up</small></p>
-                <button class="button">Sign Up To
-                    Access</button>
+                <p class="price2">$1000 <small> {{ 'pricing.and_up' | translate }}</small></p>
+                <button class="button">{{ 'pricing.sign_up_to_access' | translate }}</button>
             </div>
         </div>
         <div class="block">
             <div class="header">
                 <img src="assets/images/shoppin_icon.png" alt="Image 2" class="image">
-                <h2 class="title">GA4 Tune-up</h2>
+                <h2 class="title">{{ 'pricing.block2_header' | translate }}</h2>
             </div>
-            <p class="description">As Universal Analytics nears its end of life, GA4 continues to evolve and change
-                dramatically. Let our analysts ensure your GA4 setup follows the latest best
-                practices and transfer any important configurations from your Universal
-                Analytics
-                property to your GA4 property.</p>
+            <p class="description">{{ 'pricing.block2_desc' | translate }}</p>
             <div class="footer">
-                <p class="price2">$1000<small>and up</small></p>
-                <button class="button">Sign Up To
-                    Access</button>
+                <p class="price2">$1000<small> {{ 'pricing.and_up' | translate }}</small></p>
+                <button class="button">{{ 'pricing.sign_up_to_access' | translate }}</button>
             </div>
         </div>
         <div class="block">
             <div class="header">
                 <img src="assets/images/shoppin_icon.png" alt="Image 3" class="image">
-                <h2 class="title">Ongoing Tracking &amp; Tag Support</h2>
+                <h2 class="title">{{ 'pricing.block3_header' | translate }}</h2>
             </div>
-            <p class="description">Let Elevar's expert analysts manage all of your ongoing tagging, tracking, and
-                server-side tracking needs for you. We offer a "Lite" and "Full Service" plan.</p>
+            <p class="description">{{ 'pricing.block3_desc' | translate }}</p>
             <div class="footer">
-                <p class="price2"><small>Starts at </small>$500<small>/month</small></p>
-                <button class="button">Schedule Call</button>
+                <p class="price2"><small>{{ 'pricing.starts_at' | translate }} </small>$500<small>/month</small></p>
+                <button class="button">{{ 'pricing.schedule_call' | translate }}</button>
             </div>
         </div>
         <div class="block">
             <div class="header">
                 <img src="assets/images/shoppin_icon.png" alt="Image 4" class="image">
-                <h2 class="title">Multi-Store Plans</h2>
+                <h2 class="title">{{ 'pricing.block4_header' | translate }}</h2>
             </div>
-            <p class="description">Utilizing multiple stores for international expansion? We can help! Elevar will
-                get all of your stores rolled up into a single plan. Just choose a time to talk with
-                us here.</p>
+            <p class="description">{{ 'pricing.block4_desc' | translate }}</p>
             <div class="footer">
                 <p class="price2"><small></small></p>
-                <button class="button">Schedule
-                    Call</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- <div data-vc-full-width="true" data-vc-full-width-init="true"
-        class="vc_row wpb_row vc_row-fluid section-tab section-tab-3">
-        <div class="wpb_column vc_column_container vc_col-sm-12">
-            <div class="vc_column-inner ">
-                <div class="wpb_wrapper">
-                    <div class="pricing-wrapper">
-                        <div
-                            class="tab-box wpb_column vc_column_container vc_col-sm-4 vc_col-lg-4 vc_col-md-4 vc_col-sm-offset-0 vc_col-xs-12">
-                            <div class="vc_column-inner ">
-                                <div class="wpb_wrapper">
-                                    <div class="wpb_raw_code wpb_content_element wpb_raw_html tab-box">
-                                        <div class="wpb_wrapper">
-                                            <div class="price-b">
-                                                <div class="tab-header">
-                                                    <div class="tab-info">
-                                                        <div>
-                                                            <h2>Essentials</h2>
-                                                            <span class="subtitle">Free 15-day Trial</span>
-                                                        </div>
-                                                        <h3><span>$150</span>/month</h3>
-                                                    </div>
-                                                    <a routerLink="/auth/sign-in" class="btn btn-small btn-primary">Get
-                                                        Started</a>
-                                                </div>
-                                                <ul>
-                                                    <li>Data Layer</li>
-                                                    <li>Server-Side Tracking</li>
-                                                    <li>Tracking Guarantee</li>
-                                                    <li>User Identity Graph</li>
-                                                    <li>1,000 Orders/month</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div
-                            class="tab-box s____hadow tab-box-2 wpb_column vc_column_container vc_col-sm-4 vc_col-lg-4 vc_col-md-4 vc_col-xs-12">
-                            <div class="vc_column-inner ">
-                                <div class="wpb_wrapper">
-                                    <div class="wpb_raw_code wpb_content_element wpb_raw_html vc_custom_1674066071262">
-                                        <div class="wpb_wrapper">
-                                            <div class="price-b">
-                                                <div class="tab-header">
-                                                    <div class="tab-info">
-                                                        <div>
-                                                            <h2>Growth</h2>
-                                                            <span class="subtitle">Free 15-day Trial</span>
-                                                        </div>
-                                                        <h3><span>$350</span>/month</h3>
-                                                    </div>
-                                                    <a routerLink="/auth/sign-in" class="btn btn-small btn-primary">Get
-                                                        Started</a>
-                                                </div>
-                                                <ul>
-                                                    <li>Data Layer</li>
-                                                    <li>Server-Side Tracking</li>
-                                                    <li>Tracking Guarantee</li>
-                                                    <li>User Identity Graph</li>
-                                                    <li>10,000 Orders/month</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div
-                            class="tab-box tab-box-3 wpb_column vc_column_container vc_col-sm-4 vc_col-lg-4 vc_col-md-4 vc_col-xs-12">
-                            <div class="vc_column-inner ">
-                                <div class="wpb_wrapper">
-                                    <div class="wpb_raw_code wpb_content_element wpb_raw_html">
-                                        <div class="wpb_wrapper">
-                                            <div class="price-b">
-                                                <div class="tab-header">
-                                                    <div class="tab-info">
-                                                        <div>
-                                                            <h2>Business</h2>
-                                                            <span class="subtitle">Free 15-day Trial</span>
-                                                        </div>
-                                                        <h3><span>$750</span>/month</h3>
-                                                    </div>
-                                                    <a routerLink="/auth/sign-in" class="btn btn-small btn-primary">Get
-                                                        Started</a>
-                                                </div>
-                                                <ul>
-                                                    <li>Data Layer</li>
-                                                    <li>Server-Side Tracking</li>
-                                                    <li>Tracking Guarantee</li>
-                                                    <li>User Identity Graph</li>
-                                                    <li>50,000 Orders/month</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <button class="button">{{ 'pricing.schedule_call' | translate }}</button>
             </div>
         </div>
     </div> -->
 
-<!-- </div> -->
+
+    <div class="container2">
+        <div class="box2">
+            <span></span>
+            <div class="content2">
+                <div class="header">
+                    <img src="assets/images/shoppin_icon.png" alt="Image 1" class="image">
+                    <h2 class="title">{{ 'pricing.block1_header' | translate }}</h2>
+                </div>
+                <p>{{ 'pricing.block1_desc' | translate }}</p>
+                <div class="footer">
+                    <p class="price2">$1000 <small> {{ 'pricing.and_up' | translate }}</small></p>
+                    <button class="button">{{ 'pricing.sign_up_to_access' | translate }}</button>
+                </div>
+            </div>
+        </div>
+        <div class="box2">
+            <span></span>
+            <div class="content2">
+                <div class="header">
+                    <img src="assets/images/shoppin_icon.png" alt="Image 2" class="image">
+                    <h2 class="title">{{ 'pricing.block2_header' | translate }}</h2>
+                </div>
+                <p>{{ 'pricing.block2_desc' | translate }}</p>
+                <div class="footer">
+                    <p class="price2">$1000 <small> {{ 'pricing.and_up' | translate }}</small></p>
+                    <button class="button">{{ 'pricing.sign_up_to_access' | translate }}</button>
+                </div>
+            </div>
+        </div>
+        <div class="box2">
+            <span></span>
+            <div class="content2">
+                <div class="header">
+                    <img src="assets/images/shoppin_icon.png" alt="Image 3" class="image">
+                    <h2 class="title">{{ 'pricing.block3_header' | translate }}</h2>
+                </div>
+                <p class="description">{{ 'pricing.block3_desc' | translate }}</p>
+                <div class="footer">
+                    <p class="price2"><small>{{ 'pricing.starts_at' | translate }} </small>$500<small>/month</small></p>
+                    <button class="button">{{ 'pricing.schedule_call' | translate }}</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="box2">
+            <span></span>
+            <div class="content2">
+                <div class="header">
+                    <img src="assets/images/shoppin_icon.png" alt="Image 4" class="image">
+                    <h2 class="title">{{ 'pricing.block4_header' | translate }}</h2>
+                </div>
+                <p class="description">{{ 'pricing.block4_desc' | translate }}</p>
+                <div class="footer">
+                    <p class="price2"><small></small></p>
+                    <button class="button">{{ 'pricing.schedule_call' | translate }}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

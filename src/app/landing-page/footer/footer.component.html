@@ -2,10 +2,10 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-xs-12">
-                <img src="assets/images/logos/4.png" alt="logo" class="img-responsive">
-                <p>TrackSales automates data collection<br>
-                    and server-side tracking for <br>
-                    D2C Shopify brands</p>
+                <div class="footer-logo">
+                    <img src="assets/images/logos/4.png" alt="logo" class="img-responsive">
+                </div>
+                <p>{{ 'footer.text_sous_logo' | translate }}</p>
                 <div class="social-icons">
                     <a href="#" target="_blank" class="facebook">
                         <i class="fab fa-facebook-f"></i>
@@ -20,34 +20,33 @@
 
             </div>
 
-            <div class="col-md-2 col-xs-6 footer-col">
-                <h5>Product</h5>
+            <div class="col-md-2 col-xs-6 footer-col menu">
+                <h5>{{ 'footer.menu' | translate }}</h5>
                 <ul id="menu-features" class="nolist">
                     <li id="menu-item-11986"
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11986"><a
-                            href="#">Session Enrichment</a></li>
+                            routerLink="/">{{
+                            'nav.home' | translate }}</a></li>
                     <li id="menu-item-11689"
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11689"><a
-                            href="#">Boost Meta by 20%</a></li>
+                            routerLink="/pricing">{{
+                            'nav.pricing' | translate }}</a></li>
                     <li id="menu-item-11785"
-                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11785"><a href="#">GA4
-                            for Shopify</a></li>
+                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11785"><a
+                            routerLink="/about-us">{{
+                            'nav.about_us' | translate }}</a></li>
                     <li id="menu-item-10618"
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10618"><a
-                            href="#">Server-Side Tracking</a></li>
+                            href="https://app.tracksales.io/sign-in">{{
+                            'nav.sign_in' | translate }}</a></li>
                     <li id="menu-item-10082"
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10082"><a
-                            href="#">Data Layer for GTM</a></li>
-                    <li id="menu-item-6937"
-                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6937"><a
-                            href="#">Conversion Monitoring</a></li>
-                    <li id="menu-item-11687"
-                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11687"><a
-                            href="#">View All Integrations</a></li>
+                            href="https://app.tracksales.io/sign-up">{{
+                            'nav.sign_up' | translate }}</a></li>
                 </ul>
             </div>
             <div class="col-md-2 col-xs-6 footer-col">
-                <h5>Contact</h5>
+                <h5>{{ 'footer.contact' | translate }}</h5>
                 <p>EC Solutions BV.
                     Boulevard 1945 47
                     7511NG Enschede

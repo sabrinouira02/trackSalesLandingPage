@@ -71,7 +71,8 @@
                         <a class="nav-link" id="dropdownBasic1" ngbDropdownToggle>
                             {{ 'nav.langue' | translate }}
                         </a>
-                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="dropdown-menu-end">
+                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1"
+                            class="dropdown-menu-end custom-dropdown-menu">
                             <a (click)="switchLanguage('en')" ngbDropdownItem class="d-flex align-items-center">
                                 <span>{{ 'nav.english' | translate }}</span>
                                 <img src="assets/images/Flag_of_the_United_Kingdom.png" width="30px" alt="English Flag"

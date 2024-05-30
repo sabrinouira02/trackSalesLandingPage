@@ -10,6 +10,7 @@ import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 import { LottieService } from 'src/app/services/lottie.service';
 import * as AOS from 'aos';
+import { ScrollService } from 'src/app/services/scroll.service';
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
@@ -79,8 +80,11 @@ export class HomePageComponent implements AfterViewInit {
     private animationStateService: LottieService,
     private location: Location,
     private renderer: Renderer2,
-    private translate: TranslateService
-  ) {}
+    private translate: TranslateService,
+    private scrollService: ScrollService
+  ) {
+    this.scrollService.scrollToTop();
+  }
 
   ngAfterViewInit() {
     AOS.init({

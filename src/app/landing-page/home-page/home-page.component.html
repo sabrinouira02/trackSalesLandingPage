@@ -31,13 +31,14 @@
                             <div>1</div>
                         </div>
                         <div class="steps-text">
-                            <div class="text-l text-bold" data-aos="fade-left">Make an account</div>
-                            <p class="text-s opacity-0-8" data-aos="fade-left">Create an account within 10 seconds. No
-                                unnecessary personal
-                                information or payment details required.</p><a data-name="How To Start Register Button"
-                                routerLink="/auth/sign-up" class="steps-button w-inline-block">
+                            <div class="text-l text-bold" data-aos="fade-left">{{ 'start_etape_1_title' | translate }}
+                            </div>
+                            <p class="text-s opacity-0-8" data-aos="fade-left">{{ 'start_etape_1_description' |
+                                translate }}</p><a data-name="How To Start Register Button" routerLink="/auth/sign-up"
+                                class="steps-button w-inline-block">
                                 <div class="steps-button-wrapper">
-                                    <div class="button-text" data-aos="fade-left">Create your free account</div>
+                                    <div class="button-text" data-aos="fade-left">{{ 'create_account' | translate }}
+                                    </div>
                                     <div class="button-icon w-embed" data-aos="fade-left"><svg class="button-icon"
                                             width="24" height="24" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
@@ -55,11 +56,9 @@
                             <div>2</div>
                         </div>
                         <div class="steps-text">
-                            <div class="text-l text-bold">Connect TrackSales to your Shopify store by installing the
-                                app
+                            <div class="text-l text-bold">{{ 'start_etape_2_title' | translate }}
                             </div>
-                            <p class="text-s opacity-0-8">Easily and quickly connect your stores. Your new data tracking
-                                begins immediately.</p>
+                            <p class="text-s opacity-0-8">{{ 'start_etape_2_description' | translate }}</p>
                         </div>
                     </div>
                     <div id="w-node-ac551f8e-6b9e-9a23-6302-012f036c2d05-f310d9e4" class="steps-block"
@@ -68,9 +67,8 @@
                             <div>3</div>
                         </div>
                         <div class="steps-text">
-                            <div class="text-l text-bold">Start making the right decisions</div>
-                            <p class="text-s opacity-0-8">Now the real fun begins. Start making well-informed decisions
-                                based on accurate data, effortlessly, without the need for a dedicated big data team.
+                            <div class="text-l text-bold">{{ 'start_etape_3_title' | translate }}</div>
+                            <p class="text-s opacity-0-8">{{ 'start_etape_3_description' | translate }}
                             </p>
                         </div>
                     </div>
@@ -100,8 +98,7 @@
         <div class="relative wpb_column vc_column_container vc_col-sm-4">
             <div class="vc_column-inner ">
                 <div class="wpb_wrapper" data-aos="zoom-out" data-aos-offset="300" data-aos-duration="2000">
-                    <h2 style="text-align: left" class="vc_custom_heading">If any of this sounds familiar, you need
-                        Track Sales</h2>
+                    <h2 style="text-align: left" class="vc_custom_heading">{{'sounds_familiar_title' | translate }}</h2>
                 </div>
             </div>
         </div>
@@ -150,20 +147,17 @@
                 class="meta-title">{{ 'meta-title3' | translate }}</span>
             <h2 class="meta-sub-title" data-aos="zoom-out" data-aos-offset="300" data-aos-duration="2000">{{
                 'meta-sub-title3' | translate }}</h2>
-            <p class="subheading" data-aos="zoom-out" data-aos-offset="300" data-aos-duration="2000">Track Sales's job
-                is to collect the maximum amount of attributable data to send to
-                each of
-                your marketing destinations.</p>
+            <p class="subheading" data-aos="zoom-out" data-aos-offset="300" data-aos-duration="2000">{{
+                'data_collected_description' | translate }}</p>
             <div class="allarounddata__rows">
                 <div class="allarounddata_row_1 allarounddata__row" tabindex="-1" role="option"
                     aria-describedby="slick-slide10"><img data-aos="fade-right" data-aos-offset="300"
                         data-aos-duration="2000" src="assets/images/Product-Data.png" alt="">
                     <div class="allarounddata__column" data-aos="fade-left" data-aos-offset="300"
                         data-aos-duration="2000">
-                        <h3>Product &amp; Order Data
+                        <h3>{{ 'type1_title' | translate }}
                         </h3>
-                        <p>This is the data you'd expect to see in each of your tags that appears in pixel helpers --
-                            product sku, price, brand, revenue, transaction IDs, etc.</p>
+                        <p>{{ 'type1_title_description' | translate }}</p>
                         <a href="#" tabindex="0" class="svg-link">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -173,7 +167,7 @@
                                 <path d="M10 8L16 12L10 16V8Z" stroke="#5F5CE7" stroke-linecap="round"
                                     stroke-linejoin="round"></path>
                             </svg>
-                            Watch how it works
+                            {{ 'watch' | translate }}
                         </a>
 
 
@@ -184,9 +178,8 @@
                         data-aos-duration="2000" src="assets/images/Customer-Data.png" alt="">
                     <div class="allarounddata__column" data-aos="fade-right" data-aos-offset="300"
                         data-aos-duration="2000">
-                        <h3>Customer Data</h3>
-                        <p>This is data such as email, user identifier, customer id, phone, addresses, etc. This data
-                            collection can be integrated with consent providers like OneTrust.</p>
+                        <h3>{{ 'type2_title' | translate }}</h3>
+                        <p>{{ 'type2_title_description' | translate }}</p>
                         <a href="#" tabindex="0" class="svg-link">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -196,7 +189,7 @@
                                 <path d="M10 8L16 12L10 16V8Z" stroke="#5F5CE7" stroke-linecap="round"
                                     stroke-linejoin="round"></path>
                             </svg>
-                            Watch how it works
+                            {{ 'watch' | translate }}
                         </a>
 
                     </div>
@@ -206,10 +199,8 @@
                         data-aos="fade-right" data-aos-offset="300" data-aos-duration="2000">
                     <div class="allarounddata__column" data-aos="fade-left" data-aos-offset="300"
                         data-aos-duration="2000">
-                        <h3>Attribution Data</h3>
-                        <p>The most critical data for your marketing channels to attribute clicks to conversions. This
-                            data includes click IDs, cookie values, UTM parameters, and other data related to session
-                            stitching.</p>
+                        <h3>{{ 'type3_title' | translate }}</h3>
+                        <p>{{ 'type3_title_description' | translate }}</p>
                         <a href="#" tabindex="0" class="svg-link">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -219,7 +210,7 @@
                                 <path d="M10 8L16 12L10 16V8Z" stroke="#5F5CE7" stroke-linecap="round"
                                     stroke-linejoin="round"></path>
                             </svg>
-                            Watch how it works
+                            {{ 'watch' | translate }}
                         </a>
 
                     </div>
@@ -233,17 +224,16 @@
         <div class="wpb_column vc_column_container vc_col-sm-5">
             <div class="vc_column-inner ">
                 <h2 class="integration" class="vc_custom_heading">
-                    Do More with 50+ Integrations With Track Sales</h2>
+                    {{ 'integartions_title' | translate }}</h2>
                 <div class="wpb_text_column wpb_content_element ">
                     <div class="wpb_wrapper">
-                        <p>With real-time event monitoring and integrations with Facebook Conversion API, Google
-                            Ads, GA4, TikTok, and 40+ more digital marketing channels</p>
+                        <p>{{ 'integartions_description' | translate }}</p>
 
                     </div>
                 </div>
                 <div class="vc_btn3-container  btn btn-default vc_btn3-inline">
-                    <a class="vc_general vc_btn3" href="#"
-                        title="Do More with 50+ Integrations With Track Sales">Explore Integrations</a>
+                    <a class="vc_general vc_btn3" href="#" title="Do More with 50+ Integrations With Track Sales">{{
+                        'explore_integration' | translate }}</a>
                 </div>
             </div>
         </div>
@@ -275,18 +265,16 @@
 
                     </div>
                 </div>
-                <h2 class="meta-sub-title">Power your pixels and analytics with complete datasets </h2>
+                <h2 class="meta-sub-title">{{ 'power_pixel_title' | translate }}</h2>
                 <div class="wpb_text_column wpb_content_element ">
                     <div class="wpb_wrapper">
-                        <p style="text-align: center;">&nbsp;Instantly deploy a Google Tag Manager data layer,
-                            server-side tracking, session enrichment, and real-time performance monitoring so your
-                            marketing platforms are always fully optimized.</p>
+                        <p style="text-align: center;">{{ 'power_pixel_description' | translate }}</p>
 
                     </div>
                 </div>
                 <div class="vc_btn3-container  btn btn-default vc_btn3-inline">
                     <!-- <a class="vc_general vc_btn3" href="#" title="use cases">See Use Cases</a> -->
-                    <button class="vc_btn3">See Use Cases</button>
+                    <button class="vc_btn3">{{ 'power_pixel_button' | translate }}</button>
                 </div>
             </div>
         </div>
@@ -304,13 +292,10 @@
                     </div>
                 </div>
                 <h2 style="font-size: 38px;color: #333333;line-height: 48px;text-align: center" class="meta-sub-title">
-                    Track Sales simplifies the growing complexity of tracking and user
-                    identification all in one place</h2>
+                    {{ 'central_system_title' | translate }}</h2>
                 <div class="wpb_text_column wpb_content_element ">
                     <div class="wpb_wrapper">
-                        <p style="text-align: center;">Your marketing team feels confident and sees their campaign
-                            performance improve. You get peace of mind, better performance, and more revenue.</p>
-
+                        <p style="text-align: center;">{{ 'central_system_description' | translate }}</p>
                     </div>
                 </div>
 
@@ -348,9 +333,8 @@
                         <div class="vc_column-inner ">
                             <div class="wpb_wrapper">
                                 <div class="vc_btn3-container  btn btn-default vc_btn3-inline">
-                                    <button class="vc_btn3" routerLink="/pricing">View Pricing &amp; Plans</button>
-                                    <!-- <a class="vc_general vc_btn3 vc_btn3-size-md vc_btn3-shape-square vc_btn3-style-flat vc_btn3-color-grey"
-                                        routerLink="/pricing" title="Pricing Plans">View Pricing &amp; Plans</a> -->
+                                    <button class="vc_btn3" routerLink="/pricing">{{ 'view_pricing_button' | translate
+                                        }}</button>
                                 </div>
                             </div>
                         </div>
@@ -360,8 +344,7 @@
                             <div class="wpb_wrapper">
                                 <div class="vc_btn3-container  btn btn-blank violet vc_btn3-inline">
                                     <a class="vc_general vc_btn3 vc_btn3-size-md vc_btn3-shape-square vc_btn3-style-flat vc_btn3-color-grey"
-                                        href="#" title="Goal Forecasting">Watch
-                                        or Book a Demo</a>
+                                        href="#" title="Goal Forecasting">{{ 'watch_or_book_button' | translate }}</a>
                                 </div>
                             </div>
                         </div>
@@ -382,12 +365,10 @@
                 </div>
                 <h2 style="font-size: 38px;color: #212b36;line-height: 48px;text-align: center"
                     class="vc_custom_heading" data-aos="fade-left" data-aos-offset="1200" data-aos-duration="3000">
-                    Conversion Accuracy</h2>
+                    {{ 'conversion_accuracy' | translate }}</h2>
                 <div class="wpb_text_column wpb_content_element ">
                     <p style="text-align: center;">
-                        Track Sales fully managed server-side tracking and we guarantee 99% of your purchase
-                        data
-                        will be successfully delivered to all of your server-side marketing destinations.
+                        {{ 'conversion_accuracy_desc' | translate }}
                     </p>
                 </div>
             </div>
@@ -401,11 +382,9 @@
                 </div>
                 <h2 style="font-size: 38px;color: #212b36;line-height: 48px;text-align: center"
                     class="vc_custom_heading" data-aos="fade-right" data-aos-offset="1200" data-aos-duration="3000">
-                    Money
-                    Back Guarantee</h2>
+                    {{ 'money_back' | translate }}</h2>
                 <div class="wpb_text_column wpb_content_element ">
-                    <p style="text-align: center;">Our no questions asked 30 day money back guarantee is
-                        available on all plans. We’re invested into your success.</p>
+                    <p style="text-align: center;">{{ 'money_back_desc' | translate }}</p>
 
                 </div>
             </div>
@@ -417,12 +396,10 @@
         <div
             class="wpb_column vc_column_container vc_col-sm-10 vc_col-lg-offset-3 vc_col-lg-6 vc_col-md-offset-2 vc_col-md-8 vc_col-sm-offset-1">
             <div class="vc_column-inner vc_custom_1621249005551">
-                <h2 class="ready">Ready to Get Started?</h2>
+                <h2 class="ready">{{ 'ready_to_get_started' | translate }}</h2>
                 <div class="wpb_text_column wpb_content_element ">
                     <div class="wpb_wrapper">
-                        <p style="text-align: center;">Try free for 15 days to start increasing performance through
-                            better tracking</p>
-
+                        <p style="text-align: center;">{{ 'ready_to_get_started_desc' | translate }}</p>
                     </div>
                 </div>
                 <div class="vc_row wpb_row vc_inner vc_row-fluid stacked-mobile get-started-buttons">
@@ -431,10 +408,8 @@
                             <div class="wpb_wrapper">
                                 <div class="vc_btn3-container  btn btn-default vc_btn3-inline">
                                     <button class="vc_btn3"
-                                        onclick="window.location.href='https://app.tracksales.io/sign-up'">Sign
-                                        up</button>
-                                    <!-- <a class="vc_general vc_btn3 vc_btn3-size-md vc_btn3-shape-square vc_btn3-style-flat vc_btn3-color-grey"
-                                        routerLink="/auth/sign-up" title="Pricing Plans" target="_blank">Sign up</a> -->
+                                        onclick="window.location.href='https://app.tracksales.io/sign-up'">{{
+                                        'nav.sign_up' | translate }}</button>
                                 </div>
                             </div>
                         </div>
@@ -444,7 +419,8 @@
                             <div class="wpb_wrapper">
                                 <div class="vc_btn3-container  btn btn-blank violet vc_btn3-inline">
                                     <a class="vc_general vc_btn3 vc_btn3-size-md vc_btn3-shape-square vc_btn3-style-flat vc_btn3-color-grey"
-                                        routerLink="/pricing" title="Goal Forecasting">View Plans</a>
+                                        routerLink="/pricing" title="Goal Forecasting">{{ 'view_plans' | translate
+                                        }}</a>
                                 </div>
                             </div>
                         </div>

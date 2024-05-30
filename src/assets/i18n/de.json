@@ -1,6 +1,7 @@
 {
   "top_bar": {
     "title": "Möchten Sie die innovative Art des Trackings erleben ?",
+    "mobile_title": "Einen Platz reservieren",
     "button": "Buchen Sie eine Demo"
   },
   "nav": {
@@ -13,6 +14,11 @@
     "about_us": "Über uns",
     "sign_in": "Anmelden",
     "sign_up": "Registrieren"
+  },
+  "footer": {
+    "text_sous_logo": "TrackSales ist ein Tool, das den Prozess der Datenerfassung und des serverseitigen Trackings speziell für Direct-to-Consumer (D2C)-Marken, die Shopify verwenden, vereinfacht und automatisiert.",
+    "menu": "Menü",
+    "contact": "Kontakt"
   },
   "wpb_wrapper2_title": "Nie wieder eine Conversion verpassen",
   "wpb_wrapper2_description": "Stellen Sie sicher, dass 100% Ihrer Conversions an Marketingkanäle wie Facebook, TikTok, Google Ads, GA4 und über 40 andere Plattformen mit dem serverseitigen Tracking von Track Sales verfolgt und geliefert werden.",
@@ -33,5 +39,57 @@
   "start_etape_2_description": "Verbinden Sie Ihre Shops einfach und schnell. Ihr neues Daten-Tracking beginnt sofort.",
   "start_etape_3_description": "Jetzt beginnt der echte Spaß. Treffen Sie gut informierte Entscheidungen basierend auf genauen Daten, mühelos, ohne dass ein dediziertes Big-Data-Team erforderlich ist.",
   "create_account": "Erstellen Sie Ihr kostenloses Konto",
-  "sounds_familiar_title": "Wenn Ihnen das bekannt vorkommt, brauchen Sie Track Sales"
+  "sounds_familiar_title": "Wenn Ihnen das bekannt vorkommt, brauchen Sie Track Sales",
+  "data_collected_description": "Die Hauptaufgabe von Track Sales besteht darin, so viele relevante Daten wie möglich zu sammeln, die dann an verschiedene Marketingziele weitergeleitet werden können.",
+  "type1_title": "Produkt- und Bestelldaten",
+  "type1_title_description": "Dies sind die Daten, die Sie in jedem Ihrer Tags erwarten würden, die in Pixel-Helfern erscheinen -- Produkt-SKU, Preis, Marke, Umsatz, Transaktions-IDs usw.",
+  "type2_title": "Kundendaten",
+  "type2_title_description": "Dies sind Daten wie E-Mail, Benutzerkennung, Kunden-ID, Telefon, Adressen usw. Diese Datenerfassung kann in Zustimmungsanbieter wie OneTrust integriert werden.",
+  "type3_title": "Attributionsdaten",
+  "type3_title_description": "Die wichtigsten Daten für Ihre Marketingkanäle, um Klicks in Konversionen zuzuordnen. Diese Daten umfassen Klick-IDs, Cookie-Werte, UTM-Parameter und andere Daten, die mit der Sitzungszusammenführung zusammenhängen.",
+  "watch": "Sehen Sie, wie es funktioniert",
+  "integartions_title": "Machen Sie mehr mit 50+ Integrationen mit Track Sales",
+  "integartions_description": "Mit Echtzeit-Ereignisüberwachung und Integrationen mit Facebook Conversion API, Google Ads, GA4, TikTok und mehr als 40 weiteren digitalen Marketingkanälen",
+  "explore_integration": "Integrationen erkunden",
+  "power_pixel_title": "Stärken Sie Ihre Pixel und Analysen mit vollständigen Datensätzen",
+  "power_pixel_description": "Stellen Sie sofort eine Google Tag Manager-Datenebene, serverseitiges Tracking, Sitzungsanreicherung und Echtzeit-Leistungsüberwachung bereit, damit Ihre Marketingplattformen immer vollständig optimiert sind.",
+  "power_pixel_button": "Anwendungsfälle ansehen",
+  "central_system_title": "Track Sales bietet eine optimierte Lösung zur Verwaltung der zunehmenden Komplexität der Verfolgung und Benutzeridentifikation und konsolidiert alles in einer einzigen Plattform.",
+  "central_system_description": "Ihr Marketingteam gewinnt an Sicherheit und sieht Verbesserungen in den Ergebnissen ihrer Kampagnen. Folglich erreichen Sie Ruhe, überlegene Leistung und gesteigerte Einnahmen.",
+  "view_pricing_button": "Preise und Pläne anzeigen",
+  "watch_or_book_button": "Sehen oder eine Demo buchen",
+  "conversion_accuracy": "Konversionsgenauigkeit",
+  "money_back": "Geld-zurück-Garantie",
+  "conversion_accuracy_desc": "Track Sales verwaltet das serverseitige Tracking vollständig und wir garantieren, dass 99% Ihrer Kaufdaten erfolgreich an alle Ihre serverseitigen Marketingziele geliefert werden.",
+  "money_back_desc": "Unsere 30-tägige Geld-zurück-Garantie ohne Fragen ist bei allen Plänen verfügbar. Wir investieren in Ihren Erfolg.",
+  "ready_to_get_started": "Bereit anzufangen?",
+  "get_started": "Loslegen",
+  "ready_to_get_started_desc": "Testen Sie 15 Tage kostenlos, um die Leistung durch besseres Tracking zu steigern",
+  "view_plans": "Pläne anzeigen",
+  "pricing": {
+    "title": "Pläne und Preise",
+    "description": "Boosten Sie Ihre Werbekampagnen mit unseren bahnbrechenden Datenanreicherungstechniken, die sicherstellen, dass 100% Ihrer Konversionen erfasst und an Ihre Marketingkanäle weitergeleitet werden, was zu einem durchschnittlichen ROAS-Anstieg von 20,7% führt! Starten Sie mühelos mit einem einfachen 2-minütigen Setup - nur 10 Klicks zum Start - und verfolgen Sie Ihre ersten 50k Umsatz kostenlos.",
+    "buttons_get_started": "Loslegen",
+    "columns_header1": "Essenziell",
+    "columns_header2": "Pro",
+    "columns_header3": "Premium",
+    "year": "Jahr",
+    "data_layer": "Daten-Layer",
+    "server_Side_tracking": "Serverseitiges Tracking",
+    "tracking_guarantee": "Tracking-Garantie",
+    "orders_month": "Bestellungen/Monat",
+    "add_Ons_available": "Erweiterungen Verfügbar",
+    "block1_header": "Experteninstallation",
+    "block2_header": "GA4-Tuning",
+    "block3_header": "Fortlaufendes Tagging- und Tracking-Support",
+    "block4_header": "Multi-Store-Pläne",
+    "block1_desc": "Erwerben Sie unser einmaliges Onboarding-Add-on und unsere Analysten migrieren/aktualisieren das Tracking auf allen Ihren Marketingkanälen.",
+    "block2_desc": "Da Universal Analytics dem Ende seines Lebenszyklus näherkommt, entwickelt sich GA4 weiter und ändert sich dramatisch. Lassen Sie unsere Analysten sicherstellen, dass Ihr GA4-Setup den neuesten Best Practices folgt und wichtige Konfigurationen von Ihrer Universal Analytics-Property zu Ihrer GA4-Property übertragen.",
+    "block3_desc": "Lassen Sie die Expertenanalysten von Elevar alle Ihre fortlaufenden Tagging-, Tracking- und serverseitigen Tracking-Anforderungen für Sie verwalten. Wir bieten einen 'Lite'- und einen 'Full-Service'-Plan an.",
+    "block4_desc": "Nutzen Sie mehrere Geschäfte für eine internationale Expansion? Wir können helfen! Elevar wird alle Ihre Geschäfte in einen einzigen Plan integrieren. Wählen Sie einfach einen Zeitpunkt, um hier mit uns zu sprechen.",
+    "and_up": "und mehr",
+    "starts_at": "Beginnt um",
+    "sign_up_to_access": "Registrieren Sie sich, um Zugriff zu erhalten",
+    "schedule_call": "Anruf planen"
+  }
 }
