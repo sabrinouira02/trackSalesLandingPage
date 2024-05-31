@@ -1,0 +1,19 @@
+.dark-mode-toggle {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  //   background-color: var(--primary-color);
+  //   color: var(--background-color);
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, color 0.3s;
+  z-index: 999;
+}
+
+// .dark-mode-toggle:hover {
+//   background-color: var(--background-color);
+//   color: var(--primary-color);
+// }

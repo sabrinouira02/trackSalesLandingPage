@@ -6,7 +6,6 @@ import { PricingComponent } from './pricing/pricing.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { TermsComponent } from './terms/terms.component';
-import { ThreeComponent } from './three/three.component';
 
 const routes: Routes = [
   {
@@ -18,7 +17,6 @@ const routes: Routes = [
       { path: 'about-us', component: AboutUsComponent },
       { path: 'privacy', component: PrivacyComponent },
       { path: 'terms', component: TermsComponent },
-      { path: 'three', component: ThreeComponent },
     ],
   },
 ];

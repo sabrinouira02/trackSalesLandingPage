@@ -31,7 +31,11 @@ export class HomePageComponent implements AfterViewInit {
   targetMoneyBackDays: number = 30;
   duration: number = 3000; // durée de l'incrémentation en millisecondes
   observer!: IntersectionObserver;
+  isDarkMode: boolean = false;
 
+  toggleDarkMode() {
+    this.isDarkMode = !this.isDarkMode;
+  }
   images = [
     {
       id: '1',

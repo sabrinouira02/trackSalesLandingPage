@@ -26,7 +26,7 @@
     </div>
 </div>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light" [ngClass]="{'app-header-scrolled': scrolled}">
+<nav class="navbar navbar-expand-lg " [ngClass]="{'app-header-scrolled': scrolled}">
     <div class="container-fluid">
         <a routerLink="" class="navbar-brand">
             <!-- Image pour la version desktop -->
@@ -66,13 +66,13 @@
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <div ngbDropdown class="d-inline-block">
+                <li class="nav-item" ngbDropdown (mouseenter)="dropdown.open()">
+                    <div ngbDropdown class="d-inline-block" #dropdown="ngbDropdown">
                         <a class="nav-link" id="dropdownBasic1" ngbDropdownToggle>
                             {{ 'nav.langue' | translate }}
                         </a>
                         <div ngbDropdownMenu aria-labelledby="dropdownBasic1"
-                            class="dropdown-menu-end custom-dropdown-menu">
+                            class="dropdown-menu-end custom-dropdown-menu" (mouseleave)="dropdown.close()">
                             <a (click)="switchLanguage('en')" ngbDropdownItem class="d-flex align-items-center">
                                 <span>{{ 'nav.english' | translate }}</span>
                                 <img src="assets/images/Flag_of_the_United_Kingdom.png" width="30px" alt="English Flag"
@@ -90,15 +90,14 @@
                             </a>
                         </div>
                     </div>
-
-
                 </li>
 
-                <li class="nav-item">
+
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="https://app.tracksales.io/sign-in">{{ 'nav.sign_in' | translate }}</a>
-                </li>
+                </li> -->
                 <li class="nav-item signup">
-                    <a class="nav-link" href="https://app.tracksales.io/sign-up">{{ 'nav.sign_up' | translate }}</a>
+                    <a class="nav-link" href="https://app.tracksales.io/sign-in">{{ 'nav.sign_in' | translate }}</a>
                 </li>
             </ul>
 

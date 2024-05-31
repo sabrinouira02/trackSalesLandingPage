@@ -1,1 +1,77 @@
-/* You can add global styles to this file, and also import other style files */
+/* Définir les variables pour les couleurs principales */
+.clair-mode {
+  --primary-color: #eecc6f;
+  background-color: #f8f9fa;
+  color: #000000;
+  --nav-link-color: #000000;
+  --app-header-scrolled: rgb(241, 236, 236);
+  --page-padding-bg: #eeeeee;
+  --clients-gradient: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    #f8f9fa
+  );
+  --client-needs-bg-start: #eeeeee;
+  --client-needs-bg-end: #fafbfc;
+  --checklist-bg: #ffffff;
+  --vc_custom: #f4f6f8;
+  --box-shadow: 3.31228px 3.31228px 33.1228px rgba(33, 43, 54, 0.1);
+}
+
+// .page-padding[_ngcontent-ng-c1850198956] {
+//     padding: 4% 10% 5% 10%;
+//     box-shadow: 3.31228px 3.31228px 33.1228px rgb(116 118 122 / 95%);
+// }
+
+.dark-mode {
+  color: #ffffff;
+  background-color: #1d1e1f;
+  --text-color: #ffffff;
+  --nav-link-color: #ffffff;
+  --app-header-scrolled: rgb(50, 49, 49);
+  --page-padding-bg: #444444;
+  --clients-gradient: linear-gradient(to right, rgba(0, 0, 0, 0), #1d1e1f);
+  --client-needs-bg-start: #444444;
+  --client-needs-bg-end: #555555;
+  --checklist-bg: #2e2c2c;
+  --vc_custom: #2e2c2c;
+  --box-shadow: 3.31228px 3.31228px 33.1228px rgb(116 118 122 / 95%);
+}
+
+.app-header-scrolled {
+  background-color: var(--app-header-scrolled);
+}
+
+.nav-link {
+  color: var(--nav-link-color) !important;
+}
+
+.page-padding {
+  background-color: var(--page-padding-bg);
+}
+
+.clients .image-container:before,
+.clients .image-container:after {
+  background: var(--clients-gradient);
+}
+
+#client_needs_container {
+  background-image: linear-gradient(
+    -21deg,
+    var(--client-needs-bg-start) 45%,
+    var(--client-needs-bg-end) 46%
+  );
+}
+
+ul.checklist {
+  background-color: var(--checklist-bg);
+}
+
+.vc_custom_1621249512603 {
+  background-color: var(--vc_custom);
+}
+
+.page-padding,
+#client_needs_container {
+  box-shadow: var(--box-shadow);
+}

@@ -1,4 +1,4 @@
-<div class="main_container">
+<div class="main_container" [ngClass]="{'dark-mode': isDarkMode}">
     <div class="vc_row padding">
 
         <div class="wpb_wrapper2">
@@ -9,7 +9,7 @@
             <p class="wpb_text_column">{{ 'wpb_wrapper2_description' | translate }}
             </p>
             <button data-aos="fade-left" class="vc_btn3"
-                onclick="window.location.href='https://app.tracksales.io/sign-up'">{{
+                onclick="window.location.href='https://app.tracksales.io/sign-in'">{{
                 'wpb_wrapper2_sign_up' | translate }}</button>
             <p class="wpb_text_column">{{ 'wpb_wrapper2_free_plans' | translate }}
             </p>
@@ -20,13 +20,13 @@
     <div class="page-padding">
         <div class="container-large">
             <div class="vertical-div align-center">
-                <div class="meta-title" data-aos="zoom-out" data-aos-offset="300" data-aos-duration="1000">{{
+                <div class="meta-title" data-aos="zoom-out" data-aos-offset="300" data-aos-duration="500">{{
                     'meta-title1' | translate }}</div>
-                <h4 class="meta-sub-title" data-aos="zoom-out" data-aos-offset="300" data-aos-duration="1000">{{
+                <h4 class="meta-sub-title" data-aos="zoom-out" data-aos-offset="300" data-aos-duration="500">{{
                     'meta-sub-title1' | translate }}</h4>
                 <div class="steps-wrapper">
                     <div id="w-node-ac551f8e-6b9e-9a23-6302-012f036c2cef-f310d9e4" class="steps-block"
-                        data-aos="fade-up" data-aos-offset="300" data-aos-duration="2000">
+                        data-aos="fade-up" data-aos-offset="300" data-aos-duration="1000">
                         <div class="steps-number">
                             <div>1</div>
                         </div>
@@ -34,24 +34,28 @@
                             <div class="text-l text-bold" data-aos="fade-left">{{ 'start_etape_1_title' | translate }}
                             </div>
                             <p class="text-s opacity-0-8" data-aos="fade-left">{{ 'start_etape_1_description' |
-                                translate }}</p><a data-name="How To Start Register Button" routerLink="/auth/sign-up"
+                                translate }}</p><a data-name="How To Start Register Button"
                                 class="steps-button w-inline-block">
                                 <div class="steps-button-wrapper">
-                                    <div class="button-text" data-aos="fade-left">{{ 'create_account' | translate }}
-                                    </div>
-                                    <div class="button-icon w-embed" data-aos="fade-left"><svg class="button-icon"
-                                            width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M17 12L7 12M17 12L13 16M17 12L13 8" stroke="#FFFFFF"
-                                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                            </path>
-                                        </svg></div>
+                                    <a href="https://app.tracksales.io/sign-in" class="button-link">
+                                        <div class="button-text" data-aos="fade-left">{{ 'create_account' | translate }}
+                                        </div>
+                                        <div class="button-icon w-embed" data-aos="fade-left">
+                                            <svg class="button-icon" width="24" height="24" viewBox="0 0 24 24"
+                                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M17 12L7 12M17 12L13 16M17 12L13 8" stroke="#FFFFFF"
+                                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                    </a>
                                 </div>
+
                             </a>
                         </div>
                     </div>
                     <div id="w-node-ac551f8e-6b9e-9a23-6302-012f036c2cfc-f310d9e4" class="steps-block"
-                        data-aos="fade-down" data-aos-offset="300" data-aos-duration="2000">
+                        data-aos="fade-down" data-aos-offset="300" data-aos-duration="500">
                         <div class="steps-number">
                             <div>2</div>
                         </div>
@@ -62,7 +66,7 @@
                         </div>
                     </div>
                     <div id="w-node-ac551f8e-6b9e-9a23-6302-012f036c2d05-f310d9e4" class="steps-block"
-                        data-aos="fade-up" data-aos-offset="300" data-aos-duration="2000">
+                        data-aos="fade-up" data-aos-offset="300" data-aos-duration="500">
                         <div class="steps-number">
                             <div>3</div>
                         </div>
@@ -78,9 +82,9 @@
     </div>
 
     <div class="padding">
-        <h3 class="meta-title" data-aos="zoom-out" data-aos-offset="300" data-aos-duration="2000">{{ 'meta-title2' |
+        <h3 class="meta-title" data-aos="zoom-out" data-aos-offset="300" data-aos-duration="500">{{ 'meta-title2' |
             translate }}</h3>
-        <h2 class="meta-sub-title" data-aos="zoom-out" data-aos-offset="300" data-aos-duration="2000">{{
+        <h2 class="meta-sub-title" data-aos="zoom-out" data-aos-offset="300" data-aos-duration="500">{{
             'meta-sub-title2' | translate }}</h2>
         <div id="clients" class="clients section-bg">
             <div class="image-container" style="padding: 0 200px 0 200px;">
@@ -97,7 +101,7 @@
     <div id="client_needs_container" data-vc-full-width="true" data-vc-full-width-init="true">
         <div class="relative wpb_column vc_column_container vc_col-sm-4">
             <div class="vc_column-inner ">
-                <div class="wpb_wrapper" data-aos="zoom-out" data-aos-offset="300" data-aos-duration="2000">
+                <div class="wpb_wrapper" data-aos="zoom-out" data-aos-offset="300" data-aos-duration="500">
                     <h2 style="text-align: left" class="vc_custom_heading">{{'sounds_familiar_title' | translate }}</h2>
                 </div>
             </div>
@@ -291,7 +295,7 @@
 
                     </div>
                 </div>
-                <h2 style="font-size: 38px;color: #333333;line-height: 48px;text-align: center" class="meta-sub-title">
+                <h2 style="font-size: 38px;line-height: 48px;text-align: center" class="meta-sub-title">
                     {{ 'central_system_title' | translate }}</h2>
                 <div class="wpb_text_column wpb_content_element ">
                     <div class="wpb_wrapper">
@@ -363,8 +367,8 @@
                     <span class="stat-callout">{{conversionAccuracy}}%<span>
                         </span></span>
                 </div>
-                <h2 style="font-size: 38px;color: #212b36;line-height: 48px;text-align: center"
-                    class="vc_custom_heading" data-aos="fade-left" data-aos-offset="1200" data-aos-duration="3000">
+                <h2 style="font-size: 38px;line-height: 48px;text-align: center" class="vc_custom_heading"
+                    data-aos="fade-left" data-aos-offset="1200" data-aos-duration="3000">
                     {{ 'conversion_accuracy' | translate }}</h2>
                 <div class="wpb_text_column wpb_content_element ">
                     <p style="text-align: center;">
@@ -380,8 +384,8 @@
                     <span class="stat-callout">{{moneyBackDays}} <span>DAY</span><span>
                         </span></span>
                 </div>
-                <h2 style="font-size: 38px;color: #212b36;line-height: 48px;text-align: center"
-                    class="vc_custom_heading" data-aos="fade-right" data-aos-offset="1200" data-aos-duration="3000">
+                <h2 style="font-size: 38px;line-height: 48px;text-align: center" class="vc_custom_heading"
+                    data-aos="fade-right" data-aos-offset="1200" data-aos-duration="3000">
                     {{ 'money_back' | translate }}</h2>
                 <div class="wpb_text_column wpb_content_element ">
                     <p style="text-align: center;">{{ 'money_back_desc' | translate }}</p>

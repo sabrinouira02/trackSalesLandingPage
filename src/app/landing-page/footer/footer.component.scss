@@ -196,9 +196,9 @@ i.fab {
   margin: 8px;
 }
 
-.social-icons {
-  margin-top: 20px;
-}
+// .social-icons {
+//   margin-top: 20px;
+// }
 
 a.contact {
   color: #000;
@@ -221,4 +221,33 @@ a.contact {
 
 .social-icons a.youtube i {
   color: #ff0000; /* Couleur YouTube */
+}
+
+.social-icons-wrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.follow-title {
+  margin-right: 10px; /* Ajoutez un espacement entre le titre et les icônes si nécessaire */
+}
+
+i.fas.fa-envelope {
+  font-size: 34px;
+  margin-right: 22px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+i.fas.fa-phone {
+  font-size: 34px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+i.fas.fa-envelope:hover {
+  transform: scale(1.4);
+}
+
+i.fas.fa-phone:hover {
+  transform: scale(1.4);
 }
