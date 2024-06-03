@@ -200,6 +200,11 @@ h1 {
     position: relative !important;
   }
 
+  .page-padding,
+  #client_needs_container {
+    padding-top: 2em;
+  }
+
   .integration {
     font-size: 30px;
     color: #212b36;
@@ -227,7 +232,7 @@ h1 {
   }
 
   ul.checklist {
-    background: #ffffff;
+    // background: #ffffff;
     margin-top: 10%;
     box-shadow: 3.31228px 3.31228px 33.1228px rgba(33, 43, 54, 0.1);
     border-radius: 6.62456px;
@@ -412,7 +417,7 @@ ul.checklist li img {
 //Do More with 50+ Integrations With Elevar
 .hero.hero-clean {
   background-image: none !important;
-  padding-top: 120px;
+  padding-top: 100px;
 }
 
 @media (min-width: 768px) {
