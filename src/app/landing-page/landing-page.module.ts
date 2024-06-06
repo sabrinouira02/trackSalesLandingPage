@@ -14,6 +14,8 @@ import { HttpLoaderFactory } from '../app.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { TermsComponent } from './terms/terms.component';
+import { NewsletterComponent } from './newsletter/newsletter.component';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     LandingPageComponent,
@@ -24,11 +26,13 @@ import { TermsComponent } from './terms/terms.component';
     HeaderComponent,
     PrivacyComponent,
     TermsComponent,
+    NewsletterComponent,
   ],
   imports: [
     CommonModule,
     LandingPageRoutingModule,
     NgbModule,
+    ReactiveFormsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

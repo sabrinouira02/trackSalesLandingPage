@@ -1,4 +1,25 @@
 /* Définir les variables pour les couleurs principales */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: monospace;
+  font-weight: 500;
+  line-height: 1.1;
+  // color: black;
+}
+
+p,
+button,
+li,
+span,
+a {
+  font-family: monospace;
+  font-size: 20px;
+}
+
 .clair-mode {
   --primary-color: #eecc6f;
   background-color: #f8f9fa;
@@ -16,12 +37,8 @@
   --checklist-bg: #ffffff;
   --vc_custom: #f4f6f8;
   --box-shadow: 3.31228px 3.31228px 33.1228px rgba(33, 43, 54, 0.1);
+  --milestones: #f4ead1;
 }
-
-// .page-padding[_ngcontent-ng-c1850198956] {
-//     padding: 4% 10% 5% 10%;
-//     box-shadow: 3.31228px 3.31228px 33.1228px rgb(116 118 122 / 95%);
-// }
 
 .dark-mode {
   color: #ffffff;
@@ -36,6 +53,13 @@
   --checklist-bg: #2e2c2c;
   --vc_custom: #2e2c2c;
   --box-shadow: 3.31228px 3.31228px 33.1228px rgb(116 118 122 / 95%);
+  --milestones: #eecc6f;
+}
+
+.cc-color-override--490236203.cc-window {
+  color: rgb(0, 0, 0);
+  background-color: rgb(238, 204, 111);
+  box-shadow: 0 2px 23px #a6aaaa !important;
 }
 
 .app-header-scrolled {
@@ -130,4 +154,10 @@ ul.checklist {
 
 .kirzin:active {
   background: linear-gradient(32deg, #444444, #eecc6f, #eecc6f, #444444);
+}
+
+.milestones div,
+.cta div,
+.showcase {
+  background: var(--milestones);
 }
