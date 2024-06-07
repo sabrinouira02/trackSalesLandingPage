@@ -8,11 +8,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import {
+  TranslateModule,
+  TranslateLoader,
+  TranslateService,
+} from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import {
   NgcCookieConsentModule,
   NgcCookieConsentConfig,
+  NgcCookieConsentService,
 } from 'ngx-cookieconsent';
 
 // Fonction de chargement des fichiers de traduction
@@ -74,4 +79,47 @@ const cookieConfig: NgcCookieConsentConfig = {
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  constructor(
+    private translate: TranslateService,
+    private ccService: NgcCookieConsentService
+  ) {
+    this.translate.setDefaultLang('en');
+
+    // Définir les langues disponibles
+    this.translate.addLangs(['en', 'fr', 'de']);
+
+    // Utiliser la langue du navigateur s'il est supporté, sinon utiliser 'en'
+    const browserLang = this.translate.getBrowserLang();
+    const defaultLang =
+      browserLang && browserLang.match(/en|fr|de/) ? browserLang : 'en';
+    this.translate.use(defaultLang);
+
+    this.updateCookieConsentText();
+
+    // Écouter les événements de changement de langue
+    this.translate.onLangChange.subscribe(() => {
+      this.updateCookieConsentText();
+    });
+  }
+
+  switchLanguage(language: string) {
+    this.translate.use(language);
+  }
+
+  updateCookieConsentText() {
+    this.translate.get('COOKIE_CONSENT').subscribe((data) => {
+      const currentConfig = this.ccService.getConfig();
+      currentConfig.content = {
+        message: data.MESSAGE,
+        dismiss: data.DISMISS,
+        deny: data.DENY,
+        link: data.LINK,
+        href: data.HREF,
+        policy: data.POLICY,
+      };
+      this.ccService.destroy(); // Détruire le consentement actuel (s'il y en a un)
+      this.ccService.init(currentConfig); // Réinitialiser avec la nouvelle configuration
+    });
+  }
+}
