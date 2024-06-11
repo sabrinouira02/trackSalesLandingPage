@@ -30,11 +30,10 @@
     <div class="container-fluid">
         <a routerLink="" class="navbar-brand">
             <!-- Image pour la version desktop -->
-            <img src="assets/images/logos/T_logo.png" alt="logo" width="150" class="T_logo d-none d-sm-block">
-            <img src="assets/images/logos/TrackSales_logo.png" alt="logo" width="150"
-                class="TrackSales_logo d-none d-sm-block">
+            <img [src]="desktopLogo" alt="logo" width="150" class="T_logo d-none d-sm-block">
+            <img [src]="desktopTrackSalesLogo" alt="logo" width="150" class="TrackSales_logo d-none d-sm-block">
             <!-- Image pour la version mobile -->
-            <img src="assets/images/logos/4.png" alt="logo" width="180" class="d-block d-sm-none">
+            <img [src]="mobileLogo" alt="logo" width="180" class="d-block d-sm-none">
 
         </a>
         <button (click)="toggleNavbarCollapsing()" class="navbar-toggler" type="button" data-bs-toggle="collapse"

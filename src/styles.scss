@@ -40,6 +40,7 @@ a {
   --box-shadow: 3.31228px 3.31228px 33.1228px rgba(33, 43, 54, 0.1);
   --milestones: #f4ead1;
   --faq-body: #f8f5f5;
+  --navbar-toggler: #00000000;
 }
 
 .dark-mode {
@@ -58,6 +59,7 @@ a {
   --box-shadow: 3.31228px 3.31228px 33.1228px rgb(116 118 122 / 95%);
   --milestones: #eecc6f;
   --faq-body: #3c3939;
+  --navbar-toggler: #ffffff;
 }
 
 .cc-color-override--490236203.cc-window {
@@ -72,6 +74,10 @@ a {
 
 .nav-link {
   color: var(--nav-link-color) !important;
+}
+
+.navbar-toggler {
+  background-color: var(--navbar-toggler) !important;
 }
 
 .page-padding {
