@@ -1,10 +1,9 @@
 {
-  "COOKIE_CONSENT": {
-    "MESSAGE": "Ce site web stocke des cookies sur votre ordinateur. Ces cookies sont utilisés pour collecter des informations sur la manière dont vous interagissez avec notre site web et nous permettent de nous souvenir de vous. Nous utilisons ces informations pour améliorer et personnaliser votre expérience de navigation et pour des analyses et des mesures concernant nos visiteurs à la fois sur ce site et sur d'autres médias. Pour en savoir plus sur les cookies que nous utilisons, consultez notre ",
+  "COOKIE": {
+    "MESSAGE": "Ce site web stocke des cookies sur votre ordinateur. Ces cookies sont utilisés pour collecter des informations sur la façon dont vous interagissez avec notre site web et nous permettent de nous souvenir de vous. Nous utilisons ces informations pour améliorer et personnaliser votre expérience de navigation et pour des analyses et des métriques sur nos visiteurs tant sur ce site web que sur d'autres supports. Pour en savoir plus sur les cookies que nous utilisons, consultez notre ",
     "DISMISS": "Accepter",
     "DENY": "Refuser",
-    "LINK": "Politique de confidentialité.",
-    "HREF": "/privacy",
+    "LINK": "Politique de confidentialité",
     "POLICY": "Politique de cookies"
   },
   "top_bar": {
@@ -20,6 +19,7 @@
     "home": "Accueil",
     "pricing": "Tarification",
     "about_us": "À propos",
+    "faq": "FAQ",
     "sign_in": "Se connecter",
     "sign_up": "S'inscrire"
   },

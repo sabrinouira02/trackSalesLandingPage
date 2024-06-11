@@ -15,6 +15,7 @@ p,
 button,
 li,
 span,
+summary,
 a {
   font-family: monospace;
   // font-size: 20px;
@@ -38,9 +39,11 @@ a {
   --vc_custom: #f4f6f8;
   --box-shadow: 3.31228px 3.31228px 33.1228px rgba(33, 43, 54, 0.1);
   --milestones: #f4ead1;
+  --faq-body: #f8f5f5;
 }
 
 .dark-mode {
+  --primary-color: #eecc6f;
   color: #ffffff;
   background-color: #1d1e1f;
   --text-color: #ffffff;
@@ -54,6 +57,7 @@ a {
   --vc_custom: #2e2c2c;
   --box-shadow: 3.31228px 3.31228px 33.1228px rgb(116 118 122 / 95%);
   --milestones: #eecc6f;
+  --faq-body: #3c3939;
 }
 
 .cc-color-override--490236203.cc-window {
@@ -160,4 +164,8 @@ ul.checklist {
 .cta div,
 .showcase {
   background: var(--milestones);
+}
+
+.faq-body {
+  background-color: var(--faq-body);
 }

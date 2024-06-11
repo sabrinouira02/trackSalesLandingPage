@@ -16,6 +16,7 @@ import { PrivacyComponent } from './privacy/privacy.component';
 import { TermsComponent } from './terms/terms.component';
 import { NewsletterComponent } from './newsletter/newsletter.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FaqComponent } from './faq/faq.component';
 @NgModule({
   declarations: [
     LandingPageComponent,
@@ -27,6 +28,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     PrivacyComponent,
     TermsComponent,
     NewsletterComponent,
+    FaqComponent,
   ],
   imports: [
     CommonModule,

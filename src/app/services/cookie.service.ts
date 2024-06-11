@@ -6,38 +6,55 @@ import { NgcCookieConsentConfig } from 'ngx-cookieconsent';
   providedIn: 'root',
 })
 export class CookieService {
+  private cookieConfig: NgcCookieConsentConfig = {
+    cookie: {
+      domain: 'https://tracksales.io/',
+    },
+    position: 'bottom',
+    theme: 'classic',
+    palette: {
+      popup: {
+        background: '#eecc6f',
+        text: '#000',
+        link: '#ffffff',
+      },
+      button: {
+        background: '#0b0c0c',
+        text: '#ffffff',
+        border: 'transparent',
+      },
+    },
+    type: 'opt-in',
+    content: {
+      message: '',
+      dismiss: '',
+      deny: '',
+      link: '',
+      href: '/privacy',
+      policy: 'Cookie Policy',
+      cookieconsent_dismissed: 'yes',
+      close: '&#x274c;',
+    },
+  };
+
   constructor(private translate: TranslateService) {}
 
-  getCookieConfig(): NgcCookieConsentConfig {
-    return {
-      cookie: {
-        domain: 'https://tracksales.io/',
-      },
-      position: 'bottom',
-      theme: 'classic',
-      palette: {
-        popup: {
-          background: '#eecc6f',
-          text: '#000',
-          link: '#ffffff',
-        },
-        button: {
-          background: '#0b0c0c',
-          text: '#ffffff',
-          border: 'transparent',
-        },
-      },
-      type: 'opt-in',
-      content: {
-        message: this.translate.instant('message'),
-        dismiss: 'Accept',
-        deny: 'Decline',
-        link: 'Privacy Policy.',
-        href: '/privacy',
-        policy: 'Cookie Policy',
-        cookieconsent_dismissed: 'yes',
-        close: '&#x274c;',
-      },
-    };
+  async loadConfig(): Promise<NgcCookieConsentConfig> {
+    this.cookieConfig.content!.message = await this.translate
+      .get('COOKIE.MESSAGE')
+      .toPromise();
+    this.cookieConfig.content!.dismiss = await this.translate
+      .get('COOKIE.DISMISS')
+      .toPromise();
+    this.cookieConfig.content!.deny = await this.translate
+      .get('COOKIE.DENY')
+      .toPromise();
+    this.cookieConfig.content!.link = await this.translate
+      .get('COOKIE.LINK')
+      .toPromise();
+    this.cookieConfig.content!.policy = await this.translate
+      .get('COOKIE.POLICY')
+      .toPromise();
+    return this.cookieConfig;
   }
 }
