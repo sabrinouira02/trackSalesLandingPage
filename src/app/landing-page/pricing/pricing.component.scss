@@ -18,7 +18,7 @@
   }
 
   .first-pricing-section {
-    padding: 6rem 20rem 4rem 20rem;
+    padding: 6rem 12rem 4rem 12rem;
   }
 
   .pricing-title {
@@ -864,9 +864,9 @@ button:hover span::before {
   background: white;
 }
 
-button:hover {
-  color: rgb(29, 28, 28);
-}
+// button:hover {
+//   color: rgb(29, 28, 28);
+// }
 
 button:active span::before {
   background: #fff;
