@@ -27,7 +27,14 @@ export class HeaderComponent {
     @Inject(DOCUMENT) private document: Document,
     private renderer: Renderer2
   ) {
-    this.translate.setDefaultLang('en');
+    const languages = ['de', 'en', 'fr'];
+    let langCode = navigator.language.substr(0, 2);
+
+    if (!languages.includes(langCode)) {
+      langCode = 'en'; // Défaut à 'en' si langCode n'est pas trouvé dans languages
+    }
+
+    this.translate.setDefaultLang(langCode);
   }
 
   ngAfterViewInit(): void {

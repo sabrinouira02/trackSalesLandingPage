@@ -11,8 +11,8 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import {
-  NgcCookieConsentModule,
   NgcCookieConsentConfig,
+  NgcCookieConsentModule,
 } from 'ngx-cookieconsent';
 
 // Fonction de chargement des fichiers de traduction
@@ -22,33 +22,39 @@ export function HttpLoaderFactory(http: HttpClient) {
 
 const cookieConfig: NgcCookieConsentConfig = {
   cookie: {
-    domain: 'https://tracksales.io/', // or 'your.domain.com' // it is mandatory to set a domain, for cookies to work properly (see https://goo.gl/S2Hy2A)
+    domain: 'localhost', // il est recommandé de définir votre domaine, pour que les cookies fonctionnent correctement
   },
-  position: 'bottom',
-  theme: 'classic',
   palette: {
     popup: {
-      background: '#eecc6f',
-      text: '#000',
-      link: '#ffffff',
+      background: '#000',
     },
     button: {
-      background: '#0b0c0c',
-      text: '#ffffff',
-      border: 'transparent',
+      background: '#eecc6f',
     },
   },
-  type: 'opt-in',
+  theme: 'edgeless',
+  type: 'opt-out',
+  layout: 'my-custom-layout',
+  layouts: {
+    'my-custom-layout': '{{messagelink}}{{compliance}}',
+  },
+  elements: {
+    messagelink: `
+    <span id="cookieconsent:desc" class="cc-message" style="margin: 1em">{{message}} 
+      <a aria-label="en savoir plus sur notre politique de confidentialité" tabindex="1" class="cc-link" href="{{privacyPolicyHref}}" target="_blank" rel="noopener">{{privacyPolicyLink}}</a> et notre 
+      <a aria-label="en savoir plus sur nos conditions de service" tabindex="2" class="cc-link" href="{{tosHref}}" target="_blank" rel="noopener">{{tosLink}}</a>
+    </span>
+    `,
+  },
   content: {
     message:
-      'This website stores cookie on your computer. These cookies are used to collect information about how you interact with our website and allow us to remember you. We use this information in order to improve and customize your browsing experience and for analytics and metrics about our visitors both on this website and other media. To find out more about the cookies we use, see our ',
-    dismiss: 'Accept',
-    deny: 'Decline',
-    link: 'Privacy Policy.',
-    href: '/privacy',
-    policy: 'Cookie Policy',
-    cookieconsent_dismissed: 'yes',
-    close: '&#x274c;',
+      'En utilisant notre site, vous reconnaissez avoir lu et compris notre ',
+
+    privacyPolicyLink: 'Politique de confidentialité',
+    privacyPolicyHref: 'https://tracksales.io/privacy',
+
+    tosLink: "Conditions d'utilisation",
+    tosHref: 'https://tracksales.io/terms',
   },
 };
 
@@ -69,7 +75,7 @@ const cookieConfig: NgcCookieConsentConfig = {
         deps: [HttpClient],
       },
     }),
-    NgcCookieConsentModule.forRoot(cookieConfig),
+    NgcCookieConsentModule.forRoot(cookieConfig), // Supprimez cette ligne
   ],
   providers: [],
   bootstrap: [AppComponent],

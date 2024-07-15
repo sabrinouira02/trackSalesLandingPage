@@ -1,11 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  NgcCookieConsentService,
-  NgcInitializationErrorEvent,
-  NgcInitializingEvent,
-  NgcNoCookieLawEvent,
-  NgcStatusChangeEvent,
-} from 'ngx-cookieconsent';
+import { TranslateService } from '@ngx-translate/core';
+import { NgcCookieConsentService } from 'ngx-cookieconsent';
+
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -16,7 +12,7 @@ import { Subscription } from 'rxjs';
 export class AppComponent implements OnInit {
   title = 'track-sales-UI';
   isDarkMode: boolean = false;
-  //keep refs to subscriptions to be able to unsubscribe later
+  // Gardez des références aux abonnements pour pouvoir vous désabonner plus tard
   private popupOpenSubscription!: Subscription;
   private popupCloseSubscription!: Subscription;
   private initializingSubscription!: Subscription;
@@ -26,66 +22,60 @@ export class AppComponent implements OnInit {
   private revokeChoiceSubscription!: Subscription;
   private noCookieLawSubscription!: Subscription;
 
-  constructor(private cookieService: NgcCookieConsentService) {}
+  constructor(
+    private ccService: NgcCookieConsentService,
+    private translateService: TranslateService
+  ) {}
+
   ngOnInit() {
-    // Ajouter la classe 'clair-mode' par défaut
-    document.body.classList.add('clair-mode');
+    const languages = ['de', 'en', 'fr'];
+    let langCode = navigator.language.substr(0, 2);
 
-    // subscribe to cookieconsent observables to react to main events
-    this.popupOpenSubscription = this.cookieService.popupOpen$.subscribe(() => {
-      // you can use this.cookieService.getConfig() to do stuff...
-    });
+    if (!languages.includes(langCode)) {
+      langCode = 'en';
+    }
 
-    this.popupCloseSubscription = this.cookieService.popupClose$.subscribe(
-      () => {
-        // you can use this.cookieService.getConfig() to do stuff...
-      }
-    );
+    this.translateService.setDefaultLang(langCode);
 
-    this.initializingSubscription = this.cookieService.initializing$.subscribe(
-      (event: NgcInitializingEvent) => {
-        // the cookieconsent is initilializing... Not yet safe to call methods like `NgcCookieConsentService.hasAnswered()`
-        console.log(`initializing: ${JSON.stringify(event)}`);
-      }
-    );
+    this.translateService
+      .get([
+        'cookie.header',
+        'cookie.message',
+        'cookie.dismiss',
+        'cookie.allow',
+        'cookie.deny',
+        'cookie.link',
+        'cookie.policy',
+      ])
+      .subscribe((data) => {
+        const config = this.ccService.getConfig();
+        config.content = config.content || {};
 
-    this.initializedSubscription = this.cookieService.initialized$.subscribe(
-      () => {
-        // the cookieconsent has been successfully initialized.
-        // It's now safe to use methods on NgcCookieConsentService that require it, like `hasAnswered()` for eg...
-        console.log(`initialized: ${JSON.stringify(event)}`);
-      }
-    );
+        // Remplacez les messages par défaut par les messages traduits
+        config.content.header = data['cookie.header'];
+        config.content.message = data['cookie.message'];
+        config.content.dismiss = data['cookie.dismiss'];
+        config.content.allow = data['cookie.allow'];
+        config.content.deny = data['cookie.deny'];
+        config.content.link = data['cookie.link'];
+        config.content.policy = data['cookie.policy'];
 
-    this.initializationErrorSubscription =
-      this.cookieService.initializationError$.subscribe(
-        (event: NgcInitializationErrorEvent) => {
-          // the cookieconsent has failed to initialize...
-          console.log(
-            `initializationError: ${JSON.stringify(event.error?.message)}`
-          );
-        }
-      );
-
-    this.statusChangeSubscription = this.cookieService.statusChange$.subscribe(
-      (event: NgcStatusChangeEvent) => {
-        // you can use this.cookieService.getConfig() to do stuff...
-      }
-    );
-
-    this.revokeChoiceSubscription = this.cookieService.revokeChoice$.subscribe(
-      () => {
-        // you can use this.cookieService.getConfig() to do stuff...
-      }
-    );
-
-    this.noCookieLawSubscription = this.cookieService.noCookieLaw$.subscribe(
-      (event: NgcNoCookieLawEvent) => {
-        // you can use this.cookieService.getConfig() to do stuff...
-      }
-    );
+        this.ccService.destroy(); // supprimez la barre de cookies précédente (avec des messages par défaut)
+        this.ccService.init(this.ccService.getConfig()); // mettez à jour la configuration avec les messages traduits
+      });
   }
 
+  ngOnDestroy() {
+    // désabonnez-vous des observables cookieconsent pour éviter les fuites de mémoire
+    this.popupOpenSubscription.unsubscribe();
+    this.popupCloseSubscription.unsubscribe();
+    this.initializingSubscription.unsubscribe();
+    this.initializedSubscription.unsubscribe();
+    this.initializationErrorSubscription.unsubscribe();
+    this.statusChangeSubscription.unsubscribe();
+    this.revokeChoiceSubscription.unsubscribe();
+    this.noCookieLawSubscription.unsubscribe();
+  }
   toggleDarkMode() {
     this.isDarkMode = !this.isDarkMode;
     if (this.isDarkMode) {
@@ -95,17 +85,5 @@ export class AppComponent implements OnInit {
       document.body.classList.remove('dark-mode');
       document.body.classList.add('clair-mode');
     }
-  }
-
-  ngOnDestroy() {
-    // unsubscribe to cookieconsent observables to prevent memory leaks
-    this.popupOpenSubscription.unsubscribe();
-    this.popupCloseSubscription.unsubscribe();
-    this.initializingSubscription.unsubscribe();
-    this.initializedSubscription.unsubscribe();
-    this.initializationErrorSubscription.unsubscribe();
-    this.statusChangeSubscription.unsubscribe();
-    this.revokeChoiceSubscription.unsubscribe();
-    this.noCookieLawSubscription.unsubscribe();
   }
 }

@@ -1,10 +1,12 @@
 {
-  "COOKIE": {
-    "MESSAGE": "Ce site web stocke des cookies sur votre ordinateur. Ces cookies sont utilisés pour collecter des informations sur la façon dont vous interagissez avec notre site web et nous permettent de nous souvenir de vous. Nous utilisons ces informations pour améliorer et personnaliser votre expérience de navigation et pour des analyses et des métriques sur nos visiteurs tant sur ce site web que sur d'autres supports. Pour en savoir plus sur les cookies que nous utilisons, consultez notre ",
-    "DISMISS": "Accepter",
-    "DENY": "Refuser",
-    "LINK": "Politique de confidentialité",
-    "POLICY": "Politique de cookies"
+  "cookie": {
+    "header": "Cookies utilisés sur le site Web !",
+    "message": "Ce site Web utilise des cookies pour garantir que vous obtenez la meilleure expérience sur notre site Web.",
+    "dismiss": "D'accord !",
+    "allow": "Autoriser les cookies",
+    "deny": "Refuser",
+    "link": "En savoir plus",
+    "policy": ""
   },
   "top_bar": {
     "title": "Vous souhaitez découvrir la manière innovante de suivre vos performances ?",

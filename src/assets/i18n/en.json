@@ -1,10 +1,12 @@
 {
-  "COOKIE": {
-    "MESSAGE": "This website stores cookie on your computer. These cookies are used to collect information about how you interact with our website and allow us to remember you. We use this information in order to improve and customize your browsing experience and for analytics and metrics about our visitors both on this website and other media. To find out more about the cookies we use, see our ",
-    "DISMISS": "Accept",
-    "DENY": "Decline",
-    "LINK": "Privacy Policy",
-    "POLICY": "Cookie Policy"
+  "cookie": {
+    "header": "Cookies used on the website!",
+    "message": "This website uses cookies to ensure you get the best experience on our website.",
+    "dismiss": "Got it!",
+    "allow": "Allow cookies",
+    "deny": "Deny",
+    "link": "Learn more",
+    "policy": ""
   },
   "top_bar": {
     "title": "You want to experience the innovative way of tracking ?",

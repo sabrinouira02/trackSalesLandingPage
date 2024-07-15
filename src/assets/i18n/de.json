@@ -1,4 +1,13 @@
 {
+  "cookie": {
+    "header": "Cookies auf der Website verwendet!",
+    "message": "Diese Website verwendet Cookies, um sicherzustellen, dass Sie die beste Erfahrung auf unserer Website machen.",
+    "dismiss": "Verstanden!",
+    "allow": "Cookies erlauben",
+    "deny": "Ablehnen",
+    "link": "Mehr erfahren",
+    "policy": ""
+  },
   "top_bar": {
     "title": "Möchten Sie die innovative Art des Trackings erleben ?",
     "mobile_title": "Einen Platz reservieren",
