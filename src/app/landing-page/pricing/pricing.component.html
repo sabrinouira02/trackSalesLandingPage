@@ -3,7 +3,18 @@
     <p style="text-align:center">{{ 'pricing.description' | translate }}</p>
 
     <div class="container">
-        <div class="box">
+        <div class="box" *ngFor="let plan of plans">
+            <span></span>
+            <div class="content">
+                <h2>{{ 'plans.' + plan.key + '.name' | translate }}</h2>
+                <h5>$ {{ plan.prix }}</h5>
+                <p>{{ 'plans.' + plan.key + '.description' | translate }}</p><br>
+                <a [routerLink]="'/subscription/'+ plan.id">{{ 'pricing.buttons_get_started' | translate }}</a>
+
+                <!-- <a href="https://app.tracksales.io/sign-in">{{ 'pricing.buttons_get_started' | translate }}</a> -->
+            </div>
+        </div>
+        <!-- <div class="box">
             <span></span>
             <div class="content">
                 <h2>{{ 'pricing.columns_header1' | translate }}</h2>
@@ -12,9 +23,6 @@
                 <p>{{ 'pricing.server_Side_tracking' | translate }}</p><br>
                 <p>{{ 'pricing.tracking_guarantee' | translate }}</p><br>
                 <p>1,000 {{ 'pricing.orders_month' | translate }}</p><br>
-                <!-- <button> {{ 'pricing.buttons_get_started' | translate }}
-                    <span></span>
-                </button> -->
                 <a href="https://app.tracksales.io/sign-in">{{ 'pricing.buttons_get_started' | translate }}</a>
             </div>
         </div>
@@ -43,7 +51,7 @@
 
                 <a href="https://app.tracksales.io/sign-in">{{ 'pricing.buttons_get_started' | translate }}</a>
             </div>
-        </div>
+        </div> -->
     </div>
 
     <div class="container" style="text-align: center;">

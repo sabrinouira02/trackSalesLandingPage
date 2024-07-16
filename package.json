@@ -26,6 +26,7 @@
     "aos": "^2.3.4",
     "bootstrap": "^5.3.3",
     "cookieconsent": "^3.1.1",
+    "date-fns": "^3.6.0",
     "lil-gui": "^0.19.2",
     "lottie-web": "^5.12.2",
     "ngx-cookieconsent": "^6.0.0",
