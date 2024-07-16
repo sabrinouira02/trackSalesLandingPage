@@ -26,7 +26,7 @@
     </div>
 </div>
 
-<nav class="navbar navbar-expand-lg " [ngClass]="{'app-header-scrolled': scrolled}">
+<nav class="navbar navbar-expand-lg" [ngClass]="{'app-header-scrolled': scrolled}">
     <div class="container-fluid">
         <a routerLink="" class="navbar-brand">
             <!-- Image pour la version desktop -->
@@ -34,7 +34,6 @@
             <img [src]="desktopTrackSalesLogo" alt="logo" width="150" class="TrackSales_logo d-none d-sm-block">
             <!-- Image pour la version mobile -->
             <img [src]="mobileLogo" alt="logo" width="180" class="d-block d-sm-none">
-
         </a>
         <button (click)="toggleNavbarCollapsing()" class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -45,34 +44,32 @@
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/" routerLinkActive="active"
-                        [ngClass]="{'custom-active-class': isActive('/')}">
+                        [ngClass]="{'custom-active-class': isActive('/')}" (click)="toggleNavbarCollapsing()">
                         {{ 'nav.home' | translate }}
                         <span class="underline"></span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/pricing" routerLinkActive="active"
-                        [ngClass]="{'custom-active-class': isActive('/pricing')}">
+                        [ngClass]="{'custom-active-class': isActive('/pricing')}" (click)="toggleNavbarCollapsing()">
                         {{ 'nav.pricing' | translate }}
                         <span class="underline"></span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/about-us" routerLinkActive="active"
-                        [ngClass]="{'custom-active-class': isActive('/about-us')}">
+                        [ngClass]="{'custom-active-class': isActive('/about-us')}" (click)="toggleNavbarCollapsing()">
                         {{ 'nav.about_us' | translate }}
                         <span class="underline"></span>
                     </a>
                 </li>
-
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/faq" routerLinkActive="active"
-                        [ngClass]="{'custom-active-class': isActive('/faq')}">
+                        [ngClass]="{'custom-active-class': isActive('/faq')}" (click)="toggleNavbarCollapsing()">
                         FAQ
                         <span class="underline"></span>
                     </a>
                 </li>
-
                 <li class="nav-item" ngbDropdown (mouseenter)="dropdown.open()">
                     <div ngbDropdown class="d-inline-block" #dropdown="ngbDropdown">
                         <a class="nav-link" id="dropdownBasic1" ngbDropdownToggle>
@@ -80,17 +77,20 @@
                         </a>
                         <div ngbDropdownMenu aria-labelledby="dropdownBasic1"
                             class="dropdown-menu-end custom-dropdown-menu" (mouseleave)="dropdown.close()">
-                            <a (click)="switchLanguage('en')" ngbDropdownItem class="d-flex align-items-center">
+                            <a (click)="switchLanguage('en'); toggleNavbarCollapsing()" ngbDropdownItem
+                                class="d-flex align-items-center">
                                 <span>{{ 'nav.english' | translate }}</span>
                                 <img src="assets/images/Flag_of_the_United_Kingdom.png" width="30px" alt="English Flag"
                                     class="ms-auto">
                             </a>
-                            <a (click)="switchLanguage('fr')" ngbDropdownItem class="d-flex align-items-center">
+                            <a (click)="switchLanguage('fr'); toggleNavbarCollapsing()" ngbDropdownItem
+                                class="d-flex align-items-center">
                                 <span>{{ 'nav.french' | translate }}</span>
                                 <img src="assets/images/Flag_of_France.png" width="30px" alt="French Flag"
                                     class="ms-auto">
                             </a>
-                            <a (click)="switchLanguage('de')" ngbDropdownItem class="d-flex align-items-center">
+                            <a (click)="switchLanguage('de'); toggleNavbarCollapsing()" ngbDropdownItem
+                                class="d-flex align-items-center">
                                 <span>{{ 'nav.deutch' | translate }}</span>
                                 <img src="assets/images/Allemand-flag.png" width="30px" alt="Deutch Flag"
                                     class="ms-auto">
@@ -98,18 +98,9 @@
                         </div>
                     </div>
                 </li>
-
-
-                <!-- <li class="nav-item">
-                    <a class="nav-link" href="https://app.tracksales.io/sign-in">{{ 'nav.sign_in' | translate }}</a>
-                </li> -->
-                <!-- <li class="nav-item signup"> -->
                 <button class="kirzin" onclick="window.location.href='https://app.tracksales.io/sign-in'">{{
-                    'nav.sign_in' | translate
-                    }}</button>
-                <!-- </li> -->
+                    'nav.sign_in' | translate }}</button>
             </ul>
-
         </div>
     </div>
 </nav>

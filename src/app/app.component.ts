@@ -25,7 +25,9 @@ export class AppComponent implements OnInit {
   constructor(
     private ccService: NgcCookieConsentService,
     private translateService: TranslateService
-  ) {}
+  ) {
+    document.body.classList.add('clair-mode');
+  }
 
   ngOnInit() {
     const languages = ['de', 'en', 'fr'];

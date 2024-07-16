@@ -6,17 +6,10 @@
 
 .main_container {
   font-size: 20px;
-  // background-color: $background-color;
 }
-
-// .main_container {
-//   background-color: --background-color;
-// }
 
 .page-padding {
   padding: 4% 10% 5% 10%;
-  // background-color: #eeeeee;
-  // box-shadow: 3.31228px 3.31228px 33.1228px rgb(33 43 54 / 10%);
 }
 
 .cursor {
@@ -156,6 +149,9 @@ h1 {
 }
 
 @media (max-width: 767px) {
+  .none {
+    display: none;
+  }
   .main_container {
     font-size: 16px;
   }
@@ -168,7 +164,7 @@ h1 {
   }
   .meta-sub-title {
     font-size: 30px !important;
-    font-weight: 600;
+    font-weight: 500;
   }
 
   #client_needs_container .relative h2 {

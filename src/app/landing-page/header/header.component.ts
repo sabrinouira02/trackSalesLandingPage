@@ -89,7 +89,11 @@ export class HeaderComponent {
   }
 
   toggleNavbarCollapsing() {
-    this.navbarCollapsed = !this.navbarCollapsed;
+    if (this.navbarCollapsed) {
+      this.navbarCollapsed = false;
+    } else {
+      this.navbarCollapsed = true;
+    }
   }
 
   navigateToExternalLink(): void {
