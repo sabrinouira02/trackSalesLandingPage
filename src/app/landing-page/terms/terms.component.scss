@@ -5,6 +5,12 @@
   background-color: #f8f9fa;
 }
 
+@media (max-width: 767px) {
+  .terms-container {
+    padding: 2rem;
+  }
+}
+
 h1,
 h2,
 h3 {
