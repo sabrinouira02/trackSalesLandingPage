@@ -22,6 +22,9 @@
                 class="text-danger">
                 Valid email is required
             </div>
+            <div *ngIf="emailError" class="text-danger">
+                {{ emailError }}
+            </div>
         </div>
 
         <div class="mb-3">

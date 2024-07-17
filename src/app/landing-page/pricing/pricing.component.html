@@ -7,7 +7,7 @@
             <span></span>
             <div class="content">
                 <h2>{{ 'plans.' + plan.key + '.name' | translate }}</h2>
-                <h5>$ {{ plan.prix }}</h5>
+                <h3>$ {{ plan.prix }}</h3>
                 <p>{{ 'plans.' + plan.key + '.description' | translate }}</p><br>
                 <a [routerLink]="'/subscription/'+ plan.id">{{ 'pricing.buttons_get_started' | translate }}</a>
 

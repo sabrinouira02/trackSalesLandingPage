@@ -7,10 +7,11 @@ import {
   ValidatorFn,
   Validators,
 } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { addMonths, addYears } from 'date-fns';
 import { ScrollService } from 'src/app/services/scroll.service';
 import { SubscritionService } from 'src/app/services/subscrition.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-subscription',
@@ -26,6 +27,7 @@ export class SubscriptionComponent implements OnInit {
   constructor(
     private scrollService: ScrollService,
     private route: ActivatedRoute,
+    private router: Router,
     private fb: FormBuilder,
     private subscriptionService: SubscritionService
   ) {
@@ -60,18 +62,27 @@ export class SubscriptionComponent implements OnInit {
 
   onSubmit() {
     if (this.subscriptionForm.valid) {
-      console.log(this.subscriptionForm.value);
-      // Envoyer les données au serveur
       this.subscriptionService
         .subscription(this.subscriptionForm.value)
         .subscribe(
           (data) => {
-            console.log(data);
-            if (data) {
-              window.location.href = 'https://app.tracksales.io/sign-in';
+            if (data && data.statusCode === 200) {
+              Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Your subscription has been saved',
+                showConfirmButton: false,
+                timer: 2500,
+                willClose: () => {
+                  window.location.href = 'https://app.tracksales.io/sign-in';
+                },
+              });
+            } else {
+              console.error('Unexpected response:', data);
             }
           },
           (error) => {
+            console.error('Error occurred:', error);
             this.handleError(error);
           }
         );
@@ -153,7 +164,9 @@ export class SubscriptionComponent implements OnInit {
     };
   }
 
+  emailError: string = '';
   handleError(error: any) {
-    this.error = error.error.errors;
+    this.error = error.error.error;
+    this.emailError = this.error.email;
   }
 }
