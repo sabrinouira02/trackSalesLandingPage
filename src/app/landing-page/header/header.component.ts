@@ -2,6 +2,7 @@ import { DOCUMENT } from '@angular/common';
 import { Component, HostListener, Inject, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { LanguageService } from 'src/app/services/language.service';
 
 @Component({
   selector: 'app-header',
@@ -25,16 +26,12 @@ export class HeaderComponent {
     private router: Router,
     private translate: TranslateService,
     @Inject(DOCUMENT) private document: Document,
+    private languageService: LanguageService,
     private renderer: Renderer2
   ) {
-    const languages = ['de', 'en', 'fr'];
-    let langCode = navigator.language.substr(0, 2);
-
-    if (!languages.includes(langCode)) {
-      langCode = 'en'; // Défaut à 'en' si langCode n'est pas trouvé dans languages
-    }
-
-    this.translate.setDefaultLang(langCode);
+    this.languageService.currentLanguage$.subscribe((language) => {
+      this.translate.setDefaultLang(language);
+    });
   }
 
   ngAfterViewInit(): void {
@@ -66,8 +63,6 @@ export class HeaderComponent {
 
   onBodyClassChange(): void {
     const bodyClasses = this.document.body.classList;
-    console.log('Body classes changed:', bodyClasses);
-
     // Exemple pour détecter une classe spécifique, par exemple 'dark-mode'
     if (bodyClasses.contains('dark-mode')) {
       this.desktopLogo = 'assets/images/logos/T_logo.png';
@@ -82,6 +77,7 @@ export class HeaderComponent {
   }
   switchLanguage(language: string) {
     this.translate.use(language);
+    this.languageService.setCurrentLanguage(language);
   }
 
   isActive(route: string): boolean {

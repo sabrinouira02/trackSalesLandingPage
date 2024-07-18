@@ -77,20 +77,6 @@
   "get_started": "Loslegen",
   "ready_to_get_started_desc": "Erfahren Sie eine transformative Reise zur Steigerung Ihrer Leistung durch unsere hochmoderne KI-Technologie. Erleben Sie die Kraft intelligenter Analytik während einer 15-tägigen kostenlosen Testphase. Beginnen Sie noch heute mit der Optimierung Ihrer Tracking-Mechanismen und entfesseln Sie das volle Potenzial Ihrer Unternehmungen mit Präzision und Effizienz.",
   "view_plans": "Pläne anzeigen",
-  "plans": {
-    "0": {
-      "name": "Basisplan",
-      "description": "Dies ist die Beschreibung des Basisplans."
-    },
-    "1": {
-      "name": "Pro Plan",
-      "description": "Dies ist die Beschreibung des Pro-Plans."
-    },
-    "2": {
-      "name": "Erweiterter Plan",
-      "description": "Dies ist die Beschreibung des erweiterten Plans."
-    }
-  },
   "pricing": {
     "title": "Pläne und Preise",
     "description": "Boosten Sie Ihre Werbekampagnen mit unseren bahnbrechenden Datenanreicherungstechniken, die sicherstellen, dass 100% Ihrer Konversionen erfasst und an Ihre Marketingkanäle weitergeleitet werden, was zu einem durchschnittlichen ROAS-Anstieg von 20,7% führt! Starten Sie mühelos mit einem einfachen 2-minütigen Setup - nur 10 Klicks zum Start - und verfolgen Sie Ihre ersten 50k Umsatz kostenlos.",

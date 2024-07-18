@@ -77,20 +77,6 @@
   "get_started": "Commencer",
   "ready_to_get_started_desc": "Transformez votre performance grâce à notre technologie AI de pointe. Découvrez la puissance de l'analyse intelligente lors de notre essai gratuit de 15 jours. Commencez à optimiser vos mécanismes de suivi dès aujourd'hui et libérez tout le potentiel de vos efforts avec précision et efficacité.",
   "view_plans": "Voir les plans",
-  "plans": {
-    "0": {
-      "name": "Plan de base",
-      "description": "Ceci est la description du plan de base."
-    },
-    "1": {
-      "name": "Plan Pro",
-      "description": "Ceci est la description du plan pro."
-    },
-    "2": {
-      "name": "Plan Avancé",
-      "description": "Ceci est la description du plan avancé."
-    }
-  },
   "pricing": {
     "title": "Forfaits et Tarifs",
     "description": "Booster vos campagnes publicitaires avec nos techniques révolutionnaires d'enrichissement de données, garantissant le suivi de 100% de vos conversions et leur livraison à vos canaux marketing, ce qui entraîne une augmentation moyenne de 20,7% de votre ROAS ! Commencez facilement avec une configuration simple en 2 minutes - seulement 10 clics pour démarrer - et suivez vos premiers 50k de revenus gratuitement.",

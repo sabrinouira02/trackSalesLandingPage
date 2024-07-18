@@ -92,7 +92,8 @@ export class SubscriptionComponent implements OnInit {
   }
 
   getPlan() {
-    this.subscriptionService.getAllPlans().subscribe((data) => {
+    const languageCode = 'fr';
+    this.subscriptionService.getAllPlans(languageCode).subscribe((data) => {
       this.plan = data.filter((el: any) => {
         return el.id == this.plan_id;
       });

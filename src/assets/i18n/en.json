@@ -77,20 +77,6 @@
   "get_started": "Get Started",
   "ready_to_get_started_desc": "Embark on a transformative journey towards enhanced performance by leveraging our cutting-edge AI technology. Experience the power of intelligent analytics as you embark on a 15-day free trial. Start optimizing your tracking mechanisms today and unlock the full potential of your endeavors with precision and efficiency.",
   "view_plans": "View Plans",
-  "plans": {
-    "0": {
-      "name": "Basic Plan",
-      "description": "This is the basic plan description."
-    },
-    "1": {
-      "name": "Pro Plan",
-      "description": "This is the basic plan description."
-    },
-    "2": {
-      "name": "Advanced Plan",
-      "description": "This is the basic plan description."
-    }
-  },
   "pricing": {
     "title": "Plans and Pricing",
     "description": "Supercharge your ad campaigns with our groundbreaking data enrichment techniques, ensuring 100% of your conversions are tracked and delivered to your marketing channels, resulting in an average 20,7% increase of your ROAS! Get started effortlessly with a simple 2-minute setup — just 10 clicks to launch — and track your first 50k in revenue for free.",

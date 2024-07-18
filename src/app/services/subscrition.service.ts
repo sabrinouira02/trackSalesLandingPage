@@ -10,8 +10,10 @@ export class SubscritionService {
   // baseUrl = 'http://127.0.0.1:8000/';
   constructor(private http: HttpClient) {}
 
-  getAllPlans() {
-    return this.http.get<any>(`${this.baseUrl}api/plans`);
+  getAllPlans(code: string) {
+    return this.http.get<any>(`${this.baseUrl}api/plansWithTraduction`, {
+      params: { code },
+    });
   }
 
   subscription(data: any): Observable<any> {
