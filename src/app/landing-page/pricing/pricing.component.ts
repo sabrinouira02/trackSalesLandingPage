@@ -25,7 +25,6 @@ export class PricingComponent implements OnInit {
     this.route.params.subscribe((params) => {
       this.referralLink = params['parrainage'];
     });
-    console.log(this.referralLink);
     if (this.referralLink) {
       this.getUser();
     }

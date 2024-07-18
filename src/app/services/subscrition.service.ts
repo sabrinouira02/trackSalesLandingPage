@@ -6,8 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class SubscritionService {
-  // baseUrl = 'https://api.tracksales.io/';
-  baseUrl = 'http://127.0.0.1:8000/';
+  baseUrl = 'https://api.tracksales.io/';
+  // baseUrl = 'http://127.0.0.1:8000/';
   constructor(private http: HttpClient) {}
 
   getAllPlans(code: string) {

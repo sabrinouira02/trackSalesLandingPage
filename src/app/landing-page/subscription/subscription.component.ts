@@ -21,8 +21,10 @@ import Swal from 'sweetalert2';
 export class SubscriptionComponent implements OnInit {
   subscriptionForm!: FormGroup;
   plan_id!: string;
+  referralLink!: any;
   plan!: any;
   public error: any = [];
+  user: any;
 
   constructor(
     private scrollService: ScrollService,
@@ -34,6 +36,12 @@ export class SubscriptionComponent implements OnInit {
     this.route.params.subscribe((params) => {
       this.plan_id = params['id'];
     });
+    this.route.queryParamMap.subscribe((params) => {
+      this.referralLink = params.get('referralLink');
+    });
+    if (this.referralLink) {
+      this.getUser();
+    }
     this.scrollService.scrollToTop();
     this.getPlan();
   }
@@ -47,6 +55,7 @@ export class SubscriptionComponent implements OnInit {
         phone: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
         duree: ['', Validators.required],
         plan_id: [this.plan_id],
+        parent_id: [this.user?.id],
         prix_total: [0],
         date_fin: [''],
       },
@@ -169,5 +178,17 @@ export class SubscriptionComponent implements OnInit {
   handleError(error: any) {
     this.error = error.error.error;
     this.emailError = this.error.email;
+  }
+
+  getUser(): void {
+    this.subscriptionService.getUserByReferralLink(this.referralLink).subscribe(
+      (data) => {
+        this.user = data;
+        console.log(this.user);
+      },
+      (error) => {
+        console.error('Error fetching user', error);
+      }
+    );
   }
 }
