@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { LanguageService } from 'src/app/services/language.service';
 import { ScrollService } from 'src/app/services/scroll.service';
@@ -11,14 +12,23 @@ import { SubscritionService } from 'src/app/services/subscrition.service';
 })
 export class PricingComponent implements OnInit {
   plans!: any[];
+  user: any;
   private languageSubscription!: Subscription;
-
+  referralLink = '';
   constructor(
     private scrollService: ScrollService,
     private subscriptionService: SubscritionService,
-    private languageService: LanguageService
+    private languageService: LanguageService,
+    private route: ActivatedRoute
   ) {
     this.scrollService.scrollToTop();
+    this.route.params.subscribe((params) => {
+      this.referralLink = params['parrainage'];
+    });
+    console.log(this.referralLink);
+    if (this.referralLink) {
+      this.getUser();
+    }
   }
 
   ngOnInit(): void {
@@ -29,6 +39,18 @@ export class PricingComponent implements OnInit {
       (lang) => {
         // Mettez à jour les plans à chaque changement de langue
         this.getPlans(lang);
+      }
+    );
+  }
+
+  getUser(): void {
+    this.subscriptionService.getUserByReferralLink(this.referralLink).subscribe(
+      (data) => {
+        this.user = data;
+        console.log(this.user);
+      },
+      (error) => {
+        console.error('Error fetching user', error);
       }
     );
   }

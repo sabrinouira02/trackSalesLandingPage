@@ -851,10 +851,14 @@ button:hover span::before {
   background: white;
 }
 
-// button:hover {
-//   color: rgb(29, 28, 28);
-// }
-
 button:active span::before {
   background: #fff;
+}
+
+.parrainage-msg {
+  color: #4cd137;
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+  line-height: 18px;
 }

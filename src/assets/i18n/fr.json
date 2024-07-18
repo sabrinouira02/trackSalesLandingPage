@@ -80,6 +80,7 @@
   "pricing": {
     "title": "Forfaits et Tarifs",
     "description": "Booster vos campagnes publicitaires avec nos techniques révolutionnaires d'enrichissement de données, garantissant le suivi de 100% de vos conversions et leur livraison à vos canaux marketing, ce qui entraîne une augmentation moyenne de 20,7% de votre ROAS ! Commencez facilement avec une configuration simple en 2 minutes - seulement 10 clics pour démarrer - et suivez vos premiers 50k de revenus gratuitement.",
+    "PARRAINAGE_MSG": "Vous avez été invité par {{ name }}, bénéficiez de 10€ sur votre abonnement !",
     "buttons_get_started": "Commencez gratuitement",
     "add_Ons_available": "Extensions Disponibles",
     "block1_header": "Installation Expert",

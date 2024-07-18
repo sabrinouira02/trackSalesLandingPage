@@ -16,6 +16,7 @@ const routes: Routes = [
     children: [
       { path: '', component: HomePageComponent },
       { path: 'pricing', component: PricingComponent },
+      { path: 'pricing/:parrainage', component: PricingComponent },
       { path: 'about-us', component: AboutUsComponent },
       { path: 'privacy', component: PrivacyComponent },
       { path: 'terms', component: TermsComponent },
