@@ -25,7 +25,7 @@ export class SubscriptionComponent implements OnInit {
   plan!: any;
   public error: any = [];
   user: any;
-
+  parrainage = 0;
   constructor(
     private scrollService: ScrollService,
     private route: ActivatedRoute,
@@ -41,6 +41,7 @@ export class SubscriptionComponent implements OnInit {
     });
     if (this.referralLink) {
       this.getUser();
+      this.parrainage = 0.2;
     }
     this.scrollService.scrollToTop();
     this.getPlan();
@@ -55,7 +56,7 @@ export class SubscriptionComponent implements OnInit {
         phone: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
         duree: ['', Validators.required],
         plan_id: [this.plan_id],
-        parent_id: [this.user?.id],
+        parent_id: [''],
         prix_total: [0],
         date_fin: [''],
       },
@@ -70,6 +71,8 @@ export class SubscriptionComponent implements OnInit {
   }
 
   onSubmit() {
+    this.subscriptionForm.value.parent_id = this.user?.id;
+
     if (this.subscriptionForm.valid) {
       this.subscriptionService
         .subscription(this.subscriptionForm.value)
@@ -112,6 +115,7 @@ export class SubscriptionComponent implements OnInit {
   updateDateFin(duree: string) {
     const today = new Date();
     let dateFin: Date | null = null;
+    let prixBase = this.plan[0].prix;
     let prixTotal: number = 0;
     let prixTotalSansRemise: number = 0;
     let remise: number = 0;
@@ -119,25 +123,31 @@ export class SubscriptionComponent implements OnInit {
     switch (duree) {
       case 'mois':
         dateFin = addMonths(today, 1);
-        prixTotal = this.plan[0].prix;
+        prixTotal = prixBase;
         break;
       case 'trimestre':
         dateFin = addMonths(today, 3);
-        prixTotalSansRemise = this.plan[0].prix * 3;
+        prixTotalSansRemise = prixBase * 3;
         remise = (prixTotalSansRemise * 10) / 100;
-        prixTotal = this.plan[0].prix * 3 - remise;
+        prixTotal = prixTotalSansRemise - remise;
         break;
       case 'an':
         dateFin = addYears(today, 1);
-        prixTotalSansRemise = this.plan[0].prix * 12;
+        prixTotalSansRemise = prixBase * 12;
         remise = (prixTotalSansRemise * 10) / 100;
-        prixTotal = this.plan[0].prix * 12 - remise;
+        prixTotal = prixTotalSansRemise - remise;
         break;
       default:
         dateFin = null;
         prixTotal = 0;
         break;
     }
+
+    if (this.referralLink && prixTotal > 0) {
+      prixTotal = prixTotal - prixTotal * this.parrainage;
+    }
+
+    prixTotal = parseFloat(prixTotal.toFixed(2));
 
     this.subscriptionForm.patchValue({
       date_fin: dateFin ? dateFin.toISOString().split('T')[0] : '',
