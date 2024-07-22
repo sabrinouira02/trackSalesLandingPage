@@ -95,5 +95,28 @@
     "starts_at": "Commence à",
     "sign_up_to_access": "Inscrivez-vous pour accéder",
     "schedule_call": "Planifier un Appel"
+  },
+  "subscription": {
+    "subscription_form": "Formulaire d'abonnement",
+    "name": "Nom",
+    "email": "E-mail",
+    "password": "Mot de passe",
+    "confirm_password": "Confirmer le mot de passe",
+    "phone": "Téléphone",
+    "duree": "Durée",
+    "subscribe": "S'abonner",
+    "free": "Gratuit",
+    "month": "Mois",
+    "quarter": "Trimestre",
+    "year": "Année",
+    "end_date": "Date de fin",
+    "prix_total": "Prix total",
+    "success": "Votre abonnement a été enregistré",
+    "name_required": "Le nom est requis",
+    "email_required": "Un email valide est requis",
+    "password_required": "Le mot de passe doit comporter au moins 6 caractères",
+    "confirm_password_required": "La confirmation est requise",
+    "password_match": "Les mots de passe doivent correspondre",
+    "phone_required": "Un numéro de téléphone valide est requis"
   }
 }

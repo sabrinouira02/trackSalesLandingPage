@@ -7,7 +7,8 @@ import {
   ValidatorFn,
   Validators,
 } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { addMonths, addYears } from 'date-fns';
 import { ScrollService } from 'src/app/services/scroll.service';
 import { SubscritionService } from 'src/app/services/subscrition.service';
@@ -29,7 +30,7 @@ export class SubscriptionComponent implements OnInit {
   constructor(
     private scrollService: ScrollService,
     private route: ActivatedRoute,
-    private router: Router,
+    private translate: TranslateService,
     private fb: FormBuilder,
     private subscriptionService: SubscritionService
   ) {
@@ -79,16 +80,8 @@ export class SubscriptionComponent implements OnInit {
         .subscribe(
           (data) => {
             if (data && data.statusCode === 200) {
-              Swal.fire({
-                position: 'center',
-                icon: 'success',
-                title: 'Your subscription has been saved',
-                showConfirmButton: false,
-                timer: 2500,
-                willClose: () => {
-                  window.location.href = 'https://app.tracksales.io/sign-in';
-                },
-              });
+              sessionStorage.removeItem('referralLink');
+              this.showSuccessMessage();
             } else {
               console.error('Unexpected response:', data);
             }
@@ -200,5 +193,22 @@ export class SubscriptionComponent implements OnInit {
         console.error('Error fetching user', error);
       }
     );
+  }
+
+  showSuccessMessage() {
+    this.translate
+      .get('subscription.success')
+      .subscribe((translatedTitle: string) => {
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: translatedTitle,
+          showConfirmButton: false,
+          timer: 2500,
+          willClose: () => {
+            window.location.href = 'https://app.tracksales.io/sign-in';
+          },
+        });
+      });
   }
 }

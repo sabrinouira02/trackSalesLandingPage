@@ -14,7 +14,7 @@ export class PricingComponent implements OnInit {
   plans!: any[];
   user: any;
   private languageSubscription!: Subscription;
-  referralLink = '';
+  referralLink: string | null = null;
   constructor(
     private scrollService: ScrollService,
     private subscriptionService: SubscritionService,
@@ -22,15 +22,27 @@ export class PricingComponent implements OnInit {
     private route: ActivatedRoute
   ) {
     this.scrollService.scrollToTop();
-    this.route.params.subscribe((params) => {
-      this.referralLink = params['parrainage'];
-    });
-    if (this.referralLink) {
-      this.getUser();
-    }
+    // this.route.params.subscribe((params) => {
+    //   this.referralLink = params['parrainage'];
+    // });
+    // if (this.referralLink) {
+    //   this.getUser();
+    // }
   }
 
   ngOnInit(): void {
+    this.route.params.subscribe((params) => {
+      this.referralLink = params['parrainage'];
+      if (this.referralLink) {
+        sessionStorage.setItem('referralLink', this.referralLink);
+        this.getUser();
+      } else {
+        this.referralLink = sessionStorage.getItem('referralLink');
+        if (this.referralLink) {
+          this.getUser();
+        }
+      }
+    });
     const language = this.languageService.getCurrentLanguage();
     this.getPlans(language); // Appel initial pour obtenir les plans
 
