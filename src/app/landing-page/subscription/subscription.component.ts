@@ -10,6 +10,7 @@ import {
 import { ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { addMonths, addYears } from 'date-fns';
+import { LoaderService } from 'src/app/services/loader.service';
 import { ScrollService } from 'src/app/services/scroll.service';
 import { SubscritionService } from 'src/app/services/subscrition.service';
 import Swal from 'sweetalert2';
@@ -32,6 +33,7 @@ export class SubscriptionComponent implements OnInit {
     private route: ActivatedRoute,
     private translate: TranslateService,
     private fb: FormBuilder,
+    private loaderService: LoaderService,
     private subscriptionService: SubscritionService
   ) {
     this.route.params.subscribe((params) => {
@@ -72,6 +74,7 @@ export class SubscriptionComponent implements OnInit {
   }
 
   onSubmit() {
+    this.loaderService.show();
     this.subscriptionForm.value.parent_id = this.user?.id;
 
     if (this.subscriptionForm.valid) {
@@ -81,6 +84,7 @@ export class SubscriptionComponent implements OnInit {
           (data) => {
             if (data && data.statusCode === 200) {
               sessionStorage.removeItem('referralLink');
+              this.loaderService.hide();
               this.showSuccessMessage();
             } else {
               console.error('Unexpected response:', data);
@@ -88,6 +92,7 @@ export class SubscriptionComponent implements OnInit {
           },
           (error) => {
             console.error('Error occurred:', error);
+            this.loaderService.hide();
             this.handleError(error);
           }
         );
@@ -180,6 +185,10 @@ export class SubscriptionComponent implements OnInit {
   emailError: string = '';
   handleError(error: any) {
     this.error = error.error.error;
+    if (error.error.message) {
+      this.emailError =
+        'Invalid recipient address syntax. Please check the email address and try again.';
+    }
     this.emailError = this.error.email;
   }
 

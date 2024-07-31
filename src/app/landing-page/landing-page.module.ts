@@ -18,6 +18,7 @@ import { NewsletterComponent } from './newsletter/newsletter.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FaqComponent } from './faq/faq.component';
 import { SubscriptionComponent } from './subscription/subscription.component';
+import { LoaderComponent } from './loader/loader.component';
 @NgModule({
   declarations: [
     LandingPageComponent,
@@ -31,6 +32,7 @@ import { SubscriptionComponent } from './subscription/subscription.component';
     NewsletterComponent,
     FaqComponent,
     SubscriptionComponent,
+    LoaderComponent,
   ],
   imports: [
     CommonModule,

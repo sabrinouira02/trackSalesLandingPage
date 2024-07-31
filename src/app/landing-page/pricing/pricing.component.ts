@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { LanguageService } from 'src/app/services/language.service';
+import { LoaderService } from 'src/app/services/loader.service';
 import { ScrollService } from 'src/app/services/scroll.service';
 import { SubscritionService } from 'src/app/services/subscrition.service';
 
@@ -19,15 +20,10 @@ export class PricingComponent implements OnInit {
     private scrollService: ScrollService,
     private subscriptionService: SubscritionService,
     private languageService: LanguageService,
+    private loaderService: LoaderService,
     private route: ActivatedRoute
   ) {
     this.scrollService.scrollToTop();
-    // this.route.params.subscribe((params) => {
-    //   this.referralLink = params['parrainage'];
-    // });
-    // if (this.referralLink) {
-    //   this.getUser();
-    // }
   }
 
   ngOnInit(): void {
@@ -71,7 +67,9 @@ export class PricingComponent implements OnInit {
   }
 
   getPlans(language: any) {
+    this.loaderService.show();
     this.subscriptionService.getAllPlans(language).subscribe((data) => {
+      this.loaderService.hide();
       this.plans = data.map((plan: any) => ({
         ...plan,
         key: plan.order_index,

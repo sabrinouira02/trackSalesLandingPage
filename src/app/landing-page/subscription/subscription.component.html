@@ -1,5 +1,5 @@
 <!-- subscription-form.component.html -->
-<div id="faq" class="faq-body">
+<div id="faq" class="subscription-body">
     <div class="faq-header">
         <h3 class="faq-title">{{ 'subscription.subscription_form' | translate }}</h3>
         <div class="seperator"></div>
@@ -76,7 +76,10 @@
             <span class="ms-2">{{ 'subscription.prix_total' | translate }}: {{ subscriptionForm.get('prix_total')?.value
                 }} $</span>
         </div>
-
+        <div *ngIf="emailError" class="text-danger">
+            {{ emailError }}
+        </div>
         <button type="submit" class="kirzin">{{ 'subscription.subscribe' | translate }}</button>
     </form>
 </div>
+<app-loader></app-loader>
