@@ -14,6 +14,7 @@ import {
   NgcCookieConsentConfig,
   NgcCookieConsentModule,
 } from 'ngx-cookieconsent';
+import { GoogleTagManagerModule } from 'angular-google-tag-manager';
 
 // Fonction de chargement des fichiers de traduction
 export function HttpLoaderFactory(http: HttpClient) {
@@ -76,6 +77,9 @@ const cookieConfig: NgcCookieConsentConfig = {
       },
     }),
     NgcCookieConsentModule.forRoot(cookieConfig), // Supprimez cette ligne
+    GoogleTagManagerModule.forRoot({
+      id: 'GTM-WRC4VZRP',
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],

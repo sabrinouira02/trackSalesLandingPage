@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { GoogleTagManagerService } from 'angular-google-tag-manager';
 import { NgcCookieConsentService } from 'ngx-cookieconsent';
 
 import { Subscription } from 'rxjs';
 
+declare var gtag: (arg0: string, arg1: string, arg2: any) => void;
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -24,12 +27,25 @@ export class AppComponent implements OnInit {
 
   constructor(
     private ccService: NgcCookieConsentService,
-    private translateService: TranslateService
+    private translateService: TranslateService,
+    private gtmService: GoogleTagManagerService,
+    private router: Router
   ) {
+    this.gtmService.addGtmToDom();
     document.body.classList.add('clair-mode');
   }
 
   ngOnInit() {
+    this.router.events.forEach((item) => {
+      if (item instanceof NavigationEnd) {
+        const gtmTag = {
+          event: 'page',
+          pageName: item.url,
+        };
+
+        this.gtmService.pushTag(gtmTag);
+      }
+    });
     const languages = ['de', 'en', 'fr'];
     let langCode = navigator.language.substr(0, 2);
 
