@@ -5,8 +5,6 @@
 }
 
 .showcase {
-  // background: #eecc6f;
-  // color: #ffffff;
   padding: 100px 0;
   text-align: center;
 }
@@ -30,15 +28,12 @@
 }
 
 .content-section {
-  // padding: 50px 20%;
-  // background: #ffffff;
   margin-bottom: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .content-section h2 {
   text-align: center;
-  // color: #005f73;
   font-size: 2em;
   margin-bottom: 20px;
 }
@@ -49,7 +44,6 @@
 }
 .milestones,
 .cta {
-  // display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
@@ -60,19 +54,16 @@
   min-width: 250px;
   margin: 10px;
   padding: 20px;
-  // background: #e0f4f1;
   border-radius: 8px;
   text-align: center;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
+
 .milestones h3,
 .cta h2 {
-  // color: #005f73;
   margin-bottom: 10px;
 }
+
 .cta a {
   padding: 10px 26px;
 }
-// .cta a:hover {
-//   background: #0a9396;
-// }

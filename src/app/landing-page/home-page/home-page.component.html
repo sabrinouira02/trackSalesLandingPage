@@ -81,8 +81,8 @@
         <div id="clients" class="clients section-bg">
             <div class="image-container" style="padding: 0 200px 0 200px;">
                 <div class="image-list">
-                    <img *ngFor="let slide of images" [src]="slide.src" [alt]="slide.alt">
-                    <img *ngFor="let slide of images" [src]="slide.src" [alt]="slide.alt">
+                    <img *ngFor="let slide of images" [src]="slide.src" [alt]="slide.alt" width="100px" height="60px">
+                    <img *ngFor="let slide of images" [src]="slide.src" [alt]="slide.alt" width="100px" height="60px">
                 </div>
             </div>
         </div>
@@ -96,29 +96,29 @@
         </div>
         <div id="client_needs_1">
             <ul class="checklist tilted">
-                <li><img src="assets/images/check-square.png">I need to improve
+                <li><img src="assets/images/check-square.png" width="28px" height="28px">I need to improve
                     tracking quality due to iOS changes</li>
-                <li><img src="assets/images/check-square.png">I’m still using native
+                <li><img src="assets/images/check-square.png" width="28px" height="28px">I’m still using native
                     Facebook or GA integrations with Shopify</li>
-                <li><img src="assets/images/check-square.png">My server-side
+                <li><img src="assets/images/check-square.png" width="28px" height="28px">My server-side
                     tracking is lacking</li>
-                <li><img src="assets/images/check-square.png">My existing tracking in
+                <li><img src="assets/images/check-square.png" width="28px" height="28px">My existing tracking in
                     GTM, my theme, and apps is a mess</li>
-                <li><img src="assets/images/check-square.png">I need a better Facebook
+                <li><img src="assets/images/check-square.png" width="28px" height="28px">I need a better Facebook
                     CAPI setup for Shopify</li>
-                <li><img src="assets/images/check-square.png">I need my tracking to
+                <li><img src="assets/images/check-square.png" width="28px" height="28px">I need my tracking to
                     integrate with my Consent provider</li>
-                <li><img src="assets/images/check-square.png">I don't trust my Google
+                <li><img src="assets/images/check-square.png" width="28px" height="28px">I don't trust my Google
                     Analytics data (or need GA4)</li>
-                <li><img src="assets/images/check-square.png">I want to upgrade to
+                <li><img src="assets/images/check-square.png" width="28px" height="28px">I want to upgrade to
                     Shopify Checkout Extensibility</li>
-                <li><img src="assets/images/check-square.png">My agency needs me to
+                <li><img src="assets/images/check-square.png" width="28px" height="28px">My agency needs me to
                     fix my tracking for Google Ads, Facebook, GA</li>
-                <li><img src="assets/images/check-square.png">I want a first party
+                <li><img src="assets/images/check-square.png" width="28px" height="28px">I want a first party
                     User ID to recognize returning users without relying on cookies</li>
-                <li><img src="assets/images/check-square.png">Facebook is
+                <li><img src="assets/images/check-square.png" width="28px" height="28px">Facebook is
                     under-performing and think it could do better</li>
-                <li><img src="assets/images/check-square.png">I’m missing conversions
+                <li><img src="assets/images/check-square.png" width="28px" height="28px">I’m missing conversions
                     in Google Ads impacting performance</li>
             </ul>
         </div>
@@ -131,8 +131,9 @@
                 'meta-sub-title3' | translate }}</h2>
             <p class="subheading" data-aos="zoom-out" data-aos-offset="300" data-aos-duration="2000">{{
                 'data_collected_description' | translate }}</p>
-            <div class="allarounddata__row"><img data-aos="fade-right" data-aos-offset="300" data-aos-duration="2000"
-                    src="assets/images/Product-Data.png" alt="">
+            <div class="allarounddata__row">
+                <img data-aos="fade-right" data-aos-offset="300" data-aos-duration="2000"
+                    src="assets/images/Product-Data.webp" alt="" width="100%" height="100%">
                 <div class="allarounddata__column" data-aos="fade-left" data-aos-offset="300" data-aos-duration="2000">
                     <h3>{{ 'type1_title' | translate }}
                     </h3>
@@ -151,8 +152,9 @@
 
                 </div>
             </div>
-            <div class="allarounddata_row_2 allarounddata__row"><img data-aos="fade-left" data-aos-offset="300"
-                    data-aos-duration="2000" src="assets/images/Customer-Data.png" alt="">
+            <div class="allarounddata_row_2 allarounddata__row">
+                <img data-aos="fade-left" data-aos-offset="300" data-aos-duration="2000"
+                    src="assets/images/Customer-Data.webp" alt="" width="100%" height="100%">
                 <div class="allarounddata__column" data-aos="fade-right" data-aos-offset="300" data-aos-duration="2000">
                     <h3>{{ 'type2_title' | translate }}</h3>
                     <p>{{ 'type2_title_description' | translate }}</p>
@@ -169,8 +171,9 @@
 
                 </div>
             </div>
-            <div class="allarounddata__row"><img src="assets/images/Attribution-Data.png" alt="" data-aos="fade-right"
-                    data-aos-offset="300" data-aos-duration="2000">
+            <div class="allarounddata__row">
+                <img src="assets/images/Attribution-Data.webp" alt="" data-aos="fade-right" data-aos-offset="300"
+                    data-aos-duration="2000" width="100%" height="100%">
                 <div class="allarounddata__column" data-aos="fade-left" data-aos-offset="300" data-aos-duration="2000">
                     <h3>{{ 'type3_title' | translate }}</h3>
                     <p>{{ 'type3_title_description' | translate }}</p>
@@ -199,7 +202,7 @@
                 'explore_integration' | translate }}</button>
         </div>
         <div class="vc_col-sm-7 wpb_single_image">
-            <img width="1174" height="816" src="assets/images/Image-_-Integrations.png" alt="Integrations"
+            <img width="1174" height="816" src="assets/images/Image-_-Integrations.webp" alt="Integrations"
                 decoding="async" sizes="(max-width: 1174px) 100vw, 1174px">
         </div>
     </div>

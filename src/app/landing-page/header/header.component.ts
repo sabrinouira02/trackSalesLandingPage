@@ -16,7 +16,7 @@ export class HeaderComponent {
 
   desktopLogo = 'assets/images/logos/T_logo.png';
   desktopTrackSalesLogo = 'assets/images/logos/TrackSales_logo.png';
-  mobileLogo = 'assets/images/logos/4.png';
+  mobileLogo = 'assets/images/logos/4.webp';
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
