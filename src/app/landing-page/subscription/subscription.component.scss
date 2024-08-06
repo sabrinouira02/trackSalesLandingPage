@@ -6,6 +6,9 @@
     border-radius: 0.2em;
     padding: 5em;
   }
+  .w-10 {
+    width: 10% !important;
+  }
 }
 
 @media (max-width: 767px) {
@@ -15,5 +18,8 @@
     box-shadow: 0px 0px 16px #5b5b5b;
     border-radius: 0.2em;
     padding: 2em;
+  }
+  .w-10 {
+    width: 40% !important;
   }
 }

@@ -111,6 +111,8 @@
     "year": "Year",
     "end_date": "End Date",
     "prix_total": "Total price",
+    "promo_code": "Promo Code",
+    "verify_code": "Verify Code",
     "success": "Your subscription has been saved",
     "name_required": "Name is required",
     "email_required": "Valid email is required",

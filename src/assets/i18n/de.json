@@ -111,6 +111,8 @@
     "year": "Jahr",
     "end_date": "Enddatum",
     "prix_total": "Gesamtpreis",
+    "promo_code": "Rabattcode",
+    "verify_code": "Code überprüfen",
     "success": "Ihr Abonnement wurde gespeichert",
     "name_required": "Name ist erforderlich",
     "email_required": "Eine gültige E-Mail ist erforderlich",

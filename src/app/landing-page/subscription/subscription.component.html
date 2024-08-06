@@ -67,18 +67,32 @@
                 <option value="an">{{ 'subscription.year' | translate }}</option>
             </select>
         </div>
-
-        <div class="mb-3 d-flex align-items-center"
+        <div
             *ngIf="subscriptionForm.get('duree')?.value === 'mois' || subscriptionForm.get('duree')?.value === 'trimestre' || subscriptionForm.get('duree')?.value === 'an'">
-            <label for="date_fin" class="form-label me-2">{{ 'subscription.end_date' | translate }}:</label>
-            <input id="date_fin" formControlName="date_fin" type="date" class="form-control form-control-sm me-2"
-                readonly />
-            <span class="ms-2">{{ 'subscription.prix_total' | translate }}: {{ subscriptionForm.get('prix_total')?.value
-                }} $</span>
+
+            <div class="mb-3 d-flex align-items-center">
+                <label for="promo_code" class="form-label me-2 w-10">{{ 'subscription.promo_code' | translate
+                    }}:</label>
+                <input id="promo_code" formControlName="promo_code" type="text"
+                    class="form-control form-control-sm me-2 w-25" />
+                <button type="button" class="btn btn-primary btn-sm" (click)="verifyPromoCode()">
+                    {{ 'subscription.verify_code' | translate }}
+                </button>
+            </div>
+
+            <div class="mb-3 d-flex align-items-center">
+                <label for="date_fin" class="form-label me-2 w-10">{{ 'subscription.end_date' | translate }}:</label>
+                <input id="date_fin" formControlName="date_fin" type="date"
+                    class="form-control form-control-sm me-2 w-25" readonly />
+                <span class="ms-2">{{ 'subscription.prix_total' | translate }}: {{
+                    subscriptionForm.get('prix_total')?.value
+                    }} $</span>
+            </div>
         </div>
         <div *ngIf="emailError" class="text-danger">
             {{ emailError }}
         </div>
+        <br>
         <button type="submit" class="kirzin">{{ 'subscription.subscribe' | translate }}</button>
     </form>
 </div>

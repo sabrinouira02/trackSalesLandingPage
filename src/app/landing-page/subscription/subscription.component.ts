@@ -62,6 +62,7 @@ export class SubscriptionComponent implements OnInit {
         parent_id: [''],
         prix_total: [0],
         date_fin: [''],
+        promo_code: [''],
       },
       { validators: this.PasswordMatchValidator('password', 'confirmPassword') }
     );
@@ -99,6 +100,13 @@ export class SubscriptionComponent implements OnInit {
     } else {
       console.log('Formulaire invalide');
     }
+  }
+
+  verifyPromoCode() {
+    const promoCode = this.subscriptionForm.get('promo_code')?.value;
+    // Ajoutez ici la logique pour vérifier le code promo.
+    // Par exemple, vous pouvez faire une requête HTTP pour vérifier si le code promo est valide.
+    console.log(`Vérification du code promo: ${promoCode}`);
   }
 
   getPlan() {
