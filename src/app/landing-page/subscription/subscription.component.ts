@@ -25,6 +25,9 @@ export class SubscriptionComponent implements OnInit {
   plan_id!: string;
   referralLink!: any;
   plan!: any;
+  promoCode: any;
+  promoCodeMessage: string = '';
+
   public error: any = [];
   user: any;
   parrainage = 0;
@@ -77,7 +80,8 @@ export class SubscriptionComponent implements OnInit {
   onSubmit() {
     this.loaderService.show();
     this.subscriptionForm.value.parent_id = this.user?.id;
-
+    console.log(this.subscriptionForm.value);
+    
     if (this.subscriptionForm.valid) {
       this.subscriptionService
         .subscription(this.subscriptionForm.value)
@@ -103,10 +107,49 @@ export class SubscriptionComponent implements OnInit {
   }
 
   verifyPromoCode() {
-    const promoCode = this.subscriptionForm.get('promo_code')?.value;
-    // Ajoutez ici la logique pour vérifier le code promo.
-    // Par exemple, vous pouvez faire une requête HTTP pour vérifier si le code promo est valide.
-    console.log(`Vérification du code promo: ${promoCode}`);
+    this.promoCodeMessage = '';
+    this.loaderService.show();
+    const code = this.subscriptionForm.get('promo_code')?.value;
+    let promoCode = {
+      code: code
+    }
+    this.subscriptionService.getPromoCode(promoCode).subscribe((data) => {
+      let prixTotal = this.subscriptionForm.value.prix_total;
+      this.promoCode = data;
+
+      if (this.promoCode) {
+        const currentDate = new Date();
+        const expirationDate = new Date(this.promoCode.date_validite);
+
+        if (expirationDate >= currentDate) {
+          if (this.promoCode.fixe_pourcentage) {
+            prixTotal -= this.promoCode.montant;
+          } else {
+            prixTotal -= (prixTotal * this.promoCode.pourcentage) / 100;
+          }
+        } else {
+          // You can set a message or handle the expired promo code scenario here.
+          this.translate.get('subscription.promo_code_expired').subscribe((translation: string) => {
+            this.promoCodeMessage = translation;
+          });
+        }
+      }
+      prixTotal = parseFloat(prixTotal.toFixed(2));
+      this.subscriptionForm.patchValue({
+        prix_total: prixTotal,
+      });
+      
+      this.loaderService.hide();
+    },
+    (error) => {
+      console.error('Error occurred:', error);
+      if (error.error.error == "promo_code not found") {
+        this.translate.get('subscription.promo_code_not_found').subscribe((translation: string) => {
+          this.promoCodeMessage = translation;
+        });
+      }
+      this.loaderService.hide();
+    })
   }
 
   getPlan() {
@@ -151,6 +194,14 @@ export class SubscriptionComponent implements OnInit {
 
     if (this.referralLink && prixTotal > 0) {
       prixTotal = prixTotal - prixTotal * this.parrainage;
+    }
+
+    if (this.promoCode) {
+      if (this.promoCode.montant) {
+        prixTotal -= this.promoCode.montant
+      } else {
+        
+      }
     }
 
     prixTotal = parseFloat(prixTotal.toFixed(2));
