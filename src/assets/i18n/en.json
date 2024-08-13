@@ -121,6 +121,8 @@
     "password_match": "Passwords must match",
     "phone_required": "Valid phone number is required",
     "promo_code_not_found": "Promo code not found",
-    "promo_code_expired": "Promo code has expired"
+    "promo_code_expired": "Promo code has expired",
+    "emailError": "Invalid recipient address syntax. Please check the email address and try again.",
+    "emailUniqueError": "The email has already been taken."
   }
 }

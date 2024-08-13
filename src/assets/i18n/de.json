@@ -121,6 +121,8 @@
     "password_match": "Die Passwörter müssen übereinstimmen",
     "phone_required": "Eine gültige Telefonnummer ist erforderlich",
     "promo_code_not_found": "Aktionscode nicht gefunden",
-    "promo_code_expired": "Der Aktionscode ist abgelaufen"
+    "promo_code_expired": "Der Aktionscode ist abgelaufen",
+    "emailError": "Ungültige Syntax der Empfängeradresse. Bitte überprüfen Sie die E-Mail-Adresse und versuchen Sie es erneut.",
+    "emailUniqueError": "Die E-Mail wurde bereits vergeben."
   }
 }

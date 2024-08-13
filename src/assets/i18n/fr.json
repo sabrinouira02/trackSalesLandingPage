@@ -121,6 +121,8 @@
     "password_match": "Les mots de passe doivent correspondre",
     "phone_required": "Un numéro de téléphone valide est requis",
     "promo_code_not_found": "Code promotionnel introuvable",
-    "promo_code_expired": "Le code promotionnel a expiré"
+    "promo_code_expired": "Le code promotionnel a expiré",
+    "emailError": "Syntaxe d'adresse du destinataire invalide. Veuillez vérifier l'adresse e-mail et réessayer.",
+    "emailUniqueError": "L'e-mail a déjà été pris."
   }
 }

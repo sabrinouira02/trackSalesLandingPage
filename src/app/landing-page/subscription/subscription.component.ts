@@ -7,7 +7,7 @@ import {
   ValidatorFn,
   Validators,
 } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { addMonths, addYears } from 'date-fns';
 import { LoaderService } from 'src/app/services/loader.service';
@@ -23,21 +23,26 @@ import Swal from 'sweetalert2';
 export class SubscriptionComponent implements OnInit {
   subscriptionForm!: FormGroup;
   plan_id!: string;
-  referralLink!: any;
-  plan!: any;
+  referralLink: string | null = null;
+  plan!: { id: string, prix: number }[];
   promoCode: any;
   promoCodeMessage: string = '';
-
-  public error: any = [];
-  user: any;
+  emailError: string = '';
+  user: { id: number } | null = null;
   parrainage = 0;
+
+  private readonly EMAIL_ERROR = 'subscription.emailError';
+  private readonly EMAIL_UNIQUE_ERROR = 'subscription.emailUniqueError';
+  private readonly PROMO_CODE_EXPIRED = 'subscription.promo_code_expired';
+  private readonly PROMO_CODE_NOT_FOUND = 'subscription.promo_code_not_found';
+
   constructor(
     private scrollService: ScrollService,
     private route: ActivatedRoute,
     private translate: TranslateService,
     private fb: FormBuilder,
     private loaderService: LoaderService,
-    private subscriptionService: SubscritionService
+    private subscriptionService: SubscritionService,
   ) {
     this.route.params.subscribe((params) => {
       this.plan_id = params['id'];
@@ -47,11 +52,11 @@ export class SubscriptionComponent implements OnInit {
     });
     if (this.referralLink) {
       this.getUser();
-      this.parrainage = 0.2;
     }
     this.scrollService.scrollToTop();
     this.getPlan();
   }
+  
   ngOnInit(): void {
     this.subscriptionForm = this.fb.group(
       {
@@ -67,40 +72,31 @@ export class SubscriptionComponent implements OnInit {
         date_fin: [''],
         promo_code: [''],
       },
-      { validators: this.PasswordMatchValidator('password', 'confirmPassword') }
+      { validators: this.passwordValidator('password', 'confirmPassword') }
     );
-    // Observer les changements sur le champ duree
-    this.subscriptionForm
-      .get('duree')
-      ?.valueChanges.subscribe((duree: string) => {
-        this.updateDateFin(duree);
-      });
+
+    this.subscriptionForm.get('duree')?.valueChanges.subscribe((duree: string) => {
+      this.updateDateFin(duree);
+    });
   }
 
   onSubmit() {
     this.loaderService.show();
     this.subscriptionForm.value.parent_id = this.user?.id;
-    console.log(this.subscriptionForm.value);
-    
+
     if (this.subscriptionForm.valid) {
-      this.subscriptionService
-        .subscription(this.subscriptionForm.value)
-        .subscribe(
-          (data) => {
-            if (data && data.statusCode === 200) {
-              sessionStorage.removeItem('referralLink');
-              this.loaderService.hide();
-              this.showSuccessMessage();
-            } else {
-              console.error('Unexpected response:', data);
-            }
-          },
-          (error) => {
-            console.error('Error occurred:', error);
+      this.subscriptionService.subscription(this.subscriptionForm.value).subscribe(
+        (data) => {
+          if (data && data.statusCode === 200) {
+            sessionStorage.removeItem('referralLink');
             this.loaderService.hide();
-            this.handleError(error);
+            this.showSuccessMessage();
+          } else {
+            console.error('Unexpected response:', data);
           }
-        );
+        },
+        (error) => this.handleApiError(error)
+      );
     } else {
       console.log('Formulaire invalide');
     }
@@ -110,54 +106,46 @@ export class SubscriptionComponent implements OnInit {
     this.promoCodeMessage = '';
     this.loaderService.show();
     const code = this.subscriptionForm.get('promo_code')?.value;
-    let promoCode = {
-      code: code
-    }
-    this.subscriptionService.getPromoCode(promoCode).subscribe((data) => {
-      let prixTotal = this.subscriptionForm.value.prix_total;
-      this.promoCode = data;
 
-      if (this.promoCode) {
-        const currentDate = new Date();
-        const expirationDate = new Date(this.promoCode.date_validite);
+    this.subscriptionService.getPromoCode({ code }).subscribe(
+      (data) => {
+        this.promoCode = data;
+        const prixTotal = this.handlePromoCode();
+        this.subscriptionForm.patchValue({ prix_total: prixTotal });
+        this.loaderService.hide();
+      },
+      (error) => this.handleApiError(error)
+    );
+  }
 
-        if (expirationDate >= currentDate) {
-          if (this.promoCode.fixe_pourcentage) {
-            prixTotal -= this.promoCode.montant;
-          } else {
-            prixTotal -= (prixTotal * this.promoCode.pourcentage) / 100;
-          }
-        } else {
-          // You can set a message or handle the expired promo code scenario here.
-          this.translate.get('subscription.promo_code_expired').subscribe((translation: string) => {
-            this.promoCodeMessage = translation;
-          });
-        }
-      }
-      prixTotal = parseFloat(prixTotal.toFixed(2));
-      this.subscriptionForm.patchValue({
-        prix_total: prixTotal,
-      });
-      
-      this.loaderService.hide();
-    },
-    (error) => {
-      console.error('Error occurred:', error);
-      if (error.error.error == "promo_code not found") {
-        this.translate.get('subscription.promo_code_not_found').subscribe((translation: string) => {
+  private handlePromoCode(): number {
+    let prixTotal = this.subscriptionForm.value.prix_total;
+
+    if (this.promoCode) {
+      const currentDate = new Date();
+      const expirationDate = new Date(this.promoCode.date_validite);
+
+      if (expirationDate >= currentDate) {
+        prixTotal = this.promoCode.fixe_pourcentage 
+          ? prixTotal - this.promoCode.montant 
+          : this.calculateDiscountedPrice(prixTotal, this.promoCode.pourcentage);
+      } else {
+        this.translate.get(this.PROMO_CODE_EXPIRED).subscribe((translation: string) => {
           this.promoCodeMessage = translation;
         });
       }
-      this.loaderService.hide();
-    })
+    }
+    return parseFloat(prixTotal.toFixed(2));
+  }
+
+  private calculateDiscountedPrice(basePrice: number, discount: number): number {
+    return basePrice - (basePrice * discount / 100);
   }
 
   getPlan() {
     const languageCode = 'fr';
     this.subscriptionService.getAllPlans(languageCode).subscribe((data) => {
-      this.plan = data.filter((el: any) => {
-        return el.id == this.plan_id;
-      });
+      this.plan = data.filter((el: any) => el.id === this.plan_id);
     });
   }
 
@@ -193,41 +181,25 @@ export class SubscriptionComponent implements OnInit {
     }
 
     if (this.referralLink && prixTotal > 0) {
-      prixTotal = prixTotal - prixTotal * this.parrainage;
+      prixTotal -= prixTotal * this.parrainage;
     }
 
     if (this.promoCode) {
-      if (this.promoCode.montant) {
-        prixTotal -= this.promoCode.montant
-      } else {
-        
-      }
+      prixTotal = this.handlePromoCode();
     }
-
-    prixTotal = parseFloat(prixTotal.toFixed(2));
 
     this.subscriptionForm.patchValue({
       date_fin: dateFin ? dateFin.toISOString().split('T')[0] : '',
-      prix_total: prixTotal,
+      prix_total: parseFloat(prixTotal.toFixed(2)),
     });
   }
 
-  PasswordMatchValidator(
-    controlName: string,
-    matchingControlName: string
-  ): ValidatorFn {
+  private passwordValidator(controlName: string, matchingControlName: string): ValidatorFn {
     return (formGroup: AbstractControl): ValidationErrors | null => {
       const control = formGroup.get(controlName);
       const matchingControl = formGroup.get(matchingControlName);
 
       if (!control || !matchingControl) {
-        return null;
-      }
-
-      if (
-        matchingControl.errors &&
-        !matchingControl.errors['passwordMismatch']
-      ) {
         return null;
       }
 
@@ -241,25 +213,38 @@ export class SubscriptionComponent implements OnInit {
     };
   }
 
-  emailError: string = '';
-  handleError(error: any) {
-    this.error = error.error.error;
-    if (error.error.message) {
-      this.emailError =
-        'Invalid recipient address syntax. Please check the email address and try again.';
+  private handleApiError(error: any) {
+    console.error('Error occurred:', error);
+    this.loaderService.hide();
+    this.handleError(error);
+  }
+
+  private handleError(error: any) {
+    if (error.error && typeof error.error.error === 'string' &&
+      error.error.error.includes('Expected response code "250/251/252" but got code "550"')) {
+      this.translate.get(this.EMAIL_ERROR).subscribe((translation: string) => {
+        this.emailError = translation;
+      });
+    } else if (error.status === 400 && error.error && error.error.error.email && Array.isArray(error.error.error.email) &&
+      error.error.error.email.includes('The email has already been taken.')) {
+        this.translate.get(this.EMAIL_UNIQUE_ERROR).subscribe((translation: string) => {
+          this.emailError = translation;
+        });
+    } else if (error.status === 404 && error.error && error.error.error === 'promo_code not found') {
+      this.translate.get(this.PROMO_CODE_NOT_FOUND).subscribe((translation: string) => {
+        this.promoCodeMessage = translation;
+      });
+    } else {
+      console.error('Unexpected error:', error);
     }
-    this.emailError = this.error.email;
   }
 
   getUser(): void {
     this.subscriptionService.getUserByReferralLink(this.referralLink).subscribe(
       (data) => {
         this.user = data;
-        console.log(this.user);
       },
-      (error) => {
-        console.error('Error fetching user', error);
-      }
+      (error) => console.error('Error fetching user', error)
     );
   }
 
