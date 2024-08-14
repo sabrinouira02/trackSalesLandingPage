@@ -15,9 +15,9 @@
   },
   "nav": {
     "langue": "Sprache",
-    "english": "Englisch",
-    "french": "Französisch",
-    "deutch": "Deutsch",
+    "en": "Englisch",
+    "fr": "Französisch",
+    "de": "Deutsch",
     "home": "Startseite",
     "pricing": "Preise",
     "about_us": "Über uns",

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Subject } from 'rxjs';
-import { SubscritionService } from './subscrition.service';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -13,7 +13,7 @@ export class LanguageService {
   currentLanguage$ = this.currentLanguageSubject.asObservable();
   languageChange$ = this.languageChangeSubject.asObservable();
 
-  constructor(private subscriptionService: SubscritionService) {
+  constructor() {
     const language = this.getCurrentLanguage();
     this.currentLanguageSubject.next(language);
   }

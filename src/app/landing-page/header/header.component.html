@@ -1,106 +1,129 @@
 <div class="top-bar d-flex justify-content-between align-items-center p-2">
     <div class="d-flex align-items-center mx-auto">
-        <!-- Titre pour la version desktop -->
-        <h6 class="top-bar-title mr-3 d-none d-sm-block">
-            {{ 'top_bar.title' | translate }}
-        </h6>
-
-        <!-- Titre pour la version mobile -->
-        <h6 class="top-bar-title mr-3 d-block d-sm-none">
-            {{ 'top_bar.mobile_title' | translate }}
-        </h6>
-
-        <button class="btn btn-primary" (click)="navigateToExternalLink()">{{ 'top_bar.button' | translate }}</button>
+      <!-- Titre pour la version desktop -->
+      <h6 class="top-bar-title mr-3 d-none d-sm-block">
+        {{ 'top_bar.title' | translate }}
+      </h6>
+  
+      <!-- Titre pour la version mobile -->
+      <h6 class="top-bar-title mr-3 d-block d-sm-none">
+        {{ 'top_bar.mobile_title' | translate }}
+      </h6>
+  
+      <button class="btn btn-primary" (click)="navigateToExternalLink()">
+        {{ 'top_bar.button' | translate }}
+      </button>
     </div>
-
+  
     <div class="social-icons">
-        <a href="#" target="_blank">
-            <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="#" target="_blank">
-            <i class="fab fa-linkedin-in"></i>
-        </a>
-        <a href="#" target="_blank">
-            <i class="fab fa-youtube"></i>
-        </a>
+      <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
     </div>
 </div>
 
-<nav class="navbar navbar-expand-lg" [ngClass]="{'app-header-scrolled': scrolled}">
+<nav class="navbar navbar-expand-lg" [ngClass]="{ 'app-header-scrolled': scrolled }">
     <div class="container-fluid">
-        <a routerLink="" class="navbar-brand">
-            <!-- Image pour la version desktop -->
-            <img [src]="desktopLogo" alt="logo" width="150" class="T_logo d-none d-sm-block">
-            <img [src]="desktopTrackSalesLogo" alt="logo" width="150" class="TrackSales_logo d-none d-sm-block">
-            <!-- Image pour la version mobile -->
-            <img [src]="mobileLogo" alt="logo" width="180" class="d-block d-sm-none">
-        </a>
-        <button (click)="toggleNavbarCollapsing()" class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+      <a routerLink="" class="navbar-brand">
+        <!-- Logo pour desktop -->
+        <img [src]="logos.desktop" alt="logo" width="150" class="T_logo d-none d-sm-block">
+        <img [src]="logos.desktopTrackSales" alt="logo" width="150" class="TrackSales_logo d-none d-sm-block">
+        <!-- Logo pour mobile -->
+        <img [src]="logos.mobile" alt="logo" width="180" class="d-block d-sm-none">
+      </a>
+      <button
+        (click)="toggleNavbarCollapsing()"
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
         <div [class.collapse]="navbarCollapsed" class="navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/" routerLinkActive="active"
-                        [ngClass]="{'custom-active-class': isActive('/')}" (click)="toggleNavbarCollapsing()">
-                        {{ 'nav.home' | translate }}
-                        <span class="underline"></span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/pricing" routerLinkActive="active"
-                        [ngClass]="{'custom-active-class': isActive('/pricing')}" (click)="toggleNavbarCollapsing()">
-                        {{ 'nav.pricing' | translate }}
-                        <span class="underline"></span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/about-us" routerLinkActive="active"
-                        [ngClass]="{'custom-active-class': isActive('/about-us')}" (click)="toggleNavbarCollapsing()">
-                        {{ 'nav.about_us' | translate }}
-                        <span class="underline"></span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/faq" routerLinkActive="active"
-                        [ngClass]="{'custom-active-class': isActive('/faq')}" (click)="toggleNavbarCollapsing()">
-                        FAQ
-                        <span class="underline"></span>
-                    </a>
-                </li>
-                <li class="nav-item" ngbDropdown (mouseenter)="dropdown.open()">
-                    <div ngbDropdown class="d-inline-block" #dropdown="ngbDropdown">
-                        <a class="nav-link" id="dropdownBasic1" ngbDropdownToggle>
-                            {{ 'nav.langue' | translate }}
-                        </a>
-                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1"
-                            class="dropdown-menu-end custom-dropdown-menu" (mouseleave)="dropdown.close()">
-                            <a (click)="switchLanguage('en'); toggleNavbarCollapsing()" ngbDropdownItem
-                                class="d-flex align-items-center">
-                                <span>{{ 'nav.english' | translate }}</span>
-                                <img src="assets/images/Flag_of_the_United_Kingdom.png" width="30px" alt="English Flag"
-                                    class="ms-auto">
-                            </a>
-                            <a (click)="switchLanguage('fr'); toggleNavbarCollapsing()" ngbDropdownItem
-                                class="d-flex align-items-center">
-                                <span>{{ 'nav.french' | translate }}</span>
-                                <img src="assets/images/Flag_of_France.png" width="30px" alt="French Flag"
-                                    class="ms-auto">
-                            </a>
-                            <a (click)="switchLanguage('de'); toggleNavbarCollapsing()" ngbDropdownItem
-                                class="d-flex align-items-center">
-                                <span>{{ 'nav.deutch' | translate }}</span>
-                                <img src="assets/images/Allemand-flag.png" width="30px" alt="Deutch Flag"
-                                    class="ms-auto">
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <button class="kirzin" onclick="window.location.href='https://app.tracksales.io/sign-in'">{{
-                    'nav.sign_in' | translate }}</button>
-            </ul>
-        </div>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/"
+            routerLinkActive="active"
+            [ngClass]="{ 'custom-active-class': isActive('/') }"
+            (click)="toggleNavbarCollapsing()"
+          >
+            {{ 'nav.home' | translate }}
+            <span class="underline"></span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/pricing"
+            routerLinkActive="active"
+            [ngClass]="{ 'custom-active-class': isActive('/pricing') }"
+            (click)="toggleNavbarCollapsing()"
+          >
+            {{ 'nav.pricing' | translate }}
+            <span class="underline"></span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/about-us"
+            routerLinkActive="active"
+            [ngClass]="{ 'custom-active-class': isActive('/about-us') }"
+            (click)="toggleNavbarCollapsing()"
+          >
+            {{ 'nav.about_us' | translate }}
+            <span class="underline"></span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/faq"
+            routerLinkActive="active"
+            [ngClass]="{ 'custom-active-class': isActive('/faq') }"
+            (click)="toggleNavbarCollapsing()"
+          >
+            FAQ
+            <span class="underline"></span>
+          </a>
+        </li>
+        <li class="nav-item" ngbDropdown (mouseenter)="dropdown.open()">
+          <div ngbDropdown class="d-inline-block" #dropdown="ngbDropdown">
+            <a class="nav-link" id="dropdownBasic1" ngbDropdownToggle>
+              {{ 'nav.langue' | translate }}
+            </a>
+            <div
+              ngbDropdownMenu
+              aria-labelledby="dropdownBasic1"
+              class="dropdown-menu-end custom-dropdown-menu"
+              (mouseleave)="dropdown.close()"
+            >
+              <a
+                *ngFor="let lang of ['en', 'fr', 'de']"
+                (click)="switchLanguage(lang); toggleNavbarCollapsing()"
+                ngbDropdownItem
+                class="d-flex align-items-center"
+              >
+                <span>{{ 'nav.' + lang | translate }}</span>
+                <img
+                  [src]="'assets/images/Flag_of_' + getCountryFlag(lang) + '.png'"
+                  width="30px"
+                  alt="{{ lang | translate }} Flag"
+                  class="ms-auto"
+                />
+              </a>
+            </div>
+          </div>
+        </li>
+        <button class="kirzin" onclick="window.location.href='https://app.tracksales.io/sign-in'">{{
+            'nav.sign_in' | translate }}</button>
+      </ul>
     </div>
+  </div>
 </nav>

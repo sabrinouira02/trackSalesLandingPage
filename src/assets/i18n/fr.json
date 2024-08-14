@@ -15,9 +15,9 @@
   },
   "nav": {
     "langue": "Langue",
-    "english": "Anglais",
-    "french": "Français",
-    "deutch": "Allemand",
+    "en": "Anglais",
+    "fr": "Français",
+    "de": "Allemand",
     "home": "Accueil",
     "pricing": "Tarification",
     "about_us": "À propos",

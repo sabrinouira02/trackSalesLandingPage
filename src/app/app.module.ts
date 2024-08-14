@@ -23,7 +23,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 
 const cookieConfig: NgcCookieConsentConfig = {
   cookie: {
-    domain: 'localhost', // il est recommandé de définir votre domaine, pour que les cookies fonctionnent correctement
+    domain: 'https://tracksales.io', // il est recommandé de définir votre domaine, pour que les cookies fonctionnent correctement
   },
   palette: {
     popup: {
@@ -76,7 +76,7 @@ const cookieConfig: NgcCookieConsentConfig = {
         deps: [HttpClient],
       },
     }),
-    NgcCookieConsentModule.forRoot(cookieConfig), // Supprimez cette ligne
+    NgcCookieConsentModule.forRoot(cookieConfig),
     GoogleTagManagerModule.forRoot({
       id: 'GTM-WRC4VZRP',
     }),

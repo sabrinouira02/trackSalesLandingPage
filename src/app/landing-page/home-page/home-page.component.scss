@@ -1,9 +1,5 @@
 @import "../../../styles.scss";
 
-.padding {
-  padding: 4% 10% 5% 10%;
-}
-
 .main_container {
   font-size: 20px;
 }
@@ -121,6 +117,10 @@ h1 {
 }
 
 @media (max-width: 767px) {
+  .padding {
+    padding: 10vh 10vh 10vh 10vh;
+  }
+
   .none {
     display: none;
   }
@@ -255,6 +255,9 @@ ul.checklist li img {
 }
 
 @media (min-width: 1200px) {
+  .padding {
+    padding: 16vh 40vh 16vh 40vh;
+  }
   .container {
     width: 1170px;
   }
@@ -270,7 +273,8 @@ ul.checklist li img {
 
   #client_needs_container {
     display: flex;
-    padding: 4% 10% 5% 10%;
+    // padding: 4% 10% 5% 10%;
+    padding: 16vh 40vh 16vh 40vh;
   }
 }
 

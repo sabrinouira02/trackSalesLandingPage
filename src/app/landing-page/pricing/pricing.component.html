@@ -1,7 +1,7 @@
 <div class="first-pricing-section">
     <h2 class="pricing-title">{{ 'pricing.title' | translate }}</h2>
-    <p style="text-align:center">{{ 'pricing.description' | translate }}</p>
-    <h4 *ngIf="referralLink" class="parrainage-msg">{{ 'pricing.PARRAINAGE_MSG' | translate:{ name: user?.name } }}</h4>
+    <p>{{ 'pricing.description' | translate }}</p>
+    <h4 *ngIf="user" class="parrainage-msg">{{ 'pricing.PARRAINAGE_MSG' | translate:{ name: user?.name } }}</h4>
     <div class="container">
         <div class="box" *ngFor="let plan of plans">
             <span></span>
@@ -21,64 +21,17 @@
     </div>
 
     <div class="container2">
-        <div class="box2">
+        <div class="box2" *ngFor="let block of blocks">
             <span></span>
             <div class="content2">
                 <div class="header">
-                    <img src="assets/images/shoppin_icon.png" alt="Image 1" class="image">
-                    <h2 class="title">{{ 'pricing.block1_header' | translate }}</h2>
+                    <img [src]="block.img" alt="Image" class="image">
+                    <h2 class="title">{{ block.title | translate }}</h2>
                 </div>
-                <p>{{ 'pricing.block1_desc' | translate }}</p>
+                <p>{{ block.desc | translate }}</p>
                 <div class="footer">
-                    <p class="price2">$1000 <small> {{ 'pricing.and_up' | translate }}</small></p>
-                    <button class="button" onclick="window.location.href='https://app.tracksales.io/sign-up'">{{
-                        'pricing.sign_up_to_access' | translate }}</button>
-                </div>
-            </div>
-        </div>
-        <div class="box2">
-            <span></span>
-            <div class="content2">
-                <div class="header">
-                    <img src="assets/images/Google__G__Log.png" alt="Image 2" class="image">
-                    <h2 class="title">{{ 'pricing.block2_header' | translate }}</h2>
-                </div>
-                <p>{{ 'pricing.block2_desc' | translate }}</p>
-                <div class="footer">
-                    <p class="price2">$1000 <small> {{ 'pricing.and_up' | translate }}</small></p>
-                    <button class="button" onclick="window.location.href='https://app.tracksales.io/sign-up'">{{
-                        'pricing.sign_up_to_access' | translate }}</button>
-                </div>
-            </div>
-        </div>
-        <div class="box2">
-            <span></span>
-            <div class="content2">
-                <div class="header">
-                    <img src="assets/images/shoppin_icon.png" alt="Image 3" class="image">
-                    <h2 class="title">{{ 'pricing.block3_header' | translate }}</h2>
-                </div>
-                <p class="description">{{ 'pricing.block3_desc' | translate }}</p>
-                <div class="footer">
-                    <p class="price2"><small>{{ 'pricing.starts_at' | translate }} </small>$500<small>/month</small></p>
-                    <button class="button" onclick="window.location.href='https://app.tracksales.io/sign-up'">{{
-                        'pricing.schedule_call' | translate }}</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="box2">
-            <span></span>
-            <div class="content2">
-                <div class="header">
-                    <img src="assets/images/shoppin_icon.png" alt="Image 4" class="image">
-                    <h2 class="title">{{ 'pricing.block4_header' | translate }}</h2>
-                </div>
-                <p class="description">{{ 'pricing.block4_desc' | translate }}</p>
-                <div class="footer">
-                    <p class="price2"><small></small></p>
-                    <button class="button" onclick="window.location.href='https://app.tracksales.io/sign-up'">{{
-                        'pricing.schedule_call' | translate }}</button>
+                    <p class="price2">{{ block.price }} <small>{{ block.and_up | translate }} </small></p>
+                    <button class="button" [attr.href]="block.link">{{ block.buttonText | translate }}</button>
                 </div>
             </div>
         </div>

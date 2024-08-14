@@ -14,9 +14,17 @@ export class HeaderComponent {
   scrolled: boolean = false;
   private mutationObserver!: MutationObserver;
 
-  desktopLogo = 'assets/images/logos/T_logo.png';
-  desktopTrackSalesLogo = 'assets/images/logos/TrackSales_logo.png';
-  mobileLogo = 'assets/images/logos/4.webp';
+  logos = {
+    desktop: 'assets/images/logos/T_logo.png',
+    desktopTrackSales: 'assets/images/logos/TrackSales_logo.png',
+    mobile: 'assets/images/logos/4.webp',
+  };
+
+  darkModeLogos = {
+    desktop: 'assets/images/logos/T_logo.png',
+    desktopTrackSales: 'assets/images/logos/track-sales-white-title.png',
+    mobile: 'assets/images/logos/mobile_logo_white.png',
+  };
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
@@ -35,8 +43,6 @@ export class HeaderComponent {
   }
 
   ngAfterViewInit(): void {
-    //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
-    //Add 'implements AfterViewInit' to the class.
     this.initMutationObserver();
   }
 
@@ -48,11 +54,9 @@ export class HeaderComponent {
 
   initMutationObserver(): void {
     this.mutationObserver = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        if (mutation.attributeName === 'class') {
-          this.onBodyClassChange();
-        }
-      });
+      mutations
+        .filter((mutation) => mutation.attributeName === 'class')
+        .forEach(() => this.onBodyClassChange());
     });
 
     this.mutationObserver.observe(this.document.body, {
@@ -63,18 +67,19 @@ export class HeaderComponent {
 
   onBodyClassChange(): void {
     const bodyClasses = this.document.body.classList;
-    // Exemple pour détecter une classe spécifique, par exemple 'dark-mode'
     if (bodyClasses.contains('dark-mode')) {
-      this.desktopLogo = 'assets/images/logos/T_logo.png';
-      this.desktopTrackSalesLogo =
-        'assets/images/logos/track-sales-white-title.png';
-      this.mobileLogo = 'assets/images/logos/mobile_logo_white.png';
+      this.setLogos(this.darkModeLogos);
     } else {
-      this.desktopLogo = 'assets/images/logos/T_logo.png';
-      this.desktopTrackSalesLogo = 'assets/images/logos/TrackSales_logo.png';
-      this.mobileLogo = 'assets/images/logos/4.png';
+      this.setLogos(this.logos);
     }
   }
+
+  setLogos(logos: { desktop: string; desktopTrackSales: string; mobile: string }): void {
+    this.logos.desktop = logos.desktop;
+    this.logos.desktopTrackSales = logos.desktopTrackSales;
+    this.logos.mobile = logos.mobile;
+  }
+
   switchLanguage(language: string) {
     this.translate.use(language);
     this.languageService.setCurrentLanguage(language);
@@ -85,14 +90,21 @@ export class HeaderComponent {
   }
 
   toggleNavbarCollapsing() {
-    if (this.navbarCollapsed) {
-      this.navbarCollapsed = false;
-    } else {
-      this.navbarCollapsed = true;
-    }
+    this.navbarCollapsed = !this.navbarCollapsed;
   }
 
   navigateToExternalLink(): void {
     window.open('https://pxmr7cwajh0.typeform.com/to/MNUlpNse', '_blank'); // Remplacez par l'URL de votre choix
   }
+
+
+  getCountryFlag(language: string): string {
+    const flags: { [key: string]: string } = {
+      en: 'the_United_Kingdom',
+      fr: 'France',
+      de: 'Germany',
+    };
+    return flags[language] || 'default';
+  }
+  
 }

@@ -4,10 +4,10 @@ import {
   AfterViewInit,
   Renderer2,
   ViewChild,
-  ElementRef,
+  ElementRef
 } from '@angular/core';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
-import { Subscription } from 'rxjs';
+import { Subject, Subscription, takeUntil } from 'rxjs';
 import { LottieService } from 'src/app/services/lottie.service';
 import * as AOS from 'aos';
 import { ScrollService } from 'src/app/services/scroll.service';
@@ -19,12 +19,12 @@ import { ScrollService } from 'src/app/services/scroll.service';
 export class HomePageComponent implements AfterViewInit {
   title = '';
   langChangeSubscription!: Subscription;
-  currentInterval: any; // Pour stocker l'intervalle en cours
-  currentTimeout: any; // Pour stocker le timeout en cours
+  currentInterval: number | null = null; // Pour stocker l'intervalle en cours
+  currentTimeout: number | null = null; // Pour stocker le timeout en cours
   @ViewChild('conversionAccuracyElement')
   conversionAccuracyElement!: ElementRef;
   @ViewChild('moneyBackDaysElement') moneyBackDaysElement!: ElementRef;
-
+  private ngUnsubscribe: Subject<void> = new Subject<void>();
   conversionAccuracy: number = 0;
   moneyBackDays: number = 0;
   targetConversionAccuracy: number = 99;
@@ -33,9 +33,6 @@ export class HomePageComponent implements AfterViewInit {
   observer!: IntersectionObserver;
   isDarkMode: boolean = false;
 
-  toggleDarkMode() {
-    this.isDarkMode = !this.isDarkMode;
-  }
   images = [
     {
       id: '1',
@@ -80,6 +77,7 @@ export class HomePageComponent implements AfterViewInit {
       alt: 'cuts-logo',
     },
   ];
+
   constructor(
     private animationStateService: LottieService,
     private location: Location,
@@ -105,19 +103,19 @@ export class HomePageComponent implements AfterViewInit {
       2000
     );
     this.setTitle();
-    this.langChangeSubscription = this.translate.onLangChange.subscribe(
-      (event: LangChangeEvent) => {
-        this.setTitle();
-      }
-    );
+    this.langChangeSubscription = this.translate.onLangChange
+    .pipe(takeUntil(this.ngUnsubscribe))
+    .subscribe((event: LangChangeEvent) => {
+      this.setTitle();
+    });
+    this.setupObserver();
     this.setupObserver();
   }
 
   ngOnDestroy() {
-    if (this.langChangeSubscription) {
-      this.langChangeSubscription.unsubscribe();
-    }
-    this.clearCurrentAnimation(); // Nettoyer les animations en cours
+    this.ngUnsubscribe.next();
+    this.ngUnsubscribe.complete();
+    this.clearCurrentAnimation();
   }
 
   setTitle() {
@@ -128,20 +126,21 @@ export class HomePageComponent implements AfterViewInit {
   }
 
   animateTitle(fullTitle: string) {
-    this.title = ''; // Réinitialiser le titre avant de démarrer l'animation
+    this.clearCurrentAnimation();
+    this.title = '';
     let i = 0;
-    this.currentInterval = setInterval(() => {
+    this.currentInterval = window.setInterval(() => {
       if (i < fullTitle.length) {
         this.title += fullTitle[i];
         i++;
       } else {
-        clearInterval(this.currentInterval);
-        this.currentTimeout = setTimeout(() => {
-          this.setTitle(); // Rappeler setTitle pour obtenir la traduction la plus récente
-        }, 10000); // Délai avant de répéter l'animation (par exemple, 10000 ms = 10 secondes)
+        this.clearCurrentAnimation();
+        this.currentTimeout = window.setTimeout(() => {
+          this.setTitle(); // Re-trigger the animation after a delay
+        }, 10000);
       }
-    }, 100); // Ajuster la vitesse de l'animation en modifiant le temps d'intervalle
-  }
+    }, 100);
+ }
 
   clearCurrentAnimation() {
     if (this.currentInterval) {
@@ -156,23 +155,25 @@ export class HomePageComponent implements AfterViewInit {
 
   setupObserver(): void {
     const options = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.1,
+       root: null,
+       rootMargin: '0px',
+       threshold: 0.1,
     };
-
     this.observer = new IntersectionObserver(
-      this.handleIntersect.bind(this),
-      options
+       this.handleIntersect.bind(this),
+       options
     );
-
-    if (this.conversionAccuracyElement) {
-      this.observer.observe(this.conversionAccuracyElement.nativeElement);
-    }
-    if (this.moneyBackDaysElement) {
-      this.observer.observe(this.moneyBackDaysElement.nativeElement);
-    }
-  }
+    const elementsToObserve = [
+       this.conversionAccuracyElement,
+       this.moneyBackDaysElement,
+    ];
+ 
+    elementsToObserve.forEach((element) => {
+       if (element) {
+          this.observer.observe(element.nativeElement);
+       }
+    });
+ } 
 
   handleIntersect(
     entries: IntersectionObserverEntry[],
@@ -201,17 +202,18 @@ export class HomePageComponent implements AfterViewInit {
   incrementCounter(
     property: 'conversionAccuracy' | 'moneyBackDays',
     target: number
-  ): void {
+ ): void {
     const stepTime = Math.abs(Math.floor(this.duration / target));
-    let currentValue = 0;
     const increment = target > 0 ? 1 : -1;
-
-    const timer = setInterval(() => {
-      currentValue += increment;
-      (this as any)[property] = currentValue; // Utilisation de "as any" pour contourner le problème de typage
-      if (currentValue === target) {
-        clearInterval(timer);
-      }
-    }, stepTime);
-  }
+    let currentValue = 0;
+    const step = () => {
+       currentValue += increment;
+       (this as any)[property] = currentValue;
+       if (currentValue !== target) {
+          setTimeout(() => requestAnimationFrame(step), stepTime);
+       }
+    };
+    requestAnimationFrame(step);
+ }
+ 
 }
