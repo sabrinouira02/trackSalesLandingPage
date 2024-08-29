@@ -95,34 +95,6 @@
     "starts_at": "Beginnt um",
     "sign_up_to_access": "Registrieren Sie sich, um Zugriff zu erhalten",
     "schedule_call": "Anruf planen"
-  },
-  "subscription": {
-    "subscription_form": "Abonnementformular",
-    "name": "Name",
-    "email": "E-Mail",
-    "password": "Passwort",
-    "confirm_password": "Passwort bestätigen",
-    "phone": "Telefon",
-    "duree": "Dauer",
-    "subscribe": "Abonnieren",
-    "free": "Kostenlos",
-    "month": "Monat",
-    "quarter": "Quartal",
-    "year": "Jahr",
-    "end_date": "Enddatum",
-    "prix_total": "Gesamtpreis",
-    "promo_code": "Rabattcode",
-    "verify_code": "Code überprüfen",
-    "success": "Ihr Abonnement wurde gespeichert",
-    "name_required": "Name ist erforderlich",
-    "email_required": "Eine gültige E-Mail ist erforderlich",
-    "password_required": "Das Passwort muss mindestens 8 Zeichen lang sein",
-    "confirm_password_required": "Bestätigung ist erforderlich",
-    "password_match": "Die Passwörter müssen übereinstimmen",
-    "phone_required": "Eine gültige Telefonnummer ist erforderlich",
-    "promo_code_not_found": "Aktionscode nicht gefunden",
-    "promo_code_expired": "Der Aktionscode ist abgelaufen",
-    "emailError": "Ungültige Syntax der Empfängeradresse. Bitte überprüfen Sie die E-Mail-Adresse und versuchen Sie es erneut.",
-    "emailUniqueError": "Die E-Mail wurde bereits vergeben."
   }
+
 }

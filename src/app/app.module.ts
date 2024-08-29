@@ -15,6 +15,7 @@ import {
   NgcCookieConsentModule,
 } from 'ngx-cookieconsent';
 import { GoogleTagManagerModule } from 'angular-google-tag-manager';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 
 // Fonction de chargement des fichiers de traduction
 export function HttpLoaderFactory(http: HttpClient) {
@@ -41,8 +42,8 @@ const cookieConfig: NgcCookieConsentConfig = {
   },
   elements: {
     messagelink: `
-    <span id="cookieconsent:desc" class="cc-message" style="margin: 1em">{{message}} 
-      <a aria-label="en savoir plus sur notre politique de confidentialité" tabindex="1" class="cc-link" href="{{privacyPolicyHref}}" target="_blank" rel="noopener">{{privacyPolicyLink}}</a> et notre 
+    <span id="cookieconsent:desc" class="cc-message" style="margin: 1em">{{message}}
+      <a aria-label="en savoir plus sur notre politique de confidentialité" tabindex="1" class="cc-link" href="{{privacyPolicyHref}}" target="_blank" rel="noopener">{{privacyPolicyLink}}</a> et notre
       <a aria-label="en savoir plus sur nos conditions de service" tabindex="2" class="cc-link" href="{{tosHref}}" target="_blank" rel="noopener">{{tosLink}}</a>
     </span>
     `,
@@ -80,6 +81,7 @@ const cookieConfig: NgcCookieConsentConfig = {
     GoogleTagManagerModule.forRoot({
       id: 'GTM-WRC4VZRP',
     }),
+    NgbModalModule
   ],
   providers: [],
   bootstrap: [AppComponent],

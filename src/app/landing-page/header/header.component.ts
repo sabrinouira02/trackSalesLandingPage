@@ -28,7 +28,7 @@ export class HeaderComponent {
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
-    this.scrolled = window.scrollY > 100; // Changez la valeur 100 selon votre préférence
+    this.scrolled = window.scrollY > 80;
   }
   constructor(
     private router: Router,
@@ -106,5 +106,5 @@ export class HeaderComponent {
     };
     return flags[language] || 'default';
   }
-  
+
 }
