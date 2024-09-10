@@ -125,16 +125,16 @@
     </div>
 
     <div class="allarounddata-widget padding">
-        <div data-aos="zoom-out" data-aos-offset="300" data-aos-duration="2000"><span class="meta-title">{{
+        <div data-aos="zoom-out"><span class="meta-title">{{
                 'meta-title3' | translate }}</span>
-            <h2 class="meta-sub-title" data-aos="zoom-out" data-aos-offset="300" data-aos-duration="2000">{{
+            <h2 class="meta-sub-title">{{
                 'meta-sub-title3' | translate }}</h2>
-            <p class="subheading" data-aos="zoom-out" data-aos-offset="300" data-aos-duration="2000">{{
+            <p class="subheading">{{
                 'data_collected_description' | translate }}</p>
             <div class="allarounddata__row">
-                <img data-aos="fade-right" data-aos-offset="300" data-aos-duration="2000"
+                <img data-aos="fade-right"
                     src="assets/images/Product-Data.webp" alt="" width="100%" height="100%">
-                <div class="allarounddata__column" data-aos="fade-left" data-aos-offset="300" data-aos-duration="2000">
+                <div class="allarounddata__column" data-aos="fade-left">
                     <h3>{{ 'type1_title' | translate }}
                     </h3>
                     <p>{{ 'type1_title_description' | translate }}</p>
@@ -153,9 +153,9 @@
                 </div>
             </div>
             <div class="allarounddata_row_2 allarounddata__row">
-                <img data-aos="fade-left" data-aos-offset="300" data-aos-duration="2000"
+                <img data-aos="fade-left"
                     src="assets/images/Customer-Data.webp" alt="" width="100%" height="100%">
-                <div class="allarounddata__column" data-aos="fade-right" data-aos-offset="300" data-aos-duration="2000">
+                <div class="allarounddata__column" data-aos="fade-right">
                     <h3>{{ 'type2_title' | translate }}</h3>
                     <p>{{ 'type2_title_description' | translate }}</p>
                     <a href="#" tabindex="0">
@@ -172,9 +172,8 @@
                 </div>
             </div>
             <div class="allarounddata__row">
-                <img src="assets/images/Attribution-Data.webp" alt="" data-aos="fade-right" data-aos-offset="300"
-                    data-aos-duration="2000" width="100%" height="100%">
-                <div class="allarounddata__column" data-aos="fade-left" data-aos-offset="300" data-aos-duration="2000">
+                <img src="assets/images/Attribution-Data.webp" alt="" width="100%" height="100%">
+                <div class="allarounddata__column" data-aos="fade-left">
                     <h3>{{ 'type3_title' | translate }}</h3>
                     <p>{{ 'type3_title_description' | translate }}</p>
                     <a href="#" tabindex="0">
@@ -222,7 +221,8 @@
 
     <div data-vc-full-width="true" data-vc-full-width-init="true" data-vc-stretch-content="true"
         class="section full-width-checklist padding">
-        <h5 style="text-align: center;">{{ 'meta-title5' | translate }}</h5>
+        <!-- <span class="meta-title" >{{ 'meta-title5' | translate }}</span> -->
+        <h5 style="text-align: center;" class="meta-title">{{ 'meta-title5' | translate }}</h5>
         <h2 class="meta-sub-title">
             {{ 'central_system_title' | translate }}</h2>
         <p style="text-align: center;">{{ 'central_system_description' | translate }}</p>

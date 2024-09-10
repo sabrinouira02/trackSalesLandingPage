@@ -68,17 +68,21 @@ export class HeaderComponent {
   onBodyClassChange(): void {
     const bodyClasses = this.document.body.classList;
     if (bodyClasses.contains('dark-mode')) {
-      this.setLogos(this.darkModeLogos);
+      this.setLogos(this.darkModeLogos); // Switch to dark mode logos
     } else {
-      this.setLogos(this.logos);
+      this.setLogos({
+        desktop: 'assets/images/logos/T_logo.png',
+        desktopTrackSales: 'assets/images/logos/TrackSales_logo.png',
+        mobile: 'assets/images/logos/4.webp',
+      });
     }
   }
 
-  setLogos(logos: { desktop: string; desktopTrackSales: string; mobile: string }): void {
-    this.logos.desktop = logos.desktop;
-    this.logos.desktopTrackSales = logos.desktopTrackSales;
-    this.logos.mobile = logos.mobile;
+
+  setLogos(newLogos: any): void {
+    this.logos = { ...newLogos };
   }
+
 
   switchLanguage(language: string) {
     this.translate.use(language);

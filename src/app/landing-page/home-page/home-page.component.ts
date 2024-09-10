@@ -137,7 +137,7 @@ export class HomePageComponent implements AfterViewInit {
         this.clearCurrentAnimation();
         this.currentTimeout = window.setTimeout(() => {
           this.setTitle(); // Re-trigger the animation after a delay
-        }, 10000);
+        }, 30000);
       }
     }, 100);
  }
@@ -167,13 +167,13 @@ export class HomePageComponent implements AfterViewInit {
        this.conversionAccuracyElement,
        this.moneyBackDaysElement,
     ];
- 
+
     elementsToObserve.forEach((element) => {
        if (element) {
           this.observer.observe(element.nativeElement);
        }
     });
- } 
+ }
 
   handleIntersect(
     entries: IntersectionObserverEntry[],
@@ -215,5 +215,5 @@ export class HomePageComponent implements AfterViewInit {
     };
     requestAnimationFrame(step);
  }
- 
+
 }

@@ -30,11 +30,29 @@ li.nav-item.signup {
   width: 200px;
 }
 
+.social-icons a.facebook i:hover     {
+  color: #3b5998; /* Couleur Facebook */
+}
+
+.social-icons a.linkedin i:hover {
+  color: #0077b5; /* Couleur LinkedIn */
+}
+
+.social-icons a.youtube i:hover {
+  color: #ff0000; /* Couleur YouTube */
+}
+
 @media (max-width: 768px) {
   .custom-dropdown-menu {
     width: 88vw; /* La largeur sera égale à 100% de la vue d'écran */
     left: 0 !important; /* Assurez-vous que le menu commence à gauche */
     right: 0 !important; /* Assurez-vous que le menu s'étend à droite */
+  }
+
+  .login{
+    width: 50%;
+    margin-left: 22%;
+    margin-top: 5%;
   }
 }
 
