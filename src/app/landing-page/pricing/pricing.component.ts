@@ -71,10 +71,10 @@ export class PricingComponent implements OnInit {
     this.route.params.subscribe((params) => {
       this.referralLink = params['parrainage'];
       if (this.referralLink) {
-        sessionStorage.setItem('referralLink', this.referralLink);
+        localStorage.setItem('referralLink', this.referralLink);
         this.getUser();
       } else {
-        this.referralLink = sessionStorage.getItem('referralLink');
+        this.referralLink = localStorage.getItem('referralLink');
         if (this.referralLink) {
           this.getUser();
         }

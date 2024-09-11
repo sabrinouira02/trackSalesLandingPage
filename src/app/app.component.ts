@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    const savedDarkMode = sessionStorage.getItem('isDarkMode');
+    const savedDarkMode = localStorage.getItem('isDarkMode');
     this.isDarkMode = savedDarkMode ? JSON.parse(savedDarkMode) : false;
     this.applyTheme(this.isDarkMode);
 
@@ -60,7 +60,7 @@ export class AppComponent implements OnInit {
 
   toggleDarkMode() {
     this.isDarkMode = !this.isDarkMode;
-    sessionStorage.setItem('isDarkMode', JSON.stringify(this.isDarkMode));
+    localStorage.setItem('isDarkMode', JSON.stringify(this.isDarkMode));
     this.applyTheme(this.isDarkMode);
   }
 

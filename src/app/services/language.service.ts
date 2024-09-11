@@ -19,14 +19,14 @@ export class LanguageService {
   }
 
   setCurrentLanguage(language: string) {
-    sessionStorage.setItem('currentLanguage', language);
+    localStorage.setItem('currentLanguage', language);
     this.currentLanguageSubject.next(language);
     this.languageChangeSubject.next(); // Diffusez le changement de langue
   }
 
   getCurrentLanguage(): string {
     return (
-      sessionStorage.getItem('currentLanguage') || this.getInitialLanguage()
+      localStorage.getItem('currentLanguage') || this.getInitialLanguage()
     );
   }
 
