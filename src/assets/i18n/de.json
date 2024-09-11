@@ -1,12 +1,8 @@
 {
   "cookie": {
-    "header": "Cookies auf der Website verwendet!",
-    "message": "Diese Website verwendet Cookies, um sicherzustellen, dass Sie die beste Erfahrung auf unserer Website machen.",
-    "dismiss": "Verstanden!",
-    "allow": "Cookies erlauben",
-    "deny": "Ablehnen",
-    "link": "Mehr erfahren",
-    "policy": ""
+    "message": "Wir verwenden Cookies, um Ihr Erlebnis zu verbessern. Indem Sie unsere Website weiterhin nutzen, akzeptieren Sie unsere",
+    "accept": "Akzeptieren",
+    "reject": "Ablehnen"
   },
   "top_bar": {
     "title": "Möchten Sie die innovative Art des Trackings erleben ?",
@@ -29,7 +25,10 @@
     "text_sous_logo": "TrackSales ist ein Tool, das den Prozess der Datenerfassung und des serverseitigen Trackings speziell für Direct-to-Consumer (D2C)-Marken, die Shopify verwenden, vereinfacht und automatisiert.",
     "menu": "Menü",
     "contact": "Kontakt",
-    "follow_us": "Folgen Sie uns :"
+    "follow_us": "Folgen Sie uns :",
+    "terms": "Nutzungsbedingungen",
+    "privacy": "Datenschutzrichtlinie",
+    "right_reserved": "© 2024 Alle Rechte vorbehalten."
   },
   "wpb_wrapper2_title": "Nie wieder eine Conversion verpassen",
   "wpb_wrapper2_description": "Stellen Sie sicher, dass 100 % Ihrer Conversions an Marketingkanäle wie Facebook, TikTok, Google Ads, GA4 und über 40 weitere Plattformen mit dem leistungsstarken, KI-gesteuerten serverseitigen Tracking von Track Sales weitergeleitet werden.",

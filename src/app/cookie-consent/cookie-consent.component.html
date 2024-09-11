@@ -1,0 +1,8 @@
+<div *ngIf="!userConsent" class="cookie-consent-banner">
+  <p>
+    {{ 'cookie.message' | translate }}
+    <a href="/privacy">{{ 'footer.privacy' | translate }}</a>.
+  </p>
+  <button class="accept" (click)="acceptCookies()">{{ 'cookie.accept' | translate }}</button>
+  <button class="reject" (click)="rejectCookies()">{{ 'cookie.reject' | translate }}</button>
+</div>

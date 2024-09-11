@@ -1,12 +1,8 @@
 {
   "cookie": {
-    "header": "Cookies utilisés sur le site Web !",
-    "message": "Ce site Web utilise des cookies pour garantir que vous obtenez la meilleure expérience sur notre site Web.",
-    "dismiss": "D'accord !",
-    "allow": "Autoriser les cookies",
-    "deny": "Refuser",
-    "link": "En savoir plus",
-    "policy": ""
+    "message": "Nous utilisons des cookies pour améliorer votre expérience. En continuant à utiliser notre site, vous acceptez notre",
+    "accept": "Accepter",
+    "reject": "Rejeter"
   },
   "top_bar": {
     "title": "Vous souhaitez découvrir la manière innovante de suivre vos performances ?",
@@ -29,7 +25,10 @@
     "text_sous_logo": "TrackSales est un outil qui simplifie et automatise le processus de collecte de données et de suivi côté serveur spécifiquement pour les marques directes aux consommateurs (D2C) utilisant Shopify.",
     "menu": "Menu",
     "contact": "Contact",
-    "follow_us": "Suivez-nous :"
+    "follow_us": "Suivez-nous :",
+    "terms": "Conditions d'utilisation",
+    "privacy": "Politique de confidentialité",
+    "right_reserved": "© 2024 Tous droits réservés."
   },
   "wpb_wrapper2_title": "Assurez-vous de ne jamais rater une opportunité de conversion",
   "wpb_wrapper2_description": "Assurez un suivi et une livraison à 100 % de vos conversions aux canaux de marketing tels que Facebook, TikTok, Google Ads, GA4, et plus de 40 autres plateformes grâce au puissant suivi côté serveur piloté par l'IA de Track Sales.",
