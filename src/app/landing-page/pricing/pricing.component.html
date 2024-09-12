@@ -8,7 +8,10 @@
             <div class="content">
                 <h2>{{ plan.translated_name }}</h2>
                 <h3>$ {{ plan.prix }}</h3>
-                <p>{{ plan.translated_description }}</p><br>
+                <p>✔ {{ plan.orders_included }} {{ 'pricing.orders_included' | translate }}</p><br>
+                <p>+ {{ plan.extra_order_cost }} {{ 'pricing.extra_order_cost' | translate }}</p><br>
+                <p>✔ {{ plan.support_type }} {{ 'pricing.support_type' | translate }}</p><br>
+                <p *ngIf="plan.shopify_markets_included">✔ {{ 'pricing.shopify_markets_included' | translate }}</p>
                     <a [href]="referralLink ? 'https://app.tracksales.io/sign-in/' + plan.id + '?referralLink=' + referralLink : 'https://app.tracksales.io/sign-in/' + plan.id">
                       {{ 'pricing.buttons_get_started' | translate }}
                   </a>
