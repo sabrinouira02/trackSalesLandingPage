@@ -18,6 +18,7 @@
     "pricing": "Tarification",
     "about_us": "À propos",
     "faq1": " FAQ",
+    "contact": "Contactez-nous",
     "sign_in": "Se connecter",
     "sign_up": "S'inscrire"
   },
@@ -98,5 +99,21 @@
     "starts_at": "Commence à",
     "sign_up_to_access": "Inscrivez-vous pour accéder",
     "schedule_call": "Planifier un Appel"
+  },
+  "contact": {
+    "CONTACT_US": "Contactez-nous",
+    "FIRST_NAME": "Prénom",
+    "LAST_NAME": "Nom de famille",
+    "EMAIL": "E-mail",
+    "PHONE_NUMBER": "Numéro de téléphone",
+    "MESSAGE": "Quelle est votre idée",
+    "SUBMIT": "Soumettre",
+    "FIRST_NAME_PLACEHOLDER": "Entrez votre prénom",
+    "LAST_NAME_PLACEHOLDER": "Entrez votre nom",
+    "EMAIL_PLACEHOLDER": "Entrez votre email",
+    "PHONE_PLACEHOLDER": "Entrez votre numéro de téléphone",
+    "MESSAGE_PLACEHOLDER": "Veuillez entrer votre question...",
+    "ERROR_REQUIRED": "Ce champ est obligatoire",
+    "ERROR_INVALID_EMAIL": "Veuillez entrer une adresse email valide"
   }
 }

@@ -14,10 +14,11 @@ import { HttpLoaderFactory } from '../app.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { TermsComponent } from './terms/terms.component';
-import { NewsletterComponent } from './newsletter/newsletter.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FaqComponent } from './faq/faq.component';
 import { LoaderComponent } from './loader/loader.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { GdbrComponent } from './gdbr/gdbr.component';
 @NgModule({
   declarations: [
     LandingPageComponent,
@@ -28,9 +29,10 @@ import { LoaderComponent } from './loader/loader.component';
     HeaderComponent,
     PrivacyComponent,
     TermsComponent,
-    NewsletterComponent,
     FaqComponent,
     LoaderComponent,
+    ContactUsComponent,
+    GdbrComponent,
   ],
   imports: [
     CommonModule,

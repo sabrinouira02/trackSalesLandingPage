@@ -18,6 +18,7 @@
     "pricing": "Preise",
     "about_us": "Über uns",
     "faq1": "FAQ",
+    "contact": "Kontaktieren Sie uns",
     "sign_in": "Anmelden",
     "sign_up": "Registrieren"
   },
@@ -98,6 +99,21 @@
     "starts_at": "Beginnt um",
     "sign_up_to_access": "Registrieren Sie sich, um Zugriff zu erhalten",
     "schedule_call": "Anruf planen"
-  }
-
+  },
+  "contact": {
+      "CONTACT_US": "Kontaktiere uns",
+      "FIRST_NAME": "Vorname",
+      "LAST_NAME": "Nachname",
+      "EMAIL": "E-Mail",
+      "PHONE_NUMBER": "Telefonnummer",
+      "MESSAGE": "Was hast du im Sinn",
+      "SUBMIT": "Einreichen",
+      "FIRST_NAME_PLACEHOLDER": "Geben Sie Ihren Vornamen ein",
+      "LAST_NAME_PLACEHOLDER": "Geben Sie Ihren Nachnamen ein",
+      "EMAIL_PLACEHOLDER": "Geben Sie Ihre E-Mail-Adresse ein",
+      "PHONE_PLACEHOLDER": "Geben Sie Ihre Telefonnummer ein",
+      "MESSAGE_PLACEHOLDER": "Bitte geben Sie Ihre Anfrage ein...",
+      "ERROR_REQUIRED": "Dieses Feld ist erforderlich",
+      "ERROR_INVALID_EMAIL": "Bitte geben Sie eine gültige E-Mail-Adresse ein"
+    }
 }

@@ -20,11 +20,19 @@ export class SubscritionService {
 
   getUserByReferralLink(referralLink: any ): Observable<any> {
     const params = new HttpParams().set('referral_link', referralLink);
-    return this.http.get<any>(`${this.baseUrl}api/user/referral`, { params })
+    return this.http.get<any>(`${this.baseUrl}api/userRef/referral`, { params })
       .pipe(
         catchError(this.handleError)
       );
   }
+
+  contact(data: any ): Observable<any> {
+    return this.http.post(`${this.baseUrl}api/contact`, data)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
 
   private handleError(error: HttpErrorResponse): Observable<never> {
     // Log error to console or send it to a logging infrastructure

@@ -1,0 +1,112 @@
+<div class="contact_us_green">
+  <div class="responsive-container-block big-container">
+    <div class="responsive-container-block container">
+      <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-7 wk-ipadp-10 line" id="i69b-2">
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="form-box">
+          <div class="container-block form-wrapper">
+            <div class="head-text-box">
+              <p class="text-blk contactus-head">
+                {{ 'contact.CONTACT_US' | translate }}
+              </p>
+              <p class="text-blk contactus-subhead">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna al iqua. Ut enim
+              </p>
+            </div>
+            <div class="responsive-container-block">
+              <div class="responsive-cell-block wk-ipadp-6 wk-tab-12 wk-mobile-12 wk-desk-6">
+                <p class="text-blk input-title">{{ 'contact.FIRST_NAME' | translate }}</p>
+                <input formControlName="firstName" class="input" placeholder="{{ 'contact.FIRST_NAME_PLACEHOLDER' | translate }}">
+                <div *ngIf="contactForm.get('firstName')?.touched && contactForm.get('firstName')?.invalid" class="error-message">
+                  <span *ngIf="contactForm.get('firstName')?.errors?.['required']">{{ 'contact.ERROR_REQUIRED' | translate }}</span>
+                </div>
+              </div>
+              <div class="responsive-cell-block wk-ipadp-6 wk-tab-12 wk-mobile-12 wk-desk-6">
+                <p class="text-blk input-title">{{ 'contact.LAST_NAME' | translate }}</p>
+                <input formControlName="lastName" class="input" placeholder="{{ 'contact.LAST_NAME_PLACEHOLDER' | translate }}">
+                <div *ngIf="contactForm.get('lastName')?.touched && contactForm.get('lastName')?.invalid" class="error-message">
+                  <span *ngIf="contactForm.get('lastName')?.errors?.['required']">{{ 'contact.ERROR_REQUIRED' | translate }}</span>
+                </div>
+              </div>
+              <div class="responsive-cell-block wk-ipadp-6 wk-tab-12 wk-mobile-12 wk-desk-6">
+                <p class="text-blk input-title">{{ 'contact.EMAIL' | translate }}</p>
+                <input formControlName="email" type="email" class="input" placeholder="{{ 'contact.EMAIL_PLACEHOLDER' | translate }}">
+                <div *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.invalid" class="error-message">
+                  <span *ngIf="contactForm.get('email')?.errors?.['required']">{{ 'contact.ERROR_REQUIRED' | translate }}</span>
+                  <span *ngIf="contactForm.get('email')?.errors?.['email']">{{ 'contact.ERROR_INVALID_EMAIL' | translate }}</span>
+                </div>
+              </div>
+              <div class="responsive-cell-block wk-ipadp-6 wk-tab-12 wk-mobile-12 wk-desk-6">
+                <p class="text-blk input-title">{{ 'contact.PHONE_NUMBER' | translate }}</p>
+                <input formControlName="phoneNumber" type="tel" class="input" placeholder="{{ 'contact.PHONE_PLACEHOLDER' | translate }}">
+                <div *ngIf="contactForm.get('phoneNumber')?.touched && contactForm.get('phoneNumber')?.invalid" class="error-message">
+                  <span *ngIf="contactForm.get('phoneNumber')?.errors?.['required']">{{ 'contact.ERROR_REQUIRED' | translate }}</span>
+                </div>
+              </div>
+              <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12">
+                <p class="text-blk input-title">{{ 'contact.MESSAGE' | translate }} ?</p>
+                <textarea formControlName="message" class="textinput" placeholder="{{ 'contact.MESSAGE_PLACEHOLDER' | translate }}"></textarea>
+                <div *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.invalid" class="error-message">
+                  <span *ngIf="contactForm.get('message')?.errors?.['required']">{{ 'contact.ERROR_REQUIRED' | translate }}</span>
+                </div>
+              </div>
+            </div>
+            <div class="btn-wrapper">
+              <button type="submit" class="kirzin" [disabled]="contactForm.invalid">{{ 'contact.SUBMIT' | translate }}</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-5 wk-ipadp-10" id="ifgi">
+        <div class="container-box">
+          <div class="text-content">
+            <p class="text-blk contactus-head">
+              {{ 'contact.CONTACT_US' | translate }}
+            </p>
+            <p class="text-blk contactus-subhead">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna al iqua. Ut enim
+            </p>
+          </div>
+          <div class="workik-contact-bigbox">
+            <div class="workik-contact-box">
+              <div class="phone text-box">
+                <img class="contact-svg" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/ET21.jpg">
+                <p class="contact-text">
+                  +216 99 676 111
+                </p>
+              </div>
+              <div class="address text-box">
+                <img class="contact-svg" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/ET22.jpg">
+                <p class="contact-text">
+                  contact&#64;sync.tn
+                </p>
+              </div>
+              <div class="mail text-box">
+                <img class="contact-svg" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/ET23.jpg">
+                <p class="contact-text">
+                  102 street, y cross 485656
+                </p>
+              </div>
+            </div>
+            <!-- <div class="social-media-links">
+              <a href="">
+                <img class="social-svg" id="ie9fx" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-fb.svg" alt="Facebook">
+              </a>
+              <a href="">
+                <img class="social-svg" id="ib9ve" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-insta.svg" alt="Instagram">
+              </a>
+              <a href="">
+                <img class="social-svg" id="iyoutube" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-youtube.svg" alt="YouTube">
+              </a>
+              <a href="">
+                <img class="social-svg" id="ilinkedin" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-linkedin.svg" alt="LinkedIn">
+              </a>
+            </div> -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-loader></app-loader>

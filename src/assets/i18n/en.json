@@ -18,6 +18,7 @@
     "pricing": "Pricing",
     "about_us": "About us",
     "faq1": " FAQ",
+    "contact": "Contact us",
     "sign_in": "Sign In",
     "sign_up": "Sign Up"
   },
@@ -98,5 +99,21 @@
     "starts_at": "Starts at",
     "sign_up_to_access": "Sign Up To Access",
     "schedule_call": "Schedule Call"
+  },
+  "contact": {
+    "CONTACT_US": "Contact us",
+    "FIRST_NAME": "First Name",
+    "LAST_NAME": "Last Name",
+    "EMAIL": "Email",
+    "PHONE_NUMBER": "Phone Number",
+    "MESSAGE": "What do you have in mind",
+    "SUBMIT": "Submit",
+    "FIRST_NAME_PLACEHOLDER": "Enter your first name",
+    "LAST_NAME_PLACEHOLDER": "Enter your last name",
+    "EMAIL_PLACEHOLDER": "Enter your email",
+    "PHONE_PLACEHOLDER": "Enter your phone number",
+    "MESSAGE_PLACEHOLDER": "Please enter your query...",
+    "ERROR_REQUIRED": "This field is required",
+    "ERROR_INVALID_EMAIL": "Please enter a valid email address"
   }
 }

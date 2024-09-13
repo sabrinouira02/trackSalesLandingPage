@@ -99,6 +99,18 @@
             <span class="underline"></span>
           </a>
         </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/contact-us"
+            routerLinkActive="active"
+            [ngClass]="{ 'custom-active-class': isActive('/contact-us') }"
+            (click)="toggleNavbarCollapsing()"
+          >
+            {{ 'nav.contact' | translate }}
+            <span class="underline"></span>
+          </a>
+        </li>
         <li class="nav-item" ngbDropdown (mouseenter)="dropdown.open()">
           <div ngbDropdown class="d-inline-block" #dropdown="ngbDropdown">
             <a class="nav-link" id="dropdownBasic1" ngbDropdownToggle>
